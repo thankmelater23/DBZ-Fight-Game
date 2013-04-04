@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  SettingsViewController.h
 //  Fight 2.0
 //
 //  Created by Andre on 3/14/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface SettingsViewController : UIViewController
 
 @end
