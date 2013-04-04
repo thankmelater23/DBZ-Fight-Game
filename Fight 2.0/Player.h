@@ -23,6 +23,7 @@
     int punchSpecial1, punchSpecial2;
     int kickSpecial1, kickSpecial2;
     int superSpecail1, superSpecail2;
+    BOOL isFirstPlayer;
 }
 
 //Properties

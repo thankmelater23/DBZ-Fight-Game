@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E6B4AD2B170D891500D8ACDF /* reg back arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */; };
 		E6B4AD2C170D891500D8ACDF /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFD170D891500D8ACDF /* click.mp3 */; };
-		E6B4AD2D170D891500D8ACDF /* Attack.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4ACFE170D891500D8ACDF /* Attack.m */; };
 		E6B4AD2E170D891500D8ACDF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4ACFF170D891500D8ACDF /* MenuViewController.m */; };
 		E6B4AD2F170D891500D8ACDF /* Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4AD00170D891500D8ACDF /* Methods.m */; };
 		E6B4AD30170D891500D8ACDF /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4AD01170D891500D8ACDF /* Player.m */; };
@@ -71,18 +70,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E6B4ACF3170D891500D8ACDF /* Attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attack.h; sourceTree = "<group>"; };
-		E6B4ACF4170D891500D8ACDF /* GlobalMeths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMeths.h; sourceTree = "<group>"; };
 		E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Globals:Constants.h"; sourceTree = "<group>"; };
 		E6B4ACF6170D891500D8ACDF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E6B4ACF7170D891500D8ACDF /* Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Methods.h; sourceTree = "<group>"; };
-		E6B4ACF8170D891500D8ACDF /* newMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newMethods.h; sourceTree = "<group>"; };
 		E6B4ACF9170D891500D8ACDF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E6B4ACFA170D891500D8ACDF /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		E6B4ACFB170D891500D8ACDF /* StringFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringFunctions.h; sourceTree = "<group>"; };
 		E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "reg back arrow.jpeg"; sourceTree = "<group>"; };
 		E6B4ACFD170D891500D8ACDF /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
-		E6B4ACFE170D891500D8ACDF /* Attack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attack.m; sourceTree = "<group>"; };
 		E6B4ACFF170D891500D8ACDF /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		E6B4AD00170D891500D8ACDF /* Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Methods.m; sourceTree = "<group>"; };
 		E6B4AD01170D891500D8ACDF /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
@@ -164,57 +158,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E6EFFAE8170D87FD004B9197 = {
+		E6B4AD5E170D8DB100D8ACDF /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				E6B4AD5C170D894D00D8ACDF /* AVFoundation.framework */,
-				E6B4AD5A170D894800D8ACDF /* AudioToolbox.framework */,
-				E6EFFAFA170D87FD004B9197 /* Fight 2.0 */,
-				E6EFFAF3170D87FD004B9197 /* Frameworks */,
-				E6EFFAF2170D87FD004B9197 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		E6EFFAF2170D87FD004B9197 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E6EFFAF1170D87FD004B9197 /* Fight 2.0.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E6EFFAF3170D87FD004B9197 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E6EFFAF4170D87FD004B9197 /* UIKit.framework */,
-				E6EFFAF6170D87FD004B9197 /* Foundation.framework */,
-				E6EFFAF8170D87FD004B9197 /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E6EFFAFA170D87FD004B9197 /* Fight 2.0 */ = {
-			isa = PBXGroup;
-			children = (
-				E6EFFB03170D87FD004B9197 /* AppDelegate.h */,
-				E6EFFB04170D87FD004B9197 /* AppDelegate.m */,
 				E6EFFB0C170D87FD004B9197 /* MainStoryboard_iPhone.storyboard */,
-				E6B4ACF3170D891500D8ACDF /* Attack.h */,
-				E6B4ACF4170D891500D8ACDF /* GlobalMeths.h */,
-				E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */,
+				E6EFFB0F170D87FD004B9197 /* MainStoryboard_iPad.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		E6B4AD5F170D8DBE00D8ACDF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6EFFB12170D87FD004B9197 /* ViewController.h */,
+				E6EFFB13170D87FD004B9197 /* ViewController.m */,
 				E6B4ACF6170D891500D8ACDF /* MenuViewController.h */,
-				E6B4ACF7170D891500D8ACDF /* Methods.h */,
-				E6B4ACF8170D891500D8ACDF /* newMethods.h */,
-				E6B4ACF9170D891500D8ACDF /* Player.h */,
 				E6B4ACFA170D891500D8ACDF /* SettingsViewController.h */,
-				E6B4ACFB170D891500D8ACDF /* StringFunctions.h */,
-				E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */,
-				E6B4ACFD170D891500D8ACDF /* click.mp3 */,
-				E6B4ACFE170D891500D8ACDF /* Attack.m */,
 				E6B4ACFF170D891500D8ACDF /* MenuViewController.m */,
-				E6B4AD00170D891500D8ACDF /* Methods.m */,
-				E6B4AD01170D891500D8ACDF /* Player.m */,
 				E6B4AD02170D891500D8ACDF /* SettingsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E6B4AD60170D8DD000D8ACDF /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4ACFD170D891500D8ACDF /* click.mp3 */,
+				E6B4AD1C170D891500D8ACDF /* click.wav */,
+				E6B4AD1D170D891500D8ACDF /* Face Punch 2.wav */,
+				E6B4AD1E170D891500D8ACDF /* karate.wav */,
+				E6B4AD1F170D891500D8ACDF /* kick.wav */,
+				E6B4AD20170D891500D8ACDF /* left hook.wav */,
+				E6B4AD21170D891500D8ACDF /* Magic Tree.wav */,
+				E6B4AD22170D891500D8ACDF /* pain.wav */,
+				E6B4AD23170D891500D8ACDF /* powerhum.wav */,
+				E6B4AD24170D891500D8ACDF /* punch.wav */,
+				E6B4AD25170D891500D8ACDF /* razor slate.wav */,
+				E6B4AD26170D891500D8ACDF /* right hook.wav */,
+				E6B4AD27170D891500D8ACDF /* Ripple Lazer.wav */,
+				E6B4AD28170D891500D8ACDF /* strike.wav */,
+				E6B4AD29170D891500D8ACDF /* swoosh 3.wav */,
+				E6B4AD2A170D891500D8ACDF /* thunder.wav */,
+			);
+			name = SFX;
+			sourceTree = "<group>";
+		};
+		E6B4AD61170D8DDC00D8ACDF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */,
+				E6EFFB06170D87FD004B9197 /* Default.png */,
+				E6EFFB08170D87FD004B9197 /* Default@2x.png */,
+				E6EFFB0A170D87FD004B9197 /* Default-568h@2x.png */,
 				E6B4AD03170D891500D8ACDF /* Amsterdam_checkmark.png */,
 				E6B4AD04170D891500D8ACDF /* Arrow+01.png */,
 				E6B4AD05170D891500D8ACDF /* back-arrow-hi.png */,
@@ -240,24 +235,67 @@
 				E6B4AD19170D891500D8ACDF /* player2 punch.png */,
 				E6B4AD1A170D891500D8ACDF /* SwapLife.png */,
 				E6B4AD1B170D891500D8ACDF /* Unconventional-Recycle-Arrows-Clip-Art.png */,
-				E6B4AD1C170D891500D8ACDF /* click.wav */,
-				E6B4AD1D170D891500D8ACDF /* Face Punch 2.wav */,
-				E6B4AD1E170D891500D8ACDF /* karate.wav */,
-				E6B4AD1F170D891500D8ACDF /* kick.wav */,
-				E6B4AD20170D891500D8ACDF /* left hook.wav */,
-				E6B4AD21170D891500D8ACDF /* Magic Tree.wav */,
-				E6B4AD22170D891500D8ACDF /* pain.wav */,
-				E6B4AD23170D891500D8ACDF /* powerhum.wav */,
-				E6B4AD24170D891500D8ACDF /* punch.wav */,
-				E6B4AD25170D891500D8ACDF /* razor slate.wav */,
-				E6B4AD26170D891500D8ACDF /* right hook.wav */,
-				E6B4AD27170D891500D8ACDF /* Ripple Lazer.wav */,
-				E6B4AD28170D891500D8ACDF /* strike.wav */,
-				E6B4AD29170D891500D8ACDF /* swoosh 3.wav */,
-				E6B4AD2A170D891500D8ACDF /* thunder.wav */,
-				E6EFFB0F170D87FD004B9197 /* MainStoryboard_iPad.storyboard */,
-				E6EFFB12170D87FD004B9197 /* ViewController.h */,
-				E6EFFB13170D87FD004B9197 /* ViewController.m */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E6B4AD62170D8DE600D8ACDF /* Glue Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4AD00170D891500D8ACDF /* Methods.m */,
+				E6B4ACF7170D891500D8ACDF /* Methods.h */,
+				E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */,
+			);
+			name = "Glue Files";
+			sourceTree = "<group>";
+		};
+		E6B4AD63170D8DF100D8ACDF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4ACF9170D891500D8ACDF /* Player.h */,
+				E6B4AD01170D891500D8ACDF /* Player.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E6EFFAE8170D87FD004B9197 = {
+			isa = PBXGroup;
+			children = (
+				E6EFFAFA170D87FD004B9197 /* Fight 2.0 */,
+				E6EFFAF3170D87FD004B9197 /* Frameworks */,
+				E6EFFAF2170D87FD004B9197 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6EFFAF2170D87FD004B9197 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6EFFAF1170D87FD004B9197 /* Fight 2.0.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6EFFAF3170D87FD004B9197 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4AD5C170D894D00D8ACDF /* AVFoundation.framework */,
+				E6B4AD5A170D894800D8ACDF /* AudioToolbox.framework */,
+				E6EFFAF4170D87FD004B9197 /* UIKit.framework */,
+				E6EFFAF6170D87FD004B9197 /* Foundation.framework */,
+				E6EFFAF8170D87FD004B9197 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6EFFAFA170D87FD004B9197 /* Fight 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4AD62170D8DE600D8ACDF /* Glue Files */,
+				E6B4AD5F170D8DBE00D8ACDF /* ViewControllers */,
+				E6B4AD63170D8DF100D8ACDF /* Classes */,
+				E6B4AD5E170D8DB100D8ACDF /* StoryBoards */,
+				E6B4AD61170D8DDC00D8ACDF /* Images */,
+				E6B4AD60170D8DD000D8ACDF /* SFX */,
 				E6EFFAFB170D87FD004B9197 /* Supporting Files */,
 			);
 			path = "Fight 2.0";
@@ -266,13 +304,12 @@
 		E6EFFAFB170D87FD004B9197 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6EFFB03170D87FD004B9197 /* AppDelegate.h */,
+				E6EFFB04170D87FD004B9197 /* AppDelegate.m */,
 				E6EFFAFC170D87FD004B9197 /* Fight 2.0-Info.plist */,
 				E6EFFAFD170D87FD004B9197 /* InfoPlist.strings */,
 				E6EFFB00170D87FD004B9197 /* main.m */,
 				E6EFFB02170D87FD004B9197 /* Fight 2.0-Prefix.pch */,
-				E6EFFB06170D87FD004B9197 /* Default.png */,
-				E6EFFB08170D87FD004B9197 /* Default@2x.png */,
-				E6EFFB0A170D87FD004B9197 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -389,7 +426,6 @@
 				E6EFFB01170D87FD004B9197 /* main.m in Sources */,
 				E6EFFB05170D87FD004B9197 /* AppDelegate.m in Sources */,
 				E6EFFB14170D87FD004B9197 /* ViewController.m in Sources */,
-				E6B4AD2D170D891500D8ACDF /* Attack.m in Sources */,
 				E6B4AD2E170D891500D8ACDF /* MenuViewController.m in Sources */,
 				E6B4AD2F170D891500D8ACDF /* Methods.m in Sources */,
 				E6B4AD30170D891500D8ACDF /* Player.m in Sources */,
