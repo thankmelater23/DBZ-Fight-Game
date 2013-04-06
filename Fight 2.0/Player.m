@@ -84,6 +84,11 @@
             special1String = [NSString stringWithFormat: @"Special attack added after landing %i consecutive punches", punchSpecail1Attainer1];
             doublePunch++;
             punchesInARow = 0;
+            
+            if (doublePunch >= 3)
+            {
+                doublePunch = 3;
+            }
             NSLog(@"punches in a row: %i", punchesInARow);
             
             //Do code to make special happen
@@ -227,6 +232,7 @@
         playSound(sIDPain);
         
         //Retrn string
+        changeTurn();
         return damageDoneString;
 
     }
@@ -241,9 +247,9 @@
         
         //Return string of hit being missed
         damageDoneString = [NSString stringWithFormat:@"%@ Super missed and stumbled, %@ counters and get another turn", [self name], [other name]];
+        
+        
         changeTurn();
-        
-        
         skipTurn = YES;
         
         return damageDoneString;
@@ -330,10 +336,11 @@
 
 -(NSString*) swapLife
 {
+    
     int num = randomNumber(swapLifeChanceMin, swapLifeChanceMax);
     NSString *string;
     
-    if  (num == 2 && swapLifeUses >= 1)
+    if  (num == 2 && swapLifeUsed == NO)
     {
         playSound(sIDSwapLife);
         int tempHealth = self.health;
@@ -341,10 +348,12 @@
         other.health = tempHealth;
         
         NSLog(@"Life switches");
+        changeTurn();
+        swapLifeUsed = YES;
         return string = [NSString stringWithFormat:@"Life Swap succesfucl\nPrevious Health:\n%@ Health: %i\n%@ Health: %i\n\nNew Health:\n%@ Health: %i\n%@ Health: %i", [self name], [self health], [other name], [other health], [self name], [self health], [other name], [other health]];
     }
     
-    else if (swapLifeUses < 0)
+    else if (swapLifeUsed == YES)
     {
         NSLog(@"Life swap unavailable");
         return string = [NSString stringWithFormat:@"Life Swap Unavailable"];
@@ -352,9 +361,10 @@
     else
     {
         NSLog(@"Life Not switched");
+        changeTurn();
+        swapLifeUsed = YES;
         return string = [NSString stringWithFormat:@"Life Swap unsuccesful"];
     }
-    swapLifeUses--;
 }
 
 -(NSMutableArray*)test

@@ -15,12 +15,12 @@
 //Implementations
 //Initialize
 void   initResources()
+
 {
     initVariables();
     initAudio();
     turnGenerator();
 }
-
 void initVariables()
 {
     //Set Player Vars
@@ -32,7 +32,7 @@ void initVariables()
     [player2 mergeEnemy:player1];
     
     //Other Vars
-    swapLifeUses = swapLifeAmount;
+    swapLifeUsed = NO;
     skipTurn = NO;
     continueTextBool = NO;
     

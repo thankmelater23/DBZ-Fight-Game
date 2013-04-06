@@ -47,7 +47,6 @@ typedef enum
 #define swapLifeChanceMax 4
 //Others
 #define potionStrength 15
-#define swapLifeAmount 1
 
 //Special Defines
 #define bloodFlowHealthPoints 20
@@ -57,12 +56,13 @@ typedef enum
 //Players
 Player *player1, *player2;
 NSString *player1Name, *player2Name;
+BOOL newGame;
 
 //Enum
 playerTurn turn;
 
 //Global Game Vars
-int swapLifeUses;
+BOOL swapLifeUsed;
 BOOL skipTurn;
 
 //game stats

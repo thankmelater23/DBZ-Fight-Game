@@ -24,13 +24,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    initResources();
+    
+    if (newGame == NO)
+    {
+        initResources();
+        blinkingBoxBool = YES;
+        newGame = YES;
+    }
+
     [self enableButtons];
     [self screenForPlayer];
-    [[UIButton appearance] setTintColor:[UIColor orangeColor]];
     [_gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
-    
-    blinkingBoxBool = YES;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -78,7 +82,6 @@
 {
     [_gameTextBox setText:[whosTurn() swapLife]];
     [self screenForPlayer];
-    changeTurn();
 }//Swaps players life only can be used once a game and also has a low percentage
 
 
@@ -107,6 +110,7 @@
     [_superButton setUserInteractionEnabled:YES];
     [_potionButton setUserInteractionEnabled:YES];
     [_specialButton setUserInteractionEnabled:YES];
+    [_swapLifeButton setUserInteractionEnabled:YES];
     
     [_goButton setHidden:YES];
     [_goButton setUserInteractionEnabled:NO];
@@ -302,7 +306,6 @@
     }
 }
 
-/**************************************************/
-//Special Screen Methods
+
 
 @end
