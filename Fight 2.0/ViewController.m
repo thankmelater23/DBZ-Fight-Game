@@ -291,13 +291,13 @@
 {
     if (blinkingBoxBool == YES)
     {
-        [self.goButton setBackgroundImage:[UIImage imageNamed:@"icon_57x57.png"] forState:UIControlStateNormal];
+        [self.goButton setBackgroundImage:[UIImage imageNamed:@"yellowBox.png"] forState:UIControlStateNormal];
         blinkingBoxBool = NO;
     }
     
     else
     {
-        [self.goButton setBackgroundImage:[UIImage imageNamed:@"hng.png"] forState:UIControlStateNormal];
+        [self.goButton setBackgroundImage:[UIImage imageNamed:@"whiteBox.png"] forState:UIControlStateNormal];
         blinkingBoxBool = YES;
     }
 }
