@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6020B1417100F8300DAE734 /* Space Jupitor Earh Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6020B1317100F8300DAE734 /* Space Jupitor Earh Background.jpg */; };
 		E6B4AD2B170D891500D8ACDF /* reg back arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */; };
 		E6B4AD2C170D891500D8ACDF /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFD170D891500D8ACDF /* click.mp3 */; };
 		E6B4AD2E170D891500D8ACDF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4ACFF170D891500D8ACDF /* MenuViewController.m */; };
@@ -72,6 +73,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6020B1317100F8300DAE734 /* Space Jupitor Earh Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Space Jupitor Earh Background.jpg"; sourceTree = "<group>"; };
 		E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Globals:Constants.h"; sourceTree = "<group>"; };
 		E6B4ACF6170D891500D8ACDF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E6B4ACF7170D891500D8ACDF /* Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Methods.h; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		E6B4AD61170D8DDC00D8ACDF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E6020B1317100F8300DAE734 /* Space Jupitor Earh Background.jpg */,
 				E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */,
 				E6B4AD66170D9DF800D8ACDF /* icon_57x57@2x.png */,
 				E6B4AD64170D9DE600D8ACDF /* icon_57x57.png */,
@@ -421,6 +424,7 @@
 				E6B4AD59170D891500D8ACDF /* thunder.wav in Resources */,
 				E6B4AD65170D9DE600D8ACDF /* icon_57x57.png in Resources */,
 				E6B4AD67170D9DF800D8ACDF /* icon_57x57@2x.png in Resources */,
+				E6020B1417100F8300DAE734 /* Space Jupitor Earh Background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

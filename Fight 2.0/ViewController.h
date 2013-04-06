@@ -14,6 +14,8 @@
     NSMutableArray *stringTextHolder;
     int stringTextHolderCount;
     int stringTextHolderCurrentCount;
+    BOOL blinkingBoxBool;
+    NSTimer *blinkingBoxTimer;
 }
 //GameScreen
 //Button Properties

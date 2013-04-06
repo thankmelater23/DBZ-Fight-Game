@@ -46,7 +46,8 @@
     NSString *damageDoneString;
     NSString *special1String;
     NSString *special2String;
-    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:3];
+    NSString *special2AttackString;
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
     
     int hitOrMiss = randomNumber(punchMinPerc, punchMaxPerc);//Returns if player will hit or miss
     int hitPoins = punchDamage;
@@ -57,7 +58,6 @@
     {
         //Punch hit
         playSound(sIDPunch);
-        //Add timer for hurt sound
         playSound(sIDPain);
         punchesInARow++;
         punchesTotal++;
@@ -65,15 +65,17 @@
         
         damageDoneString = [NSString stringWithFormat: @"%@ punch hit, damage of: %i\n%@ life: %i", [self name],hitPoins, [other name], [other health]];
         
-        if (self == player1)
+        if (isFirstPlayer == YES)
         {
-            [p1Image setImage:[UIImage imageNamed:@"player1 right punch.png"]];
-            //[NSTimer timerWithTimeInterval:1.0 target:nil  selector:@selector([_player1Image setImage:[UIImage imageNamed:@"player1 powerup"]]) userInfo:nil repeats:NO];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 right punch.png"];
+            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            
+    
         }
         
         else
         {
-            [p2Image setImage:[UIImage imageNamed:@"player2 punch.png"]];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 punch.png"];
         }
         
         
@@ -89,11 +91,13 @@
         
         if (punchesTotal == punchSpecail1Attainer2)
         {
-            special2String = [NSString stringWithFormat: @"Special attack added after landing %i total punches", punchSpecail1Attainer2];
+            special2String = [NSString stringWithFormat: @"Special attack activated after landing %i total punches", punchSpecail1Attainer2];
+            
+            [self addHealth:bloodFlowHealthPoints];
+            special2AttackString = [NSString stringWithFormat: @"BLOOD FLOW activated!/n/n %@ recieved %i health points", [self name], bloodFlowHealthPoints];
             punchesTotal = 0;
             
             NSLog(@"punches total: %i", punchesTotal);
-            //Do code to make special happen
         }
         
     }
@@ -278,12 +282,12 @@
 
 -(void) takeDamage:(int) damage
 {
-    _health -= damage;
-    if (_health < 0)
+    self.health -= damage;
+    if (self.health < 0)
     {
-        _health = 0;
+        self.health = 0;
     }
-    NSLog(@"Health was tooken of %i, health is now %i", damage, _health);
+    NSLog(@"Health was tooken of %i, health is now %i", damage, self.health);
 }//Takes life away of the int value put into damage
 
 -(NSString*) usePotion
@@ -368,4 +372,18 @@
     
 }
 
+-(void) addHealth:(int)addedHealth
+{
+    self.health += addedHealth;
+    if (self.health >= healthMax)
+    {
+        self.health = healthMax;
+    }
+}
+
+-(void) setPlayerImageTimer:(UIImageView*) playerImg imageName:(NSString*) string
+{
+    [playerImg setImage:[UIImage imageNamed:string]];
+    
+}
 @end

@@ -29,6 +29,8 @@
     [self screenForPlayer];
     [[UIButton appearance] setTintColor:[UIColor orangeColor]];
     [_gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
+    
+    blinkingBoxBool = YES;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -79,27 +81,43 @@
     changeTurn();
 }//Swaps players life only can be used once a game and also has a low percentage
 
-- (IBAction)continueText
+
+//Engine methods
+-(void) textBoxEnabled
 {
-    ++stringTextHolderCurrentCount;
-    if (stringTextHolderCurrentCount >= stringTextHolderCount)
-    {
-        [self enableButtons];
-        changeTurn();
-        [self screenForPlayer];
-        [_gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
-    }
+    [_playerNameButton setUserInteractionEnabled:NO];
+    [_punchButton setUserInteractionEnabled:NO];
+    [_kickButton setUserInteractionEnabled:NO];
+    [_superButton setUserInteractionEnabled:NO];
+    [_potionButton setUserInteractionEnabled:NO];
+    [_specialButton setUserInteractionEnabled:NO];
+    [_swapLifeButton setUserInteractionEnabled:NO];
     
-    else
-    {
+    [_goButton setHidden:NO];
+    [_goButton setUserInteractionEnabled:YES];
     
-        [_gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
-    }
-}
+    blinkingBoxTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(blinkingOkButton) userInfo:nil repeats:YES];
+    
+}//Disable all buttons only leaves ok button available to get through text
+-(void) enableButtons
+{
+    [_playerNameButton setUserInteractionEnabled:YES];
+    [_punchButton setUserInteractionEnabled:YES];
+    [_kickButton setUserInteractionEnabled:YES];
+    [_superButton setUserInteractionEnabled:YES];
+    [_potionButton setUserInteractionEnabled:YES];
+    [_specialButton setUserInteractionEnabled:YES];
+    
+    [_goButton setHidden:YES];
+    [_goButton setUserInteractionEnabled:NO];
+    
+    [blinkingBoxTimer invalidate];
+    blinkingBoxTimer = nil;
+    
+}//Enables buttons interaction to allow gameplay selection/Non text
 
 
-
-//Visual methods
+//Game Screen Update Methods
 -(void) screenForPlayer
 {
     Player *currentPlayerTurn = whosTurn();
@@ -123,17 +141,15 @@
         [self setHealthBar];
     }
     
-[self setScreen];
-
+    [self setScreen];
+    
 }//Sets screen color and button name for which player turn it is
-
 -(void) setScreen
 {
     [self setPotionsImage];
     
     
 }//Sets all buttons to a certin color
-
 -(void) setHealthBar
 {
     if ([player1 health] >= healthMax)
@@ -172,39 +188,6 @@
         [self textBoxEnabled];
     }
 }//Sets up health bars and button to represent players health
-
-
-
-//Engine methods
--(void) textBoxEnabled
-{
-    [_playerNameButton setUserInteractionEnabled:NO];
-    [_punchButton setUserInteractionEnabled:NO];
-    [_kickButton setUserInteractionEnabled:NO];
-    [_superButton setUserInteractionEnabled:NO];
-    [_potionButton setUserInteractionEnabled:NO];
-    [_specialButton setUserInteractionEnabled:NO];
-    [_swapLifeButton setUserInteractionEnabled:NO];
-    
-    [_goButton setHidden:NO];
-    [_goButton setUserInteractionEnabled:YES];
-    
-}//Disable all buttons only leaves ok button available to get through text
--(void) enableButtons
-{
-    [_playerNameButton setUserInteractionEnabled:YES];
-    [_punchButton setUserInteractionEnabled:YES];
-    [_kickButton setUserInteractionEnabled:YES];
-    [_superButton setUserInteractionEnabled:YES];
-    [_potionButton setUserInteractionEnabled:YES];
-    [_specialButton setUserInteractionEnabled:YES];
-    
-    [_goButton setHidden:YES];
-    [_goButton setUserInteractionEnabled:NO];
-    
-}//Enables buttons interaction to allow gameplay selection/Non text
-
-
 -(void) setPotionsImage
 {
     switch ([player1 potions])
@@ -279,6 +262,7 @@
 }
 
 
+//Text Box Methods
 -(void) textLoader:(NSMutableArray*) array
 {
     stringTextHolder = array;
@@ -286,4 +270,39 @@
     stringTextHolderCurrentCount = 0;
     [_gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
 }
+- (IBAction)continueText
+{
+    ++stringTextHolderCurrentCount;
+    if (stringTextHolderCurrentCount >= stringTextHolderCount)
+    {
+        [self enableButtons];
+        changeTurn();
+        [self screenForPlayer];
+        [_gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
+    }
+    
+    else
+    {
+        
+        [_gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
+    }
+}
+-(void) blinkingOkButton
+{
+    if (blinkingBoxBool == YES)
+    {
+        [self.goButton setBackgroundImage:[UIImage imageNamed:@"icon_57x57.png"] forState:UIControlStateNormal];
+        blinkingBoxBool = NO;
+    }
+    
+    else
+    {
+        [self.goButton setBackgroundImage:[UIImage imageNamed:@"hng.png"] forState:UIControlStateNormal];
+        blinkingBoxBool = YES;
+    }
+}
+
+/**************************************************/
+//Special Screen Methods
+
 @end

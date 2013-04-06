@@ -49,6 +49,9 @@ typedef enum
 #define potionStrength 15
 #define swapLifeAmount 1
 
+//Special Defines
+#define bloodFlowHealthPoints 20
+
 
 //Global Variables
 //Players
