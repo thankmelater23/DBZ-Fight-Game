@@ -52,7 +52,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="WN9-CJ-7pN" kind="modal" modalTransitionStyle="flipHorizontal" id="bug-27-VdT"/>
+                                    <action selector="setSpecialScreen" destination="Csr-dA-cej" eventType="touchUpInside" id="3f4-Eb-4mQ"/>
+                                    <segue destination="WN9-CJ-7pN" kind="modal" id="duy-Yd-3CW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftN-vb-48L">
@@ -645,7 +646,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Csr-dA-cej" kind="modal" modalTransitionStyle="flipHorizontal" id="PE0-Lj-sap"/>
+                                            <segue destination="Csr-dA-cej" kind="modal" id="0cE-7H-dcb"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="hp_potion.png" translatesAutoresizingMaskIntoConstraints="NO" id="d4D-C0-8so">
@@ -822,6 +823,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Utj-cD-esn"/>
+        <segue reference="0cE-7H-dcb"/>
     </inferredMetricsTieBreakers>
 </document>
