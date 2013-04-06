@@ -52,8 +52,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="setSpecialScreen" destination="Csr-dA-cej" eventType="touchUpInside" id="3f4-Eb-4mQ"/>
-                                    <segue destination="WN9-CJ-7pN" kind="modal" id="duy-Yd-3CW"/>
+                                    <segue destination="HgM-z4-UwE" kind="modal" id="p9f-29-VZ2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftN-vb-48L">
@@ -315,7 +314,7 @@
                         <outlet property="playerNameButton" destination="5O0-6Z-2bR" id="4sX-OU-2h5"/>
                         <outlet property="potionButton" destination="ftN-vb-48L" id="6cw-C3-Md8"/>
                         <outlet property="punchButton" destination="cfl-eT-6sa" id="nAT-4a-B4h"/>
-                        <outlet property="specialButton" destination="qg2-IF-DGi" id="jIG-2G-YTd"/>
+                        <outlet property="specialButton" destination="qg2-IF-DGi" id="VDx-pg-DDS"/>
                         <outlet property="superButton" destination="Did-Sz-GXz" id="176-0D-GEm"/>
                         <outlet property="swapLifeButton" destination="u2c-gY-m34" id="ZfA-tm-j6Z"/>
                     </connections>
@@ -400,6 +399,265 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYV-De-cx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5375" y="-4095"/>
+        </scene>
+        <!--Special Screen View Controller-->
+        <scene sceneID="L3U-Ff-ftF">
+            <objects>
+                <viewController id="HgM-z4-UwE" customClass="SpecialScreenViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ny-VF-kJL">
+                        <rect key="frame" x="0.0" y="20" width="568" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-9l-DJZ">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="7v6-dW-Ykk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jof-iE-ZDm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="R89-rT-0DG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Double Punch">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="pth-0k-c1f">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="S1C-RD-s16"/>
+                                    <constraint firstAttribute="height" constant="40" id="Snb-bp-IBa"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFm-qi-hwx">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="WD8-on-Zgz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Super Punch">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91f-gO-2TH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="QNy-eH-6sH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Triple Kick">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kyx-Pn-a6k">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="8Cs-Hp-Ybi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-Fa-IMg">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="5ac-ga-uYj"/>
+                                    <constraint firstAttribute="width" constant="200" id="qZX-f9-3IL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Potions">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="W8q-Wl-RPd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6am-oZ-aMt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q13-FF-nBP">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="BS4-mm-9LE"/>
+                                    <constraint firstAttribute="width" constant="137" id="vln-gg-a9m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.2196078598" green="0.023529414089999999" blue="0.98039221759999995" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Player Name">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="hp_potion.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y5Q-uO-xoZ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="IWF-gn-y1V"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="hp_potion.png" translatesAutoresizingMaskIntoConstraints="NO" id="o3O-Nu-eRu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="qSb-aX-Zgz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-lS-Ym7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="CJW-cp-xX6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="P7C-cv-Wbz"/>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lea-9K-h9d">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="493" id="uKl-6y-LYe"/>
+                                </constraints>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="YW0-45-vub"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="yer-tq-8br"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="TEQ-yV-fF0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yBz-px-wOG"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74c-JA-O94">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="gW4-OW-eP0"/>
+                                    <constraint firstAttribute="height" constant="34" id="hjF-Hc-ck7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="back-arrow-hi.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Csr-dA-cej" kind="modal" id="xhc-ai-1fx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="rMv-mH-4TR">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FhR-Qt-Zfb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="hp_potion.png" translatesAutoresizingMaskIntoConstraints="NO" id="32L-mE-Sew">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="F5M-WT-Hun"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="8iO-K1-wUr">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gic-lK-pDL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="player1 powerup.png" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-op-Xeb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="LOT-8W-TFK"/>
+                                    <constraint firstAttribute="height" constant="163" id="oqQ-Kg-oAL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNV-2o-tHM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="S7r-UL-un5"/>
+                                    <constraint firstAttribute="height" constant="21" id="TRn-9Q-u8L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pth-0k-c1f" firstAttribute="top" secondItem="W8q-Wl-RPd" secondAttribute="top" type="default" id="0Y5-6U-ZTA"/>
+                            <constraint firstItem="32L-mE-Sew" firstAttribute="top" secondItem="Y5Q-uO-xoZ" secondAttribute="top" type="default" id="0db-mz-gq1"/>
+                            <constraint firstItem="TEQ-yV-fF0" firstAttribute="trailing" secondItem="o3O-Nu-eRu" secondAttribute="trailing" type="default" id="12D-rW-XZf"/>
+                            <constraint firstItem="pth-0k-c1f" firstAttribute="leading" secondItem="rMv-mH-4TR" secondAttribute="leading" type="default" id="2Co-pD-B7b"/>
+                            <constraint firstItem="91f-gO-2TH" firstAttribute="trailing" secondItem="nFm-qi-hwx" secondAttribute="trailing" type="default" id="2Ki-Lh-pzD"/>
+                            <constraint firstItem="hPn-Fa-IMg" firstAttribute="leading" secondItem="2ny-VF-kJL" secondAttribute="leading" constant="181" id="2pb-Rc-pdt"/>
+                            <constraint firstAttribute="trailing" secondItem="Y5Q-uO-xoZ" secondAttribute="trailing" constant="24" id="4bu-gG-3G4"/>
+                            <constraint firstAttribute="bottom" secondItem="pth-0k-c1f" secondAttribute="bottom" constant="106" id="6Ha-os-tEL"/>
+                            <constraint firstItem="yNV-2o-tHM" firstAttribute="top" secondItem="lea-9K-h9d" secondAttribute="top" type="default" id="7yY-ay-rM6"/>
+                            <constraint firstItem="32L-mE-Sew" firstAttribute="bottom" secondItem="Y5Q-uO-xoZ" secondAttribute="bottom" type="default" id="A2D-JM-fQD"/>
+                            <constraint firstItem="YW0-45-vub" firstAttribute="top" secondItem="P7C-cv-Wbz" secondAttribute="top" type="default" id="AGs-kk-tvG"/>
+                            <constraint firstItem="91f-gO-2TH" firstAttribute="leading" secondItem="nFm-qi-hwx" secondAttribute="leading" type="default" id="AbY-ws-8zd"/>
+                            <constraint firstItem="yer-tq-8br" firstAttribute="bottom" secondItem="TEQ-yV-fF0" secondAttribute="bottom" type="default" id="BZW-8G-h2N"/>
+                            <constraint firstItem="Kyx-Pn-a6k" firstAttribute="leading" secondItem="YW0-45-vub" secondAttribute="leading" type="default" id="BbU-L4-9wV"/>
+                            <constraint firstAttribute="trailing" secondItem="YW0-45-vub" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Bqb-bx-6Pt"/>
+                            <constraint firstItem="lea-9K-h9d" firstAttribute="top" secondItem="2ny-VF-kJL" secondAttribute="top" constant="-1" id="C9O-if-83l"/>
+                            <constraint firstItem="lea-9K-h9d" firstAttribute="leading" secondItem="2ny-VF-kJL" secondAttribute="leading" constant="7" id="Cwq-Me-ypH"/>
+                            <constraint firstItem="Q13-FF-nBP" firstAttribute="top" secondItem="hPn-Fa-IMg" secondAttribute="top" type="default" id="D84-hf-ajI"/>
+                            <constraint firstItem="Cfd-lS-Ym7" firstAttribute="top" secondItem="2ny-VF-kJL" secondAttribute="top" type="default" id="DcT-NT-KjS"/>
+                            <constraint firstItem="8iO-K1-wUr" firstAttribute="leading" secondItem="32L-mE-Sew" secondAttribute="leading" type="default" id="EFO-yk-eTS"/>
+                            <constraint firstItem="o3O-Nu-eRu" firstAttribute="top" secondItem="32L-mE-Sew" secondAttribute="top" type="default" id="EOR-g0-ek8"/>
+                            <constraint firstItem="rjC-9l-DJZ" firstAttribute="trailing" secondItem="2ny-VF-kJL" secondAttribute="trailing" type="default" id="Eix-vM-O0V"/>
+                            <constraint firstItem="pth-0k-c1f" firstAttribute="bottom" secondItem="W8q-Wl-RPd" secondAttribute="bottom" type="default" id="FMh-Fx-RuU"/>
+                            <constraint firstItem="Jof-iE-ZDm" firstAttribute="top" secondItem="cTZ-op-Xeb" secondAttribute="top" type="default" id="FRZ-Ma-TtR"/>
+                            <constraint firstItem="W8q-Wl-RPd" firstAttribute="bottom" secondItem="Kyx-Pn-a6k" secondAttribute="bottom" type="default" id="FbR-21-Mpz"/>
+                            <constraint firstAttribute="trailing" secondItem="Kyx-Pn-a6k" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="GWP-gD-1DA"/>
+                            <constraint firstAttribute="bottom" secondItem="nFm-qi-hwx" secondAttribute="bottom" constant="50" id="I4t-tc-ee8"/>
+                            <constraint firstItem="P7C-cv-Wbz" firstAttribute="bottom" secondItem="YW0-45-vub" secondAttribute="bottom" type="default" id="IFP-ir-cJ3"/>
+                            <constraint firstItem="rjC-9l-DJZ" firstAttribute="bottom" secondItem="2ny-VF-kJL" secondAttribute="bottom" type="default" id="Igg-Ba-YSs"/>
+                            <constraint firstItem="74c-JA-O94" firstAttribute="leading" secondItem="lea-9K-h9d" secondAttribute="leading" type="default" id="Jj8-6L-wSS"/>
+                            <constraint firstItem="Q13-FF-nBP" firstAttribute="leading" secondItem="2ny-VF-kJL" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KTe-0O-DWJ"/>
+                            <constraint firstAttribute="trailing" secondItem="32L-mE-Sew" secondAttribute="trailing" constant="81" id="LWc-C0-Tj3"/>
+                            <constraint firstItem="Y5Q-uO-xoZ" firstAttribute="leading" secondItem="yer-tq-8br" secondAttribute="leading" type="default" id="Lko-Nb-EQS"/>
+                            <constraint firstItem="rMv-mH-4TR" firstAttribute="top" secondItem="P7C-cv-Wbz" secondAttribute="top" type="default" id="MB1-nr-0xy"/>
+                            <constraint firstItem="o3O-Nu-eRu" firstAttribute="leading" secondItem="hPn-Fa-IMg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Owl-1K-GOL"/>
+                            <constraint firstItem="W8q-Wl-RPd" firstAttribute="top" secondItem="Kyx-Pn-a6k" secondAttribute="top" type="default" id="P12-1I-5qg"/>
+                            <constraint firstItem="o3O-Nu-eRu" firstAttribute="leading" secondItem="TEQ-yV-fF0" secondAttribute="leading" type="default" id="RtF-5A-e2X"/>
+                            <constraint firstItem="rMv-mH-4TR" firstAttribute="trailing" secondItem="pth-0k-c1f" secondAttribute="trailing" type="default" id="XM2-9S-0av"/>
+                            <constraint firstItem="rjC-9l-DJZ" firstAttribute="leading" secondItem="2ny-VF-kJL" secondAttribute="leading" type="default" id="XP7-Xu-WqZ"/>
+                            <constraint firstAttribute="trailing" secondItem="W8q-Wl-RPd" secondAttribute="trailing" constant="83" id="YRm-jb-Y9f"/>
+                            <constraint firstItem="Cfd-lS-Ym7" firstAttribute="leading" secondItem="2ny-VF-kJL" secondAttribute="leading" type="default" id="Yh3-oe-Hcv"/>
+                            <constraint firstItem="rMv-mH-4TR" firstAttribute="bottom" secondItem="P7C-cv-Wbz" secondAttribute="bottom" type="default" id="YyY-S2-AiI"/>
+                            <constraint firstItem="P7C-cv-Wbz" firstAttribute="trailing" secondItem="W8q-Wl-RPd" secondAttribute="trailing" type="default" id="ZAh-jX-c3c"/>
+                            <constraint firstItem="o3O-Nu-eRu" firstAttribute="centerY" secondItem="hPn-Fa-IMg" secondAttribute="centerY" type="default" id="Zjj-xu-ugN"/>
+                            <constraint firstAttribute="bottom" secondItem="91f-gO-2TH" secondAttribute="bottom" constant="108" id="aaU-L9-bNV"/>
+                            <constraint firstItem="8iO-K1-wUr" firstAttribute="trailing" secondItem="32L-mE-Sew" secondAttribute="trailing" type="default" id="asL-m3-Mfy"/>
+                            <constraint firstItem="o3O-Nu-eRu" firstAttribute="top" secondItem="2ny-VF-kJL" secondAttribute="top" constant="35" id="dNs-DB-O6B"/>
+                            <constraint firstItem="32L-mE-Sew" firstAttribute="bottom" secondItem="o3O-Nu-eRu" secondAttribute="bottom" type="default" id="h8E-84-lHb"/>
+                            <constraint firstItem="yNV-2o-tHM" firstAttribute="leading" secondItem="2ny-VF-kJL" secondAttribute="leading" constant="509" id="iMx-PU-BNW"/>
+                            <constraint firstItem="8iO-K1-wUr" firstAttribute="top" secondItem="2ny-VF-kJL" secondAttribute="top" constant="94" id="jFE-MW-lUe"/>
+                            <constraint firstItem="cTZ-op-Xeb" firstAttribute="leading" secondItem="2ny-VF-kJL" secondAttribute="leading" constant="30" id="jRz-gE-4gB"/>
+                            <constraint firstItem="Jof-iE-ZDm" firstAttribute="trailing" secondItem="91f-gO-2TH" secondAttribute="trailing" type="default" id="lqS-b5-cFB"/>
+                            <constraint firstItem="TEQ-yV-fF0" firstAttribute="top" secondItem="2ny-VF-kJL" secondAttribute="top" constant="93" id="lrO-ST-PpO"/>
+                            <constraint firstItem="P7C-cv-Wbz" firstAttribute="leading" secondItem="W8q-Wl-RPd" secondAttribute="leading" type="default" id="mgt-bQ-A10"/>
+                            <constraint firstItem="o3O-Nu-eRu" firstAttribute="bottom" secondItem="hPn-Fa-IMg" secondAttribute="bottom" type="default" id="o6D-h7-dI3"/>
+                            <constraint firstItem="Jof-iE-ZDm" firstAttribute="leading" secondItem="hPn-Fa-IMg" secondAttribute="leading" type="default" id="oc5-V1-FP7"/>
+                            <constraint firstItem="74c-JA-O94" firstAttribute="top" secondItem="cTZ-op-Xeb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pYa-NI-LnN"/>
+                            <constraint firstAttribute="trailing" secondItem="pth-0k-c1f" secondAttribute="trailing" constant="141" id="pon-NT-VnH"/>
+                            <constraint firstItem="yer-tq-8br" firstAttribute="top" secondItem="TEQ-yV-fF0" secondAttribute="top" type="default" id="qJ9-SN-g5Y"/>
+                            <constraint firstItem="TEQ-yV-fF0" firstAttribute="leading" secondItem="Jof-iE-ZDm" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="qNY-tG-0Wc"/>
+                            <constraint firstItem="Cfd-lS-Ym7" firstAttribute="trailing" secondItem="2ny-VF-kJL" secondAttribute="trailing" type="default" id="qwI-Xf-gxO"/>
+                            <constraint firstItem="91f-gO-2TH" firstAttribute="leading" secondItem="Jof-iE-ZDm" secondAttribute="leading" type="default" id="r2q-Mj-jRn"/>
+                            <constraint firstAttribute="bottom" secondItem="rMv-mH-4TR" secondAttribute="bottom" constant="47" id="t9r-s6-jdv"/>
+                            <constraint firstItem="cTZ-op-Xeb" firstAttribute="top" secondItem="2ny-VF-kJL" secondAttribute="top" constant="92" id="tTO-8u-HRb"/>
+                            <constraint firstItem="Y5Q-uO-xoZ" firstAttribute="trailing" secondItem="yer-tq-8br" secondAttribute="trailing" type="default" id="tiZ-Yp-IJC"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVv-GJ-ftF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5367" y="-3661"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="uJ5-OD-uFL">
@@ -645,9 +903,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="Csr-dA-cej" kind="modal" id="0cE-7H-dcb"/>
-                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="hp_potion.png" translatesAutoresizingMaskIntoConstraints="NO" id="d4D-C0-8so">
                                         <constraints>
@@ -785,22 +1040,22 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="specPlayerHealthBar" destination="U64-21-JL1" id="aUL-cM-2fm"/>
-                        <outlet property="specPlayerHealthLabel" destination="PwV-Nj-BWx" id="lBG-hc-W6K"/>
-                        <outlet property="specPlayerImage" destination="xFD-fX-QgZ" id="BS6-tt-7YE"/>
-                        <outlet property="specPlayerName" destination="4a2-Dh-jTd" id="47i-cE-whF"/>
-                        <outlet property="specPlayerPot1" destination="d4D-C0-8so" id="RlZ-wQ-mpS"/>
-                        <outlet property="specPlayerPot2" destination="7d0-kn-6CL" id="ov2-E3-qx5"/>
-                        <outlet property="specPlayerPot3" destination="r43-If-Ogk" id="zKl-yr-bw9"/>
-                        <outlet property="specialOneCheck1" destination="qA8-oB-E8X" id="rrT-mq-a78"/>
-                        <outlet property="specialOneCheck2" destination="geo-5O-uuc" id="n3y-WJ-aYQ"/>
-                        <outlet property="specialOneCheck3" destination="HsH-2M-N87" id="Hk1-bs-sRe"/>
-                        <outlet property="specialThreeCheck1" destination="cPj-uR-M1L" id="VKa-Hs-mzS"/>
-                        <outlet property="specialThreeCheck2" destination="8UX-9L-9TN" id="h5K-Wu-x1o"/>
-                        <outlet property="specialThreeCheck3" destination="fCD-GE-cnC" id="yxJ-cO-Rmh"/>
-                        <outlet property="specialTwoCheck1" destination="PVv-8x-fwg" id="Zvk-an-BlB"/>
-                        <outlet property="specialTwoCheck2" destination="nj4-A4-HlS" id="6kW-HQ-ubf"/>
-                        <outlet property="specialTwoCheck3" destination="fUk-4X-XiN" id="M6M-mu-S1M"/>
+                        <outlet property="specPlayerHealthBar" destination="U64-21-JL1" id="ds2-oL-TLs"/>
+                        <outlet property="specPlayerHealthLabel" destination="PwV-Nj-BWx" id="cbH-Le-kP1"/>
+                        <outlet property="specPlayerImage" destination="xFD-fX-QgZ" id="kdk-Rw-bS9"/>
+                        <outlet property="specPlayerName" destination="4a2-Dh-jTd" id="a3t-1R-pbZ"/>
+                        <outlet property="specPlayerPot1" destination="d4D-C0-8so" id="a31-Sd-dbB"/>
+                        <outlet property="specPlayerPot2" destination="7d0-kn-6CL" id="2S9-rn-vMl"/>
+                        <outlet property="specPlayerPot3" destination="r43-If-Ogk" id="lDG-tZ-2Dt"/>
+                        <outlet property="specialOneCheck1" destination="qA8-oB-E8X" id="dDh-cO-JmL"/>
+                        <outlet property="specialOneCheck2" destination="geo-5O-uuc" id="6ci-Iy-yFI"/>
+                        <outlet property="specialOneCheck3" destination="HsH-2M-N87" id="Jmy-tG-sE1"/>
+                        <outlet property="specialThreeCheck1" destination="cPj-uR-M1L" id="bls-90-lwy"/>
+                        <outlet property="specialThreeCheck2" destination="8UX-9L-9TN" id="N7O-zw-RFo"/>
+                        <outlet property="specialThreeCheck3" destination="fCD-GE-cnC" id="NJZ-V9-BJ0"/>
+                        <outlet property="specialTwoCheck1" destination="PVv-8x-fwg" id="hvB-55-lHI"/>
+                        <outlet property="specialTwoCheck2" destination="nj4-A4-HlS" id="o58-l6-tKU"/>
+                        <outlet property="specialTwoCheck3" destination="fUk-4X-XiN" id="4Do-c8-NTm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYr-06-0DR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -817,12 +1072,84 @@
         <image name="player1 powerup.png" width="78" height="97"/>
         <image name="player2 powerup.png" width="77" height="109"/>
     </resources>
+    <classes>
+        <class className="MenuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goButton"/>
+                <relationship kind="action" name="otherButton"/>
+                <relationship kind="action" name="startButton"/>
+                <relationship kind="outlet" name="player1NameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="player2NameFiled" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
+        <class className="SpecialScreenViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpecialScreenViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="specPlayerHealthBar" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="specPlayerHealthLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="specPlayerImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specPlayerName" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="specPlayerPot1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specPlayerPot2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specPlayerPot3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialOneCheck1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialOneCheck2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialOneCheck3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialThreeCheck1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialThreeCheck2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialThreeCheck3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialTwoCheck1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialTwoCheck2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="specialTwoCheck3" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Super"/>
+                <relationship kind="action" name="continueText"/>
+                <relationship kind="action" name="kick"/>
+                <relationship kind="action" name="potion"/>
+                <relationship kind="action" name="punch"/>
+                <relationship kind="action" name="swapLife"/>
+                <relationship kind="outlet" name="gameTextBox" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="goButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="kickButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="okTextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="p1Potion1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="p1Potion2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="p1Potion3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="p2Potion1" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="p2Potion2" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="p2Potion3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="player1HealthBar" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="player1HealthButton" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player1Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="player2HealthBar" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="player2HealthButton" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="player2Image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerNameButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="potionButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="punchButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="specialButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="superButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="swapLifeButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0cE-7H-dcb"/>
+        <segue reference="xhc-ai-1fx"/>
     </inferredMetricsTieBreakers>
 </document>
