@@ -20,9 +20,8 @@
     int superAtackInARow,   superAttackTotal;
     
     //Special Holders
-    int punchSpecial1, punchSpecial2;
-    int kickSpecial1, kickSpecial2;
-    int superSpecail1, superSpecail2;
+    int doublePunch, tripleKick, SuperPunch;
+    
     BOOL isFirstPlayer;
 }
 
@@ -39,7 +38,7 @@
 
 //GamnePlay Methods
 //Attacks
--(NSString*) punchOpp;
+-(NSMutableArray*) punchOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 -(NSString*) kickOpp;
 -(NSString*) superAtackOpp;
 -(NSString*) specialAttack1;
@@ -54,6 +53,7 @@
 -(BOOL)      isDead;
 -(NSString*) swapLife;
 
+-(NSMutableArray*)test;
 
 
 @end

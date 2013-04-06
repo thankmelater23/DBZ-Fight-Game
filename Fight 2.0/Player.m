@@ -13,18 +13,25 @@
 @implementation Player
 -(Player*) init:(NSString*) name
 {
-    self     = [super init];
-    _name    = name;
-    _potions = 3;//Initialized with #define
-    _health  = healthMax;   //Initialized with #define
-     
-    //Attack Levels init
-    punchesInARow   = 0;
-    punchesTotal    = 0;
-    kickInArow      = 0;
-    kicksTotal      = 0;
-    superAtackInARow = 0;
-    superAttackTotal = 0;
+    if(self     = [super init])
+    {
+        _name    = name;
+        _potions = 3;//Initialized with #define
+        _health  = healthMax;   //Initialized with #define
+        
+        //Attack Levels init
+        punchesInARow   = 0;
+        punchesTotal    = 0;
+        kickInArow      = 0;
+        kicksTotal      = 0;
+        superAtackInARow = 0;
+        superAttackTotal = 0;
+        
+        //Special Holders
+        doublePunch = 0;
+        tripleKick =  0;
+        SuperPunch =  0;
+    }
     
     return self;
 }
@@ -34,47 +41,61 @@
     other = opponent;
 }//Merg Player * pointer variable to opponent to make changes of that player with that pointer
 
--(NSString*) punchOpp
+-(NSMutableArray*) punchOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
+    NSString *damageDoneString;
+    NSString *special1String;
+    NSString *special2String;
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:3];
+    
     int hitOrMiss = randomNumber(punchMinPerc, punchMaxPerc);//Returns if player will hit or miss
     int hitPoins = punchDamage;
-    NSString *damageDoneString;
+    
     
     //Hit miss rand
     if (hitOrMiss != 2)
     {
         //Punch hit
         playSound(sIDPunch);
+        //Add timer for hurt sound
+        playSound(sIDPain);
         punchesInARow++;
         punchesTotal++;
+        [other takeDamage:hitPoins];
+        
+        damageDoneString = [NSString stringWithFormat: @"%@ punch hit, damage of: %i\n%@ life: %i", [self name],hitPoins, [other name], [other health]];
+        
+        if (self == player1)
+        {
+            [p1Image setImage:[UIImage imageNamed:@"player1 right punch.png"]];
+            //[NSTimer timerWithTimeInterval:1.0 target:nil  selector:@selector([_player1Image setImage:[UIImage imageNamed:@"player1 powerup"]]) userInfo:nil repeats:NO];
+        }
+        
+        else
+        {
+            [p2Image setImage:[UIImage imageNamed:@"player2 punch.png"]];
+        }
+        
         
         if (punchesInARow == punchSpecail1Attainer1)
         {
-            NSLog(@"punches in a row: %i", punchesInARow);
+            special1String = [NSString stringWithFormat: @"Special attack added after landing %i consecutive punches", punchSpecail1Attainer1];
+            doublePunch++;
             punchesInARow = 0;
+            NSLog(@"punches in a row: %i", punchesInARow);
+            
             //Do code to make special happen
-            punchSpecial1++;
         }
         
         if (punchesTotal == punchSpecail1Attainer2)
         {
-            NSLog(@"punches total: %i", punchesTotal);
+            special2String = [NSString stringWithFormat: @"Special attack added after landing %i total punches", punchSpecail1Attainer2];
             punchesTotal = 0;
+            
+            NSLog(@"punches total: %i", punchesTotal);
             //Do code to make special happen
-            punchSpecial2++;
         }
         
-        
-        //Set up damage and health change
-        [other takeDamage:hitPoins];
-        
-        damageDoneString = [NSString stringWithFormat: @"%@ punch hit, damage of: %i\n%@ life: %i", [self name],hitPoins, [other name], [other health]];
-    
-        //Add timer for hurt sound
-        playSound(sIDPain);
-        
-        //Retrn string
-        return damageDoneString;
     }
     
     else
@@ -84,12 +105,25 @@
         
         //Reset some feauturs for hit being missed
         punchesInARow = 0;
-       
-        //Return string of hit being missed
         damageDoneString = [NSString stringWithFormat:@"%@ punch missed", [self name]];
-        
-        return damageDoneString;
     }
+    
+    if (damageDoneString != nil)
+    {
+        [array addObject:damageDoneString];
+    }
+    
+    if (special1String != nil)
+    {
+        [array addObject:special1String];
+    }
+    
+    if (special2String != nil)
+    {
+        [array addObject:special2String];
+    }
+    
+    return array;
 }
 
 -(NSString*) kickOpp
@@ -111,7 +145,7 @@
             NSLog(@"punches in a row: %i", kickInArow);
             kickInArow = 0;
             //Do code to make special happen
-            kickSpecial1++;
+            tripleKick++;
             
         }
         
@@ -120,7 +154,6 @@
             NSLog(@"punches total: %i", kicksTotal);
             kicksTotal = 0;
             //Do code to make special happen
-            kickSpecial2++;
         }
         
         
@@ -170,7 +203,7 @@
             NSLog(@"super in a row: %i", superAtackInARow);
             superAtackInARow = 0;
             //Do code to make special happen
-            superSpecail1++;
+            SuperPunch++;
         }
         
         if (kicksTotal == superSpecail1Attainer2)
@@ -178,7 +211,6 @@
             NSLog(@"super total: %i", kicksTotal);
             kicksTotal = 0;
             //Do code to make special happen
-            superSpecail2++;
         }
         
         
@@ -295,7 +327,7 @@
 -(NSString*) swapLife
 {
     int num = randomNumber(swapLifeChanceMin, swapLifeChanceMax);
-    NSString *string = [[NSString alloc]init];
+    NSString *string;
     
     if  (num == 2 && swapLifeUses >= 1)
     {
@@ -319,6 +351,21 @@
         return string = [NSString stringWithFormat:@"Life Swap unsuccesful"];
     }
     swapLifeUses--;
+}
+
+-(NSMutableArray*)test
+{
+    NSString *one, *two;
+    
+    one = @"Hey there";
+    two = @"Who is that?";
+    
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
+    [array addObject:one];
+    [array addObject:two];
+    return array;
+    
+    
 }
 
 @end

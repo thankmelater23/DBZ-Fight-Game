@@ -60,7 +60,6 @@ playerTurn turn;
 
 //Global Game Vars
 int swapLifeUses;
-int go;
 BOOL skipTurn;
 
 //game stats
@@ -84,5 +83,6 @@ SystemSoundID sIDSwapLife;
 #define superSpecail1Attainer1   2
 #define superSpecail1Attainer2   4
 
+BOOL continueTextBool;
 
 #endif

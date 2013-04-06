@@ -50,11 +50,10 @@
 //User Interaction
 -(IBAction) punch
 {
+    [self textLoader:[whosTurn() punchOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     
-    [_gameTextBox setText:[self punchMethGuts]];
-    //[_gameTextBox setText:[whosTurn() punchOpp]];
-    changeTurn();
-    [self screenForPlayer];
+    [self textBoxEnabled];
+    
 }//Punch button
 -(IBAction) kick
 {
@@ -79,79 +78,23 @@
     [self screenForPlayer];
     changeTurn();
 }//Swaps players life only can be used once a game and also has a low percentage
--(NSString*) punchMethGuts
+
+- (IBAction)continueText
 {
-    int hitOrMiss = randomNumber(punchMinPerc, punchMaxPerc);//Returns if player will hit or miss
-    int hitPoins = punchDamage;
-    NSString *damageDoneString;
-    Player *currPlayer = whosTurn();
-    Player *other = whosNotTurn();
-    
-    //Hit miss rand
-    if (hitOrMiss != 2)
+    ++stringTextHolderCurrentCount;
+    if (stringTextHolderCurrentCount >= stringTextHolderCount)
     {
-        if (currPlayer == player1)
-        {
-            [_player1Image setImage:[UIImage imageNamed:@"player1 right punch.png"]];
-            //[NSTimer timerWithTimeInterval:1.0 target:nil  selector:@selector([_player1Image setImage:[UIImage imageNamed:@"player1 powerup"]]) userInfo:nil repeats:NO];
-        }
-        
-        else
-        {
-            [_player2Image setImage:[UIImage imageNamed:@"player2 punch.png"]];
-        }
-        //Punch hit
-        playSound(sIDPunch);
-        currPlayer->punchesInARow++;
-        currPlayer->punchesTotal++;
-        
-        if (currPlayer->punchesInARow == punchSpecail1Attainer1)
-        {
-            NSLog(@"punches in a row: %i", currPlayer->punchesInARow);
-            currPlayer->punchesInARow = 0;
-            //Do code to make special happen
-            currPlayer->punchSpecial1++;
-        }
-        
-        if (currPlayer->punchesTotal == punchSpecail1Attainer2)
-        {
-            NSLog(@"punches total: %i", currPlayer->punchesTotal);
-            currPlayer->punchesTotal = 0;
-            //Do code to make special happen
-            currPlayer->punchSpecial2++;
-        }
-        
-        
-        //Set up damage and health change
-        [other takeDamage:hitPoins];
-        
-        damageDoneString = [NSString stringWithFormat: @"%@ punch hit, damage of: %i\n%@ life: %i", [currPlayer name],hitPoins, [other name], [other health]];
-        
-        //Add timer for hurt sound
-        playSound(sIDPain);
-        
-        //Retrn string
-        return damageDoneString;
+        [self enableButtons];
+        changeTurn();
+        [self screenForPlayer];
+        [_gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
     }
     
     else
     {
-        //Play punch missed sound
-        playSound(sIDMissed);
-        
-        //Reset some feauturs for hit being missed
-        currPlayer->punchesInARow = 0;
-        
-        //Return string of hit being missed
-        damageDoneString = [NSString stringWithFormat:@"%@ punch missed", [currPlayer name]];
-        
-        return damageDoneString;
+    
+        [_gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
     }
-}
-
-- (IBAction)Go
-{
-    go++;
 }
 
 
@@ -221,19 +164,19 @@
     
     if ([player1 isDead])
     {
-        [self disableButtons];
+        [self textBoxEnabled];
     }
     
     if ([player2 isDead])
     {
-        [self disableButtons];
+        [self textBoxEnabled];
     }
 }//Sets up health bars and button to represent players health
 
 
 
 //Engine methods
--(void) disableButtons
+-(void) textBoxEnabled
 {
     [_playerNameButton setUserInteractionEnabled:NO];
     [_punchButton setUserInteractionEnabled:NO];
@@ -333,5 +276,14 @@
             break;
         }
     }
+}
+
+
+-(void) textLoader:(NSMutableArray*) array
+{
+    stringTextHolder = array;
+    stringTextHolderCount = [array count];
+    stringTextHolderCurrentCount = 0;
+    [_gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
 }
 @end

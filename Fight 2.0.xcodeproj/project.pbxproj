@@ -55,6 +55,8 @@
 		E6B4AD59170D891500D8ACDF /* thunder.wav in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD2A170D891500D8ACDF /* thunder.wav */; };
 		E6B4AD5B170D894800D8ACDF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B4AD5A170D894800D8ACDF /* AudioToolbox.framework */; };
 		E6B4AD5D170D894D00D8ACDF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B4AD5C170D894D00D8ACDF /* AVFoundation.framework */; };
+		E6B4AD65170D9DE600D8ACDF /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD64170D9DE600D8ACDF /* icon_57x57.png */; };
+		E6B4AD67170D9DF800D8ACDF /* icon_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD66170D9DF800D8ACDF /* icon_57x57@2x.png */; };
 		E6EFFAF5170D87FD004B9197 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EFFAF4170D87FD004B9197 /* UIKit.framework */; };
 		E6EFFAF7170D87FD004B9197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EFFAF6170D87FD004B9197 /* Foundation.framework */; };
 		E6EFFAF9170D87FD004B9197 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EFFAF8170D87FD004B9197 /* CoreGraphics.framework */; };
@@ -123,6 +125,8 @@
 		E6B4AD2A170D891500D8ACDF /* thunder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thunder.wav; sourceTree = "<group>"; };
 		E6B4AD5A170D894800D8ACDF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E6B4AD5C170D894D00D8ACDF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E6B4AD64170D9DE600D8ACDF /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_57x57.png; path = ../icon_57x57.png; sourceTree = "<group>"; };
+		E6B4AD66170D9DF800D8ACDF /* icon_57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_57x57@2x.png"; path = "../icon_57x57@2x.png"; sourceTree = "<group>"; };
 		E6EFFAF1170D87FD004B9197 /* Fight 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fight 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EFFAF4170D87FD004B9197 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E6EFFAF6170D87FD004B9197 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -173,8 +177,8 @@
 				E6EFFB12170D87FD004B9197 /* ViewController.h */,
 				E6EFFB13170D87FD004B9197 /* ViewController.m */,
 				E6B4ACF6170D891500D8ACDF /* MenuViewController.h */,
-				E6B4ACFA170D891500D8ACDF /* SettingsViewController.h */,
 				E6B4ACFF170D891500D8ACDF /* MenuViewController.m */,
+				E6B4ACFA170D891500D8ACDF /* SettingsViewController.h */,
 				E6B4AD02170D891500D8ACDF /* SettingsViewController.m */,
 			);
 			name = ViewControllers;
@@ -207,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */,
+				E6B4AD66170D9DF800D8ACDF /* icon_57x57@2x.png */,
+				E6B4AD64170D9DE600D8ACDF /* icon_57x57.png */,
 				E6EFFB06170D87FD004B9197 /* Default.png */,
 				E6EFFB08170D87FD004B9197 /* Default@2x.png */,
 				E6EFFB0A170D87FD004B9197 /* Default-568h@2x.png */,
@@ -242,9 +248,9 @@
 		E6B4AD62170D8DE600D8ACDF /* Glue Files */ = {
 			isa = PBXGroup;
 			children = (
-				E6B4AD00170D891500D8ACDF /* Methods.m */,
-				E6B4ACF7170D891500D8ACDF /* Methods.h */,
 				E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */,
+				E6B4ACF7170D891500D8ACDF /* Methods.h */,
+				E6B4AD00170D891500D8ACDF /* Methods.m */,
 			);
 			name = "Glue Files";
 			sourceTree = "<group>";
@@ -304,11 +310,11 @@
 		E6EFFAFB170D87FD004B9197 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6EFFB00170D87FD004B9197 /* main.m */,
 				E6EFFB03170D87FD004B9197 /* AppDelegate.h */,
 				E6EFFB04170D87FD004B9197 /* AppDelegate.m */,
 				E6EFFAFC170D87FD004B9197 /* Fight 2.0-Info.plist */,
 				E6EFFAFD170D87FD004B9197 /* InfoPlist.strings */,
-				E6EFFB00170D87FD004B9197 /* main.m */,
 				E6EFFB02170D87FD004B9197 /* Fight 2.0-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -413,6 +419,8 @@
 				E6B4AD57170D891500D8ACDF /* strike.wav in Resources */,
 				E6B4AD58170D891500D8ACDF /* swoosh 3.wav in Resources */,
 				E6B4AD59170D891500D8ACDF /* thunder.wav in Resources */,
+				E6B4AD65170D9DE600D8ACDF /* icon_57x57.png in Resources */,
+				E6B4AD67170D9DF800D8ACDF /* icon_57x57@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

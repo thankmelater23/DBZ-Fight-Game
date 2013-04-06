@@ -26,13 +26,16 @@ void initVariables()
     //Set Player Vars
     player1 = [[Player alloc]init:player1Name];
     player2 = [[Player alloc]init:player2Name];
+    player1->isFirstPlayer = YES;
+    player2->isFirstPlayer = NO;
     [player1 mergeEnemy:player2];
     [player2 mergeEnemy:player1];
     
     //Other Vars
     swapLifeUses = swapLifeAmount;
-    go = 0;
     skipTurn = NO;
+    continueTextBool = NO;
+    
 }
 
 //System turn methods

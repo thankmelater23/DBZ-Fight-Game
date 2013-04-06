@@ -10,6 +10,11 @@
 
 
 @interface ViewController : UIViewController
+{
+    NSMutableArray *stringTextHolder;
+    int stringTextHolderCount;
+    int stringTextHolderCurrentCount;
+}
 //GameScreen
 //Button Properties
 @property (retain, nonatomic) IBOutlet UIButton *playerNameButton;
@@ -23,6 +28,7 @@
 
 //Text Field Property
 @property (weak, nonatomic) IBOutlet UITextView *gameTextBox;
+@property (weak, nonatomic) IBOutlet UIButton *okTextButton;
 
 //HealthBars Property
 @property (weak, nonatomic) IBOutlet UISlider *player1HealthBar;
@@ -67,7 +73,7 @@
 -(IBAction) Super;
 -(IBAction) potion;
 -(IBAction) swapLife;
-- (IBAction)Go;
+- (IBAction)continueText;
 
 //Visual methods
 -(void) screenForPlayer;
@@ -75,6 +81,6 @@
 -(void) setHealthBar;
 
 //Engine methods
--(void) disableButtons;
+-(void) textBoxEnabled;
 -(void) enableButtons;
 @end
