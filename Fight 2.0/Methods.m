@@ -40,12 +40,8 @@ void initVariables()
 //System turn methods
 void   changeTurn()
 {
-    if (skipTurn == YES)
-    {
-        skipTurn = NO;
-        changeTurn();
-    }
-    
+    if (skipTurn == NO)
+    {    
     NSLog(@"Turn Changing");
     if (turn == enumPlayer1)
     {
@@ -56,7 +52,12 @@ void   changeTurn()
     {
         turn = enumPlayer1;
     }
+    }
     
+    else
+    {
+       skipTurn = NO; 
+    }
     turnsCompleted++;
 }
 Player *whosTurn()
@@ -145,6 +146,7 @@ int  randomNumber(int min, int max)
         num = min + arc4random() % max;
     }
     
+    NSLog(@"random number generated from: \nMIN:%i\nMAX:%i\nNumber:%i", min, max, num);
     return num;
 }
 void setToNumber(int var, int setNumber)

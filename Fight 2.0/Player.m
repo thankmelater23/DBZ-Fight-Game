@@ -55,7 +55,7 @@
     
     
     //Hit miss rand
-    if (hitOrMiss != 2)
+    if (hitOrMiss != 0 && hitOrMiss != 4 && hitOrMiss != 8)
     {
         //Punch hit
         playSound(sIDPunch);
@@ -144,7 +144,7 @@
     NSString *damageDoneString;
     
     //Hit miss rand
-    if (hitOrMiss == 1 || hitOrMiss == 3)
+    if (hitOrMiss != 0 && hitOrMiss != 2 && hitOrMiss != 4 && hitOrMiss != 6)
     {
         //Kick Hit
         playSound(sIDKick);
@@ -203,7 +203,7 @@
     NSString *damageDoneString;
     
     //Hit miss rand
-    if (hitOrMiss == 1 || hitOrMiss == 3)
+    if (hitOrMiss == 0 || hitOrMiss == 4)
     {
         playSound(sIDSuper);
        
@@ -219,10 +219,10 @@
             setToNumber(self.superPunch, specialsAndPotionsMax);
         }
         
-        if (kicksTotal == superSpecail1Attainer2)
+        if (superAttackTotal == superSpecail1Attainer2)
         {
-            NSLog(@"super total: %i", kicksTotal);
-            kicksTotal = 0;
+            NSLog(@"super total: %i", superAttackTotal);
+            superAttackTotal = 0;
             //Do code to make special happen
         }
         
@@ -252,7 +252,7 @@
         //Return string of hit being missed
         damageDoneString = [NSString stringWithFormat:@"%@ Super missed and stumbled, %@ counters and get another turn", [self name], [other name]];
         
-        
+        skipTurn = NO;
         changeTurn();
         skipTurn = YES;
         
@@ -316,7 +316,7 @@
     int num = randomNumber(swapLifeChanceMin, swapLifeChanceMax);
     NSString *string;
     
-    if  (num == 2 && swapLifeUsed == NO)
+    if  ((num == 2 && swapLifeUsed == NO) || (num == 0 && swapLifeUsed == NO))
     {
         playSound(sIDSwapLife);
         int tempHealth = self.health;
@@ -342,7 +342,6 @@
         return string = [NSString stringWithFormat:@"Life Swap unsuccesful"];
     }
 }
-
 
 
 //Game methods

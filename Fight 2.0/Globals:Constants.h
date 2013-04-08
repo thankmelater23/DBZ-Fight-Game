@@ -54,30 +54,38 @@ int turnsCompleted;
 #define specialsAndPotionsMax 3
 
 //Attacks
-#define punchDamage 3
-#define kickDamage  6
-#define superDamage 10
+#define punchDamage         3
+#define kickDamage          6
+#define superDamage         10
+#define doublePunchDamage   5
+#define tripleKickMinDamage 1
+#define tripleKickMaxDamage 5
+#define superPunchDamage    10
 //Minimun to max for attacks
-#define punchMinPerc  1
-#define punchMaxPerc  3
-#define kickMinPerc   1
-#define kickMaxPerc   4
-#define superMinPerc  1
-#define superMaxPerc  4
+#define punchMinPerc   0
+#define punchMaxPerc   9
+#define kickMinPerc    0
+#define kickMaxPerc    9
+#define superMinPerc   0
+#define superMaxPerc   5
+#define doublePunchMin 0
+#define doublePunchMax 3//Make doublePunch chance 2/3 success
+#define superPunchMin  0
+#define superPunchMax  5//Make superPunch chance 3/5 success
 
 //Health defines
-#define potionChanceMin   1
+#define potionChanceMin   0
 #define potionChanceMax   5
-#define swapLifeChanceMin 1 
+#define swapLifeChanceMin 0 
 #define swapLifeChanceMax 4
 #define potionStrength    15
 
 //Player setting defines
 //Define specails
-#define punchSpecail1Attainer1   3
-#define punchSpecail1Attainer2   7
+#define punchSpecail1Attainer1   4
+#define punchSpecail1Attainer2   10
 #define kickSpecail1Attainer1    3
-#define kickSpecail1Attainer2    6
+#define kickSpecail1Attainer2    7
 #define superSpecail1Attainer1   2
 #define superSpecail1Attainer2   4
 
@@ -85,7 +93,7 @@ int turnsCompleted;
 #define bloodFlowHealthPoints 20
 
 //Game setting define
-#define specialScreenImagesFadeOut 0.4
+#define specialScreenImagesFadeOut 0.3
 #define specialScreenImagesFadeIn  1.0
 
 

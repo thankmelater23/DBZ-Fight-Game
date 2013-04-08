@@ -61,4 +61,6 @@
     player1Name = self.player1NameField.text;
     player2Name = self.player2NameFiled.text;
 }
+
+
 @end

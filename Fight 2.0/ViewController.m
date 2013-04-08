@@ -196,6 +196,16 @@
     {
         [self textBoxEnabled];
     }
+    
+    if (swapLifeUsed == YES)
+    {
+        [[self swapLifeButton]setAlpha:specialScreenImagesFadeOut];
+    }
+    
+    else
+    {
+        [[self swapLifeButton]setAlpha:specialScreenImagesFadeIn];
+    }
 }//Sets up health bars and button to represent players health
 -(void) setPotionsImage
 {
