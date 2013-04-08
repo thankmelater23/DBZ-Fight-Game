@@ -453,6 +453,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doublePunchButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="TDL-ct-FFK"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="pth-0k-c1f">
                                 <constraints>
@@ -472,6 +475,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="superPunchButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="Dz2-6Z-VwA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91f-gO-2TH">
                                 <constraints>
@@ -485,6 +491,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="tripleKickButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="nao-Fc-fv7"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kyx-Pn-a6k">
                                 <constraints>
@@ -858,6 +867,9 @@
         <class className="SpecialScreenViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpecialScreenViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doublePunchButton"/>
+                <relationship kind="action" name="superPunchButton"/>
+                <relationship kind="action" name="tripleKickButton"/>
                 <relationship kind="outlet" name="specPlayerHealthBar" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="specPlayerHealthLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="specPlayerImage" candidateClass="UIImageView"/>

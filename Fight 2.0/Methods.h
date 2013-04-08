@@ -10,28 +10,29 @@
 #define Fight_2_0_Methods_h
 
 #import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+
+@class Player;
 
 
-@class Player;//Might casue a problem
-
-
-
-//Declared
+//Initialize
 void   initResources();
 void   initVariables();
-void   initAudio    ();
-int    randomNumber (int min, int max);
-void   changeTurn   ();
-Player *whosTurn    ();
-Player *whosNotTurn ();
-//Conditions
-NSString* winOrLoose(Player* player);
-//SFX
-void playSound();
-void punchSound();
-void kickSound();
-void superSound();
-void missedSound();
 
-void turnGenerator();
+
+//System turn methods
+void   changeTurn    ();
+Player *whosTurn     ();
+Player *whosNotTurn  ();
+void   turnGenerator ();
+
+
+//SFX
+void   initAudio ();
+void playSound   (SystemSoundID soundID);
+
+
+//Game Engine Methods
+int  randomNumber (int min, int max);
+void setToNumber  (int var, int setNumber);
 #endif

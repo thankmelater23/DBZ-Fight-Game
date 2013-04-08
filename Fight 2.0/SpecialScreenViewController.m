@@ -18,6 +18,7 @@
 
 @implementation SpecialScreenViewController
 
+//System Methods
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,20 +27,20 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setSpecialScreen];
 	// Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+//Screen Setters
 - (void) setSpecialScreen
 {
     [self setPotionsImages];
@@ -62,8 +63,7 @@
         [self.specPlayerImage setImage:[UIImage imageNamed:@"player2 powerup.png"]];
     }
 }
-
--(void) setPotionsImages
+-(void)  setPotionsImages
 {
     switch ([whosTurn() potions])
     {
@@ -110,8 +110,7 @@
         }
     }
 }
-
--(void) setSpecial1Images
+-(void)  setSpecial1Images
 {
     switch ([whosTurn() doublePunch])
     {
@@ -157,8 +156,7 @@
         }
     }
 }
-
--(void) setSpecial2Images
+-(void)  setSpecial2Images
 {
     switch ([whosTurn() tripleKick])
     {
@@ -204,8 +202,7 @@
         }
     }
 }
-
--(void) setSpecial3Images
+-(void)  setSpecial3Images
 {
     switch ([whosTurn() superPunch])
     {
@@ -250,6 +247,18 @@
             break;
         }
     }
+}
+
+
+//Special Attacks
+-(IBAction) doublePunchButton
+{
+}
+-(IBAction) tripleKickButton
+{
+}
+-(IBAction) superPunchButton
+{
 }
 
 @end

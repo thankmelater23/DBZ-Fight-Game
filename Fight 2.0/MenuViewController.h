@@ -13,10 +13,14 @@
 {
     SystemSoundID click;
 }
-- (IBAction)startButton;
-
-- (IBAction)otherButton;
+//Properties
 @property (weak, nonatomic) IBOutlet UITextField *player1NameField;
 @property (weak, nonatomic) IBOutlet UITextField *player2NameFiled;
+
+
+//Methods
+//Engine Methods
+- (IBAction)startButton;
+- (IBAction)otherButton;
 - (IBAction)goButton;
 @end

@@ -11,6 +11,7 @@
 
 @interface Player : NSObject
 {
+    //Opposing player object
     Player      *other;
     
     @public
@@ -20,7 +21,6 @@
     int superAtackInARow,   superAttackTotal;
     
     //Special Holders
-    
     BOOL isFirstPlayer;
 }
 
@@ -41,21 +41,20 @@
 //GamnePlay Methods
 //Attacks
 -(NSMutableArray*) punchOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
--(NSString*) kickOpp;
--(NSString*) superAtackOpp;
--(NSString*) specialAttack1;
--(NSString*) specil1Attack2;
--(NSString*) specil1Attack3;
--(void)      takeDamage:(int) damage;
+-(NSString*)       kickOpp;
+-(NSString*)       superAtackOpp;
+-(NSMutableArray*) doublePunchSpecial;
+-(NSMutableArray*) tripleKickSpecial;
+-(NSMutableArray*) superPunchSpecial;
+-(NSString*)       usePotion;
+-(NSString*)       swapLife;
 
 
-//Other Player Options
--(NSString*) usePotion;
--(NSString*) showHealth;
--(BOOL)      isDead;
--(NSString*) swapLife;
-
--(NSMutableArray*)test;
+//Game methods
+-(BOOL) isDead;
+-(void) takeDamage:         (int) damage;
+-(void) addHealth:          (int)addedHealth;
+-(void) setPlayerImageTimer:(UIImageView*) playerImg imageName:(NSString*) string;
 
 
 @end

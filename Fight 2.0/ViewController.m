@@ -40,12 +40,12 @@
     [self setScreen];
     [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
 }
-- (void)didReceiveMemoryWarning
+- (void)     didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (BOOL)shouldAutorotate
+- (BOOL)     shouldAutorotate
 {
     return NO;
 }
@@ -281,14 +281,14 @@
 
 
 //Text Box Methods
--(void) textLoader:(NSMutableArray*) array
+-(void)    textLoader:       (NSMutableArray*) array
 {
     stringTextHolder = array;
     stringTextHolderCount = [array count];
     stringTextHolderCurrentCount = 0;
     [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
 }
-- (IBAction)continueText
+-(IBAction)continueText
 {
     ++stringTextHolderCurrentCount;
     if (stringTextHolderCurrentCount >= stringTextHolderCount)
@@ -305,7 +305,7 @@
         [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
     }
 }
--(void) blinkingOkButton
+-(void)    blinkingOkButton
 {
     if (blinkingBoxBool == YES)
     {
@@ -319,8 +319,6 @@
         blinkingBoxBool = YES;
     }
 }
-
-
 
 
 @end

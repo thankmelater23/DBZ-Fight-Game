@@ -12,10 +12,8 @@
 #import "Globals:Constants.h"
 
 
-//Implementations
 //Initialize
 void   initResources()
-
 {
     initVariables();
     initAudio();
@@ -37,6 +35,7 @@ void initVariables()
     continueTextBool = NO;
     
 }
+
 
 //System turn methods
 void   changeTurn()
@@ -60,7 +59,6 @@ void   changeTurn()
     
     turnsCompleted++;
 }
-
 Player *whosTurn()
 {
     if (turn == enumPlayer1)
@@ -75,7 +73,6 @@ Player *whosTurn()
         return player2;
     }
 }
-
 Player *whosNotTurn()
 {
     if (turn != enumPlayer1)
@@ -90,6 +87,20 @@ Player *whosNotTurn()
         return player2;
     }
 }
+void   turnGenerator()//Remake turn generator from view controller
+{
+    int num = randomNumber(1, 2);
+    if ( num == 1)
+    {
+        turn = enumPlayer1;
+    }
+    
+    else
+    {
+        turn = enumPlayer2;
+    }
+}
+
 
 //SFX
 void   initAudio()
@@ -116,14 +127,14 @@ void   initAudio()
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)swapLifeURL, &sIDSwapLife);
     
 }
-
-void playSound(SystemSoundID soundID)
+void   playSound(SystemSoundID soundID)
 {
     AudioServicesPlaySystemSound(soundID);
 }
 
+
 //Game Engine Methods
-int    randomNumber(int min, int max)
+int  randomNumber(int min, int max)
 {
     int num;
     
@@ -136,17 +147,10 @@ int    randomNumber(int min, int max)
     
     return num;
 }
-
-void turnGenerator()//Remake turn generator from view controller
+void setToNumber(int var, int setNumber)
 {
-    int num = randomNumber(1, 2);
-    if ( num == 1)
+    if (var >= setNumber)
     {
-        turn = enumPlayer1;
-    }
-    
-    else
-    {
-        turn = enumPlayer2;
+        var = setNumber;
     }
 }

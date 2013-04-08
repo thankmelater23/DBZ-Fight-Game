@@ -35,12 +35,13 @@
     
     return self;
 }
-
 -(void) mergeEnemy: (Player*) opponent
 {
     other = opponent;
 }//Merg Player * pointer variable to opponent to make changes of that player with that pointer
 
+
+//Attacks
 -(NSMutableArray*) punchOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
     NSString *damageDoneString;
@@ -83,6 +84,8 @@
         {
             special1String = [NSString stringWithFormat: @"Special attack added after landing %i consecutive punches", punchSpecail1Attainer1];
             self.doublePunch++;
+            setToNumber(self.doublePunch, specialsAndPotionsMax);
+            
             punchesInARow = 0;
             
             if (self.doublePunch >= 3)
@@ -134,8 +137,7 @@
     
     return array;
 }
-
--(NSString*) kickOpp
+-(NSString*)      kickOpp
 {
     int hitOrMiss = randomNumber(kickMinPerc, kickMaxPerc);//Returns if player will hit or miss
     int hitPoins = kickDamage;
@@ -155,6 +157,8 @@
             kickInArow = 0;
             //Do code to make special happen
             self.tripleKick++;
+            setToNumber(self.tripleKick, specialsAndPotionsMax);
+            
             
         }
         
@@ -192,8 +196,7 @@
         return damageDoneString;
     }
 }
-
--(NSString*) superAtackOpp
+-(NSString*)      superAtackOpp
 {
     int hitOrMiss = randomNumber(superMinPerc, superMaxPerc);//Returns if player will hit or miss
     int hitPoins = superDamage;
@@ -213,6 +216,7 @@
             superAtackInARow = 0;
             //Do code to make special happen
             self.superPunch++;
+            setToNumber(self.superPunch, specialsAndPotionsMax);
         }
         
         if (kicksTotal == superSpecail1Attainer2)
@@ -255,75 +259,48 @@
         return damageDoneString;
     }
 }
-
--(NSString*) specialAttack1
+-(NSMutableArray*) doublePunchSpecial
 {
-    NSString* string = [[NSString alloc]initWithFormat:@"here"];
-    return string;
+    NSMutableArray *array;
+    return array;
 }
-
--(NSString*) specil1Attack2
+-(NSMutableArray*) tripleKickSpecial
 {
-    NSString* string = [[NSString alloc]initWithFormat:@"here"];
-    return string;
+    NSMutableArray *array;    return array;
 }
-
--(NSString*) specil1Attack3
+-(NSMutableArray*) superPunchSpecial
 {
-    NSString* string = [[NSString alloc]initWithFormat:@"here"];
-    return string;
+    NSMutableArray *array;
+    return array;
 }
-
--(BOOL) isDead
-{
-    if (self.health <= 0)
-    {
-        NSLog(@"is Dead");
-        return YES;
-    }
-    
-    else
-        return NO;
-}//Returns bool if player life is 0 or below
-
--(void) takeDamage:(int) damage
-{
-    self.health -= damage;
-    if (self.health < 0)
-    {
-        self.health = 0;
-    }
-    NSLog(@"Health was tooken of %i, health is now %i", damage, self.health);
-}//Takes life away of the int value put into damage
-
--(NSString*) usePotion
+-(NSString*)      usePotion
 {
     NSString *string;
     
     if (self.potions > 0)
     {
-    self.potions--;
-    int num = randomNumber(potionChanceMin, potionChanceMax);
-    
-    if (num == 1 || num == 3)
-    {
-        playSound(sIDPotion);
-        self.health += potionStrength;
-        if (self.health >= healthMax)
+        self.potions--;
+        int num = randomNumber(potionChanceMin, potionChanceMax);
+        
+        if (num == 1 || num == 3)
         {
-            self.health = healthMax;
+            playSound(sIDPotion);
+            self.health += potionStrength;
+            if (self.health >= healthMax)
+            {
+                self.health = healthMax;
+            }
+            
+            return string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];
         }
         
-        return string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];
-    }
-    
-    else
-    {
-        NSLog(@"Potion did not work");
-        
-        return string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
-        
-    }
+        else
+        {
+            NSLog(@"Potion did not work");
+            
+            return string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
+            
+        }
     }
     
     else
@@ -333,8 +310,7 @@
     }
     
 }
-
--(NSString*) swapLife
+-(NSString*)      swapLife
 {
     
     int num = randomNumber(swapLifeChanceMin, swapLifeChanceMax);
@@ -367,22 +343,30 @@
     }
 }
 
--(NSMutableArray*)test
-{
-    NSString *one, *two;
-    
-    one = @"Hey there";
-    two = @"Who is that?";
-    
-    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
-    [array addObject:one];
-    [array addObject:two];
-    return array;
-    
-    
-}
 
--(void) addHealth:(int)addedHealth
+
+//Game methods
+-(BOOL) isDead
+{
+    if (self.health <= 0)
+    {
+        NSLog(@"is Dead");
+        return YES;
+    }
+    
+    else
+        return NO;
+}//Returns bool if player life is 0 or below
+-(void) takeDamage:         (int) damage
+{
+    self.health -= damage;
+    if (self.health < 0)
+    {
+        self.health = 0;
+    }
+    NSLog(@"Health was tooken of %i, health is now %i", damage, self.health);
+}//Takes life away of the int value put into damage
+-(void) addHealth:          (int)addedHealth
 {
     self.health += addedHealth;
     if (self.health >= healthMax)
@@ -390,7 +374,6 @@
         self.health = healthMax;
     }
 }
-
 -(void) setPlayerImageTimer:(UIImageView*) playerImg imageName:(NSString*) string
 {
     [playerImg setImage:[UIImage imageNamed:string]];

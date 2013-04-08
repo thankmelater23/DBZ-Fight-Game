@@ -12,26 +12,26 @@
 @interface ViewController : UIViewController
 {
     NSMutableArray *stringTextHolder;
-    int stringTextHolderCount;
-    int stringTextHolderCurrentCount;
-    BOOL blinkingBoxBool;
-    NSTimer *blinkingBoxTimer;
-    NSTimer *healthBarUpdater;
+    int           stringTextHolderCount;
+    int           stringTextHolderCurrentCount;
+    BOOL          blinkingBoxBool;
+    NSTimer       *blinkingBoxTimer;
+    NSTimer       *healthBarUpdater;
 }
 //GameScreen
 //Button Properties
-@property (retain, nonatomic) IBOutlet UIButton *playerNameButton;
-@property (weak, nonatomic) IBOutlet UIButton   *punchButton;
-@property (weak, nonatomic) IBOutlet UIButton   *kickButton;
-@property (weak, nonatomic) IBOutlet UIButton   *superButton;
-@property (weak, nonatomic) IBOutlet UIButton   *potionButton;
-@property (weak, nonatomic) IBOutlet UIButton   *specialButton;
-@property (weak, nonatomic) IBOutlet UIButton   *goButton;
-@property (weak, nonatomic) IBOutlet UIButton  *swapLifeButton;
+@property (retain, nonatomic) IBOutlet UIButton   *playerNameButton;
+@property (weak, nonatomic) IBOutlet   UIButton   *punchButton;
+@property (weak, nonatomic) IBOutlet   UIButton   *kickButton;
+@property (weak, nonatomic) IBOutlet   UIButton   *superButton;
+@property (weak, nonatomic) IBOutlet   UIButton   *potionButton;
+@property (weak, nonatomic) IBOutlet   UIButton   *specialButton;
+@property (weak, nonatomic) IBOutlet   UIButton   *goButton;
+@property (weak, nonatomic) IBOutlet   UIButton   *swapLifeButton;
 
 //Text Field Property
 @property (weak, nonatomic) IBOutlet UITextView *gameTextBox;
-@property (weak, nonatomic) IBOutlet UIButton *okTextButton;
+@property (weak, nonatomic) IBOutlet UIButton  *okTextButton;
 
 //HealthBars Property
 @property (weak, nonatomic) IBOutlet UISlider *player1HealthBar;
@@ -62,14 +62,22 @@
 -(IBAction) Super;
 -(IBAction) potion;
 -(IBAction) swapLife;
-- (IBAction)continueText;
 
-//Visual methods
--(void) setUniqueLookForCurrentPlayerTurn;
--(void) setScreen;
--(void) setHealthBar;
 
 //Engine methods
 -(void) textBoxEnabled;
 -(void) enableButtons;
+
+
+//Game Screen Update Methods
+-(void) setUniqueLookForCurrentPlayerTurn;
+-(void) setScreen;
+-(void) setHealthBar;
+-(void) setPotionsImage;
+
+
+//Text Box Methods
+-(void)     textLoader:       (NSMutableArray*) array;
+-(IBAction) continueText;
+-(void)     blinkingOkButton;
 @end

@@ -20,11 +20,38 @@ typedef enum
     enumPlayer1, enumPlayer2
 }playerTurn;
 
+//Global Variables
+//Players
+Player   *player1,     *player2;
+NSString *player1Name, *player2Name;
+//Enum
+playerTurn turn;
+
+//Sound ID's
+SystemSoundID sIDPunch;
+SystemSoundID sIDKick;
+SystemSoundID sIDSuper;
+SystemSoundID sIDMissed;
+SystemSoundID sIDPain;
+SystemSoundID sIDPotion;
+SystemSoundID sIDSwapLife;
+
+//Game BOOL's
+BOOL continueTextBool;
+BOOL newGame;
+BOOL swapLifeUsed;
+BOOL skipTurn;
+
+//Global Game Vars
+int turnsCompleted;
+
+
 //Defines
 
 //Player attributes
-#define healthMax 100
-#define initialPotions 3
+#define healthMax             100
+#define initialPotions        3
+#define specialsAndPotionsMax 3
 
 //Attacks
 #define punchDamage 3
@@ -38,46 +65,14 @@ typedef enum
 #define superMinPerc  1
 #define superMaxPerc  4
 
-//Create Directives of how many in a row and total attacks to certin feture
-
-//Health Directives
-#define potionChanceMin 1
-#define potionChanceMax 5
+//Health defines
+#define potionChanceMin   1
+#define potionChanceMax   5
 #define swapLifeChanceMin 1 
 #define swapLifeChanceMax 4
-//Others
-#define potionStrength 15
+#define potionStrength    15
 
-//Special Defines
-#define bloodFlowHealthPoints 20
-
-
-//Global Variables
-//Players
-Player *player1, *player2;
-NSString *player1Name, *player2Name;
-BOOL newGame;
-
-//Enum
-playerTurn turn;
-
-//Global Game Vars
-BOOL swapLifeUsed;
-BOOL skipTurn;
-
-//game stats
-int turnsCompleted;
-
-//Sound ID's
-SystemSoundID sIDPunch;
-SystemSoundID sIDKick;
-SystemSoundID sIDSuper;
-SystemSoundID sIDMissed;
-SystemSoundID sIDPain;
-SystemSoundID sIDPotion;
-SystemSoundID sIDSwapLife;
-
-
+//Player setting defines
 //Define specails
 #define punchSpecail1Attainer1   3
 #define punchSpecail1Attainer2   7
@@ -86,9 +81,12 @@ SystemSoundID sIDSwapLife;
 #define superSpecail1Attainer1   2
 #define superSpecail1Attainer2   4
 
+//Special attacks defines
+#define bloodFlowHealthPoints 20
+
+//Game setting define
 #define specialScreenImagesFadeOut 0.4
 #define specialScreenImagesFadeIn  1.0
 
-BOOL continueTextBool;
 
 #endif
