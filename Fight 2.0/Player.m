@@ -276,7 +276,7 @@
 
 -(BOOL) isDead
 {
-    if (_health <= 0)
+    if (self.health <= 0)
     {
         NSLog(@"is Dead");
         return YES;
@@ -300,18 +300,18 @@
 {
     NSString *string;
     
-    if (_potions > 0)
+    if (self.potions > 0)
     {
-    _potions--;
+    self.potions--;
     int num = randomNumber(potionChanceMin, potionChanceMax);
     
     if (num == 1 || num == 3)
     {
         playSound(sIDPotion);
-        _health += potionStrength;
-        if (_health >= healthMax)
+        self.health += potionStrength;
+        if (self.health >= healthMax)
         {
-            _health = healthMax;
+            self.health = healthMax;
         }
         
         return string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];

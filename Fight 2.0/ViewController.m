@@ -30,11 +30,15 @@
         initResources();
         blinkingBoxBool = YES;
         newGame = YES;
+        
+        [healthBarUpdater invalidate];
+        healthBarUpdater = nil;
+        healthBarUpdater = [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(setHealthBar) userInfo:nil repeats:YES];
     }
 
     [self enableButtons];
-    [self screenForPlayer];
-    [_gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
+    [self setScreen];
+    [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -63,57 +67,57 @@
 }//Punch button
 -(IBAction) kick
 {
-    [_gameTextBox setText:[whosTurn() kickOpp]];
+    [self.gameTextBox setText:[whosTurn() kickOpp]];
     changeTurn();
-    [self screenForPlayer];
+    [self setScreen];
 }//Kick Button
 -(IBAction) Super
 {
-    [_gameTextBox setText:[whosTurn() superAtackOpp]];
-    [self screenForPlayer];
+    [self.gameTextBox setText:[whosTurn() superAtackOpp]];
+    [self setScreen];
 }//Super attack button
 -(IBAction) potion
 {
-    [_gameTextBox setText:[whosTurn() usePotion]];
-    [self screenForPlayer];
+    [self.gameTextBox setText:[whosTurn() usePotion]];
+    [self setScreen];
     changeTurn();
 }//Potion button
 -(IBAction) swapLife
 {
-    [_gameTextBox setText:[whosTurn() swapLife]];
-    [self screenForPlayer];
+    [self.gameTextBox setText:[whosTurn() swapLife]];
+    [self setScreen];
 }//Swaps players life only can be used once a game and also has a low percentage
 
 
 //Engine methods
 -(void) textBoxEnabled
 {
-    [_playerNameButton setUserInteractionEnabled:NO];
-    [_punchButton setUserInteractionEnabled:NO];
-    [_kickButton setUserInteractionEnabled:NO];
-    [_superButton setUserInteractionEnabled:NO];
-    [_potionButton setUserInteractionEnabled:NO];
-    [_specialButton setUserInteractionEnabled:NO];
-    [_swapLifeButton setUserInteractionEnabled:NO];
+    [self.playerNameButton setUserInteractionEnabled:NO];
+    [self.punchButton setUserInteractionEnabled:NO];
+    [self.kickButton setUserInteractionEnabled:NO];
+    [self.superButton setUserInteractionEnabled:NO];
+    [self.potionButton setUserInteractionEnabled:NO];
+    [self.specialButton setUserInteractionEnabled:NO];
+    [self.swapLifeButton setUserInteractionEnabled:NO];
     
-    [_goButton setHidden:NO];
-    [_goButton setUserInteractionEnabled:YES];
+    [self.goButton setHidden:NO];
+    [self.goButton setUserInteractionEnabled:YES];
     
     blinkingBoxTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(blinkingOkButton) userInfo:nil repeats:YES];
     
 }//Disable all buttons only leaves ok button available to get through text
 -(void) enableButtons
 {
-    [_playerNameButton setUserInteractionEnabled:YES];
-    [_punchButton setUserInteractionEnabled:YES];
-    [_kickButton setUserInteractionEnabled:YES];
-    [_superButton setUserInteractionEnabled:YES];
-    [_potionButton setUserInteractionEnabled:YES];
-    [_specialButton setUserInteractionEnabled:YES];
-    [_swapLifeButton setUserInteractionEnabled:YES];
+    [self.playerNameButton setUserInteractionEnabled:YES];
+    [self.punchButton setUserInteractionEnabled:YES];
+    [self.kickButton setUserInteractionEnabled:YES];
+    [self.superButton setUserInteractionEnabled:YES];
+    [self.potionButton setUserInteractionEnabled:YES];
+    [self.specialButton setUserInteractionEnabled:YES];
+    [self.swapLifeButton setUserInteractionEnabled:YES];
     
-    [_goButton setHidden:YES];
-    [_goButton setUserInteractionEnabled:NO];
+    [self.goButton setHidden:YES];
+    [self.goButton setUserInteractionEnabled:NO];
     
     [blinkingBoxTimer invalidate];
     blinkingBoxTimer = nil;
@@ -122,35 +126,36 @@
 
 
 //Game Screen Update Methods
--(void) screenForPlayer
+-(void) setUniqueLookForCurrentPlayerTurn
 {
     Player *currentPlayerTurn = whosTurn();
     
     if (currentPlayerTurn == player1)
     {
-        [_playerNameButton setTitle:[currentPlayerTurn name] forState:UIControlStateNormal];
+        [self.playerNameButton setTitle:[currentPlayerTurn name] forState:UIControlStateNormal];
         self.view.backgroundColor = [UIColor redColor];
-        _playerNameButton.tintColor = [UIColor blackColor];
-        [_playerNameButton setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
-        [self setHealthBar];
+        self.playerNameButton.tintColor = [UIColor blackColor];
+        [self.playerNameButton setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+        [[self player1BackGroundColor]setHidden:NO];
+        [[self player2BackGroundColor]setHidden:YES];
     }
     
     
     if (currentPlayerTurn == player2)
     {
-        [_playerNameButton setTitle:[currentPlayerTurn name] forState:UIControlStateNormal];
+        [self.playerNameButton setTitle:[currentPlayerTurn name] forState:UIControlStateNormal];
         self.view.backgroundColor = [UIColor blueColor];
-        _playerNameButton.tintColor = [UIColor blackColor];
-        [_playerNameButton setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
-        [self setHealthBar];
+        self.playerNameButton.tintColor = [UIColor blackColor];
+        [self.playerNameButton setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
+        [[self player1BackGroundColor]setHidden:YES];
+        [[self player2BackGroundColor]setHidden:NO];
     }
-    
-    [self setScreen];
-    
 }//Sets screen color and button name for which player turn it is
 -(void) setScreen
 {
+    [self setHealthBar];
     [self setPotionsImage];
+    [self setUniqueLookForCurrentPlayerTurn];
     
     
 }//Sets all buttons to a certin color
@@ -177,10 +182,10 @@
     }
     
     
-    [_player1HealthBar setValue: [player1 health]];
-    [_player2HealthBar setValue: [player2 health]];
-    [_player1HealthButton setText:[NSString stringWithFormat:@"%i", [player1 health]]];
-    [_player2HealthButton setText:[NSString stringWithFormat:@"%i", [player2 health]]];
+    [self.player1HealthBar setValue: [player1 health]];
+    [self.player2HealthBar setValue: [player2 health]];
+    [self.player1HealthButton setText:[NSString stringWithFormat:@"%i", [player1 health]]];
+    [self.player2HealthButton setText:[NSString stringWithFormat:@"%i", [player2 health]]];
     
     if ([player1 isDead])
     {
@@ -198,33 +203,33 @@
     {
         case 3:
         {
-            [_p1Potion1 setHidden:NO];
-            [_p1Potion2 setHidden:NO];
-            [_p1Potion3 setHidden:NO];
+            [self.p1Potion1 setHidden:NO];
+            [self.p1Potion2 setHidden:NO];
+            [self.p1Potion3 setHidden:NO];
             break;
         }
             
         case 2:
         {
-            [_p1Potion1 setHidden:NO];
-            [_p1Potion2 setHidden:NO];
-            [_p1Potion3 setHidden:YES];
+            [self.p1Potion1 setHidden:NO];
+            [self.p1Potion2 setHidden:NO];
+            [self.p1Potion3 setHidden:YES];
             break;
         }
             
         case 1:
         {
-            [_p1Potion1 setHidden:NO];
-            [_p1Potion2 setHidden:YES];
-            [_p1Potion3 setHidden:YES];
+            [self.p1Potion1 setHidden:NO];
+            [self.p1Potion2 setHidden:YES];
+            [self.p1Potion3 setHidden:YES];
             break;
         }
             
         default:
         {
-            [_p1Potion1 setHidden:YES];
-            [_p1Potion2 setHidden:YES];
-            [_p1Potion3 setHidden:YES];
+            [self.p1Potion1 setHidden:YES];
+            [self.p1Potion2 setHidden:YES];
+            [self.p1Potion3 setHidden:YES];
             break;
         }
     }
@@ -233,33 +238,33 @@
     {
         case 3:
         {
-            [_p2Potion1 setHidden:NO];
-            [_p2Potion2 setHidden:NO];
-            [_p2Potion3 setHidden:NO];
+            [self.p2Potion1 setHidden:NO];
+            [self.p2Potion2 setHidden:NO];
+            [self.p2Potion3 setHidden:NO];
             break;
         }
             
         case 2:
         {
-            [_p2Potion1 setHidden:NO];
-            [_p2Potion2 setHidden:NO];
-            [_p2Potion3 setHidden:YES];
+            [self.p2Potion1 setHidden:NO];
+            [self.p2Potion2 setHidden:NO];
+            [self.p2Potion3 setHidden:YES];
             break;
         }
             
         case 1:
         {
-            [_p2Potion1 setHidden:NO];
-            [_p2Potion2 setHidden:YES];
-            [_p2Potion3 setHidden:YES];
+            [self.p2Potion1 setHidden:NO];
+            [self.p2Potion2 setHidden:YES];
+            [self.p2Potion3 setHidden:YES];
             break;
         }
             
         default:
         {
-            [_p2Potion1 setHidden:YES];
-            [_p2Potion2 setHidden:YES];
-            [_p2Potion3 setHidden:YES];
+            [self.p2Potion1 setHidden:YES];
+            [self.p2Potion2 setHidden:YES];
+            [self.p2Potion3 setHidden:YES];
             break;
         }
     }
@@ -272,7 +277,7 @@
     stringTextHolder = array;
     stringTextHolderCount = [array count];
     stringTextHolderCurrentCount = 0;
-    [_gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
+    [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
 }
 - (IBAction)continueText
 {
@@ -281,14 +286,14 @@
     {
         [self enableButtons];
         changeTurn();
-        [self screenForPlayer];
-        [_gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
+        [self setScreen];
+        [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
     }
     
     else
     {
         
-        [_gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
+        [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
     }
 }
 -(void) blinkingOkButton

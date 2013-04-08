@@ -43,7 +43,20 @@
 - (void) setSpecialScreen
 {
     [self.specPlayerName setTitle:[whosTurn() name] forState:UIControlStateNormal];
-    [self.specPlayerPot1 setHidden:YES];
+    [self.specPlayerHealthBar setValue:[whosTurn() health]];
+    [self.specPlayerHealthLabel setText:[NSString stringWithFormat:@"%i",[whosTurn() health]]];
+    
+    if (whosTurn() == player1)
+    {
+        [self.specPlayerImage setImage:[UIImage imageNamed:@"player1 powerup.png"]];
+        
+    }
+    
+    
+    else
+    {
+        [self.specPlayerImage setImage:[UIImage imageNamed:@"player2 powerup.png"]];
+    }
 }
 
 @end

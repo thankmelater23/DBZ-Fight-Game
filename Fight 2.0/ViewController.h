@@ -16,6 +16,7 @@
     int stringTextHolderCurrentCount;
     BOOL blinkingBoxBool;
     NSTimer *blinkingBoxTimer;
+    NSTimer *healthBarUpdater;
 }
 //GameScreen
 //Button Properties
@@ -48,6 +49,8 @@
 //UIImages
 @property (weak, nonatomic) IBOutlet UIImageView *player1Image;
 @property (weak, nonatomic) IBOutlet UIImageView *player2Image;
+@property (weak, nonatomic) IBOutlet UIImageView *player1BackGroundColor;
+@property (weak, nonatomic) IBOutlet UIImageView *player2BackGroundColor;
 
 
 
@@ -62,7 +65,7 @@
 - (IBAction)continueText;
 
 //Visual methods
--(void) screenForPlayer;
+-(void) setUniqueLookForCurrentPlayerTurn;
 -(void) setScreen;
 -(void) setHealthBar;
 
