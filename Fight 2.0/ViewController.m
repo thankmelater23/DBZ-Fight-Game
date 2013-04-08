@@ -260,8 +260,17 @@
             break;
         }
             
+        case 0:
+        {
+            [self.p2Potion1 setHidden:YES];
+            [self.p2Potion2 setHidden:YES];
+            [self.p2Potion3 setHidden:YES];
+            break;
+        }
+            
         default:
         {
+            NSLog(@"issue with setPotionsImage(variable is giving out wrong number");
             [self.p2Potion1 setHidden:YES];
             [self.p2Potion2 setHidden:YES];
             [self.p2Potion3 setHidden:YES];

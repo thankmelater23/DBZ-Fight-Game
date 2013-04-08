@@ -20,7 +20,6 @@
     int superAtackInARow,   superAttackTotal;
     
     //Special Holders
-    int doublePunch, tripleKick, SuperPunch;
     
     BOOL isFirstPlayer;
 }
@@ -29,6 +28,9 @@
 @property(nonatomic, strong)    NSString    *name;
 @property(nonatomic, readwrite) int         potions;
 @property(nonatomic, readwrite) int         health;
+@property(nonatomic, readwrite) int         doublePunch;
+@property(nonatomic, readwrite) int         tripleKick;
+@property(nonatomic, readwrite) int         superPunch;
 
 //Methods
 

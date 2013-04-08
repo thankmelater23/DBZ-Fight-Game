@@ -28,9 +28,9 @@
         superAttackTotal = 0;
         
         //Special Holders
-        doublePunch = 0;
-        tripleKick =  0;
-        SuperPunch =  0;
+        _doublePunch = 0;
+        _tripleKick =  0;
+        _superPunch =  0;
     }
     
     return self;
@@ -82,12 +82,12 @@
         if (punchesInARow == punchSpecail1Attainer1)
         {
             special1String = [NSString stringWithFormat: @"Special attack added after landing %i consecutive punches", punchSpecail1Attainer1];
-            doublePunch++;
+            self.doublePunch++;
             punchesInARow = 0;
             
-            if (doublePunch >= 3)
+            if (self.doublePunch >= 3)
             {
-                doublePunch = 3;
+                self.doublePunch = 3;
             }
             NSLog(@"punches in a row: %i", punchesInARow);
             
@@ -154,7 +154,7 @@
             NSLog(@"punches in a row: %i", kickInArow);
             kickInArow = 0;
             //Do code to make special happen
-            tripleKick++;
+            self.tripleKick++;
             
         }
         
@@ -212,7 +212,7 @@
             NSLog(@"super in a row: %i", superAtackInARow);
             superAtackInARow = 0;
             //Do code to make special happen
-            SuperPunch++;
+            self.superPunch++;
         }
         
         if (kicksTotal == superSpecail1Attainer2)

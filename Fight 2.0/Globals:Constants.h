@@ -86,6 +86,9 @@ SystemSoundID sIDSwapLife;
 #define superSpecail1Attainer1   2
 #define superSpecail1Attainer2   4
 
+#define specialScreenImagesFadeOut 0.4
+#define specialScreenImagesFadeIn  1.0
+
 BOOL continueTextBool;
 
 #endif
