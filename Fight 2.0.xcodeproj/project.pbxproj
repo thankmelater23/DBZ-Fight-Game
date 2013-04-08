@@ -24,8 +24,6 @@
 		E6B4AD36170D891500D8ACDF /* fightStick.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD07170D891500D8ACDF /* fightStick.png */; };
 		E6B4AD37170D891500D8ACDF /* hng.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD08170D891500D8ACDF /* hng.png */; };
 		E6B4AD38170D891500D8ACDF /* hp_potion.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD09170D891500D8ACDF /* hp_potion.png */; };
-		E6B4AD39170D891500D8ACDF /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD0A170D891500D8ACDF /* icon_57x57.png */; };
-		E6B4AD3A170D891500D8ACDF /* icon_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD0B170D891500D8ACDF /* icon_57x57@2x.png */; };
 		E6B4AD3B170D891500D8ACDF /* player1 block.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD0C170D891500D8ACDF /* player1 block.png */; };
 		E6B4AD3C170D891500D8ACDF /* player1 dodge.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD0D170D891500D8ACDF /* player1 dodge.png */; };
 		E6B4AD3D170D891500D8ACDF /* player1 hit.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD0E170D891500D8ACDF /* player1 hit.png */; };
@@ -67,10 +65,11 @@
 		E6BF438F171268A9004C4EB8 /* Hill background.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6BF438A171268A9004C4EB8 /* Hill background.gif */; };
 		E6BF439217126E13004C4EB8 /* redBox.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF439017126E13004C4EB8 /* redBox.png */; };
 		E6BF439317126E13004C4EB8 /* blueBox.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF439117126E13004C4EB8 /* blueBox.png */; };
-		E6BF439A1712DDA3004C4EB8 /* icon_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF43981712DDA3004C4EB8 /* icon_57x57@2x.png */; };
-		E6BF439D1712DDBF004C4EB8 /* icon_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF439C1712DDBF004C4EB8 /* icon_57x57@2x.png */; };
-		E6BF439F1712DDDD004C4EB8 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF439E1712DDDD004C4EB8 /* icon_57x57.png */; };
-		E6BF43A11712DDE7004C4EB8 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF43A01712DDE7004C4EB8 /* icon_57x57.png */; };
+		E6BF43A31712F7B0004C4EB8 /* icon_72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF43A21712F7B0004C4EB8 /* icon_72x72@2x.png */; };
+		E6BF43A51712F7B8004C4EB8 /* icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF43A41712F7B8004C4EB8 /* icon_72x72.png */; };
+		E6BF43A71712F7CF004C4EB8 /* dbz logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6BF43A61712F7CF004C4EB8 /* dbz logo.jpg */; };
+		E6BF43AA1712F86F004C4EB8 /* th_Dbz-logo-135.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF43A81712F86F004C4EB8 /* th_Dbz-logo-135.png */; };
+		E6BF43AB1712F86F004C4EB8 /* vs dbz.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6BF43A91712F86F004C4EB8 /* vs dbz.jpeg */; };
 		E6EFFAF5170D87FD004B9197 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EFFAF4170D87FD004B9197 /* UIKit.framework */; };
 		E6EFFAF7170D87FD004B9197 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EFFAF6170D87FD004B9197 /* Foundation.framework */; };
 		E6EFFAF9170D87FD004B9197 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EFFAF8170D87FD004B9197 /* CoreGraphics.framework */; };
@@ -109,8 +108,6 @@
 		E6B4AD07170D891500D8ACDF /* fightStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightStick.png; sourceTree = "<group>"; };
 		E6B4AD08170D891500D8ACDF /* hng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hng.png; sourceTree = "<group>"; };
 		E6B4AD09170D891500D8ACDF /* hp_potion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp_potion.png; sourceTree = "<group>"; };
-		E6B4AD0A170D891500D8ACDF /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57x57.png; sourceTree = "<group>"; };
-		E6B4AD0B170D891500D8ACDF /* icon_57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_57x57@2x.png"; sourceTree = "<group>"; };
 		E6B4AD0C170D891500D8ACDF /* player1 block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 block.png"; sourceTree = "<group>"; };
 		E6B4AD0D170D891500D8ACDF /* player1 dodge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 dodge.png"; sourceTree = "<group>"; };
 		E6B4AD0E170D891500D8ACDF /* player1 hit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 hit.png"; sourceTree = "<group>"; };
@@ -152,10 +149,11 @@
 		E6BF438A171268A9004C4EB8 /* Hill background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Hill background.gif"; sourceTree = "<group>"; };
 		E6BF439017126E13004C4EB8 /* redBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redBox.png; sourceTree = "<group>"; };
 		E6BF439117126E13004C4EB8 /* blueBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBox.png; sourceTree = "<group>"; };
-		E6BF43981712DDA3004C4EB8 /* icon_57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_57x57@2x.png"; sourceTree = "<group>"; };
-		E6BF439C1712DDBF004C4EB8 /* icon_57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_57x57@2x.png"; path = "../icon_57x57@2x.png"; sourceTree = "<group>"; };
-		E6BF439E1712DDDD004C4EB8 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57x57.png; sourceTree = "<group>"; };
-		E6BF43A01712DDE7004C4EB8 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_57x57.png; path = ../icon_57x57.png; sourceTree = "<group>"; };
+		E6BF43A21712F7B0004C4EB8 /* icon_72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_72x72@2x.png"; sourceTree = "<group>"; };
+		E6BF43A41712F7B8004C4EB8 /* icon_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_72x72.png; sourceTree = "<group>"; };
+		E6BF43A61712F7CF004C4EB8 /* dbz logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dbz logo.jpg"; sourceTree = "<group>"; };
+		E6BF43A81712F86F004C4EB8 /* th_Dbz-logo-135.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "th_Dbz-logo-135.png"; sourceTree = "<group>"; };
+		E6BF43A91712F86F004C4EB8 /* vs dbz.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "vs dbz.jpeg"; sourceTree = "<group>"; };
 		E6EFFAF1170D87FD004B9197 /* Fight 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fight 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6EFFAF4170D87FD004B9197 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E6EFFAF6170D87FD004B9197 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -241,12 +239,10 @@
 		E6B4AD61170D8DDC00D8ACDF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				E6BF43981712DDA3004C4EB8 /* icon_57x57@2x.png */,
-				E6BF43A01712DDE7004C4EB8 /* icon_57x57.png */,
-				E6BF439C1712DDBF004C4EB8 /* icon_57x57@2x.png */,
-				E6BF439E1712DDDD004C4EB8 /* icon_57x57.png */,
 				E6020B1317100F8300DAE734 /* Space Jupitor Earh Background.jpg */,
 				E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */,
+				E6BF43A81712F86F004C4EB8 /* th_Dbz-logo-135.png */,
+				E6BF43A91712F86F004C4EB8 /* vs dbz.jpeg */,
 				E6EFFB06170D87FD004B9197 /* Default.png */,
 				E6EFFB08170D87FD004B9197 /* Default@2x.png */,
 				E6EFFB0A170D87FD004B9197 /* Default-568h@2x.png */,
@@ -259,6 +255,7 @@
 				E6B4AD04170D891500D8ACDF /* Arrow+01.png */,
 				E6B4AD05170D891500D8ACDF /* back-arrow-hi.png */,
 				E6B4AD06170D891500D8ACDF /* exchange arrow.png */,
+				E6BF43A61712F7CF004C4EB8 /* dbz logo.jpg */,
 				E6B4AD07170D891500D8ACDF /* fightStick.png */,
 				E6B4AD08170D891500D8ACDF /* hng.png */,
 				E6BF439017126E13004C4EB8 /* redBox.png */,
@@ -266,8 +263,6 @@
 				E6020B471710304B00DAE734 /* yellowBox.png */,
 				E6020B481710304B00DAE734 /* whiteBox.png */,
 				E6B4AD09170D891500D8ACDF /* hp_potion.png */,
-				E6B4AD0A170D891500D8ACDF /* icon_57x57.png */,
-				E6B4AD0B170D891500D8ACDF /* icon_57x57@2x.png */,
 				E6B4AD0C170D891500D8ACDF /* player1 block.png */,
 				E6B4AD0D170D891500D8ACDF /* player1 dodge.png */,
 				E6B4AD0E170D891500D8ACDF /* player1 hit.png */,
@@ -311,6 +306,8 @@
 		E6EFFAE8170D87FD004B9197 = {
 			isa = PBXGroup;
 			children = (
+				E6BF43A41712F7B8004C4EB8 /* icon_72x72.png */,
+				E6BF43A21712F7B0004C4EB8 /* icon_72x72@2x.png */,
 				E6EFFAFA170D87FD004B9197 /* Fight 2.0 */,
 				E6EFFAF3170D87FD004B9197 /* Frameworks */,
 				E6EFFAF2170D87FD004B9197 /* Products */,
@@ -430,8 +427,6 @@
 				E6B4AD36170D891500D8ACDF /* fightStick.png in Resources */,
 				E6B4AD37170D891500D8ACDF /* hng.png in Resources */,
 				E6B4AD38170D891500D8ACDF /* hp_potion.png in Resources */,
-				E6B4AD39170D891500D8ACDF /* icon_57x57.png in Resources */,
-				E6B4AD3A170D891500D8ACDF /* icon_57x57@2x.png in Resources */,
 				E6B4AD3B170D891500D8ACDF /* player1 block.png in Resources */,
 				E6B4AD3C170D891500D8ACDF /* player1 dodge.png in Resources */,
 				E6B4AD3D170D891500D8ACDF /* player1 hit.png in Resources */,
@@ -474,10 +469,11 @@
 				E6BF438F171268A9004C4EB8 /* Hill background.gif in Resources */,
 				E6BF439217126E13004C4EB8 /* redBox.png in Resources */,
 				E6BF439317126E13004C4EB8 /* blueBox.png in Resources */,
-				E6BF439A1712DDA3004C4EB8 /* icon_57x57@2x.png in Resources */,
-				E6BF439D1712DDBF004C4EB8 /* icon_57x57@2x.png in Resources */,
-				E6BF439F1712DDDD004C4EB8 /* icon_57x57.png in Resources */,
-				E6BF43A11712DDE7004C4EB8 /* icon_57x57.png in Resources */,
+				E6BF43A31712F7B0004C4EB8 /* icon_72x72@2x.png in Resources */,
+				E6BF43A51712F7B8004C4EB8 /* icon_72x72.png in Resources */,
+				E6BF43A71712F7CF004C4EB8 /* dbz logo.jpg in Resources */,
+				E6BF43AA1712F86F004C4EB8 /* th_Dbz-logo-135.png in Resources */,
+				E6BF43AB1712F86F004C4EB8 /* vs dbz.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
