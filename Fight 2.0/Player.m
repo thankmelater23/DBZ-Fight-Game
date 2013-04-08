@@ -291,13 +291,14 @@
                 self.health = healthMax;
             }
             
+            changeTurn();
             return string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];
         }
         
         else
         {
             NSLog(@"Potion did not work");
-            
+            changeTurn();
             return string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
             
         }

@@ -80,7 +80,6 @@
 {
     [self.gameTextBox setText:[whosTurn() usePotion]];
     [self setScreen];
-    changeTurn();
 }//Potion button
 -(IBAction) swapLife
 {
@@ -213,33 +212,33 @@
     {
         case 3:
         {
-            [self.p1Potion1 setHidden:NO];
-            [self.p1Potion2 setHidden:NO];
-            [self.p1Potion3 setHidden:NO];
+            [self.p1Potion1 setAlpha:specialScreenImagesFadeIn];
+            [self.p1Potion2 setAlpha:specialScreenImagesFadeIn];
+            [self.p1Potion3 setAlpha:specialScreenImagesFadeIn];
             break;
         }
             
         case 2:
         {
-            [self.p1Potion1 setHidden:NO];
-            [self.p1Potion2 setHidden:NO];
-            [self.p1Potion3 setHidden:YES];
+            [self.p1Potion1 setAlpha:specialScreenImagesFadeIn];
+            [self.p1Potion2 setAlpha:specialScreenImagesFadeIn];
+            [self.p1Potion3 setAlpha:specialScreenImagesFadeOut];
             break;
         }
             
         case 1:
         {
-            [self.p1Potion1 setHidden:NO];
-            [self.p1Potion2 setHidden:YES];
-            [self.p1Potion3 setHidden:YES];
+            [self.p1Potion1 setAlpha:specialScreenImagesFadeIn];
+            [self.p1Potion2 setAlpha:specialScreenImagesFadeOut];
+            [self.p1Potion3 setAlpha:specialScreenImagesFadeOut];
             break;
         }
             
         default:
         {
-            [self.p1Potion1 setHidden:YES];
-            [self.p1Potion2 setHidden:YES];
-            [self.p1Potion3 setHidden:YES];
+            [self.p1Potion1 setAlpha:specialScreenImagesFadeOut];
+            [self.p1Potion2 setAlpha:specialScreenImagesFadeOut];
+            [self.p1Potion3 setAlpha:specialScreenImagesFadeOut];
             break;
         }
     }
@@ -248,42 +247,42 @@
     {
         case 3:
         {
-            [self.p2Potion1 setHidden:NO];
-            [self.p2Potion2 setHidden:NO];
-            [self.p2Potion3 setHidden:NO];
+            [self.p2Potion1 setAlpha:specialScreenImagesFadeIn];
+            [self.p2Potion2 setAlpha:specialScreenImagesFadeIn];
+            [self.p2Potion3 setAlpha:specialScreenImagesFadeIn];
             break;
         }
             
         case 2:
         {
-            [self.p2Potion1 setHidden:NO];
-            [self.p2Potion2 setHidden:NO];
-            [self.p2Potion3 setHidden:YES];
+            [self.p2Potion1 setAlpha:specialScreenImagesFadeIn];
+            [self.p2Potion2 setAlpha:specialScreenImagesFadeIn];
+            [self.p2Potion3 setAlpha:specialScreenImagesFadeOut];
             break;
         }
             
         case 1:
         {
-            [self.p2Potion1 setHidden:NO];
-            [self.p2Potion2 setHidden:YES];
-            [self.p2Potion3 setHidden:YES];
+            [self.p2Potion1 setAlpha:specialScreenImagesFadeIn];
+            [self.p2Potion2 setAlpha:specialScreenImagesFadeOut];
+            [self.p2Potion3 setAlpha:specialScreenImagesFadeOut];
             break;
         }
             
         case 0:
         {
-            [self.p2Potion1 setHidden:YES];
-            [self.p2Potion2 setHidden:YES];
-            [self.p2Potion3 setHidden:YES];
+            [self.p2Potion1 setAlpha:specialScreenImagesFadeOut];
+            [self.p2Potion2 setAlpha:specialScreenImagesFadeOut];
+            [self.p2Potion3 setAlpha:specialScreenImagesFadeOut];
             break;
         }
             
         default:
         {
             NSLog(@"issue with setPotionsImage(variable is giving out wrong number");
-            [self.p2Potion1 setHidden:YES];
-            [self.p2Potion2 setHidden:YES];
-            [self.p2Potion3 setHidden:YES];
+            [self.p2Potion1 setAlpha:specialScreenImagesFadeOut];
+            [self.p2Potion2 setAlpha:specialScreenImagesFadeOut];
+            [self.p2Potion3 setAlpha:specialScreenImagesFadeOut];
             break;
         }
     }
