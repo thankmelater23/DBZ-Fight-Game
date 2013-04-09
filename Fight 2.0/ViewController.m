@@ -181,7 +181,7 @@
     }
     
     
-    [self.player1HealthBar setValue: [player1 health]];
+    [self.player1HealthBar setValue: 100 - ([player1 health])];
     [self.player2HealthBar setValue: [player2 health]];
     [self.player1HealthButton setText:[NSString stringWithFormat:@"%i", [player1 health]]];
     [self.player2HealthButton setText:[NSString stringWithFormat:@"%i", [player2 health]]];

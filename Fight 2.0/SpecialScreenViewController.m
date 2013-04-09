@@ -48,7 +48,7 @@
     [self setSpecial2Images];
     [self setSpecial3Images];
     [self.specPlayerName setTitle:[whosTurn() name] forState:UIControlStateNormal];
-    [self.specPlayerHealthBar setValue:[whosTurn() health]];
+    [self.specPlayerHealthBar setValue: 100 - ([whosTurn() health])];
     [self.specPlayerHealthLabel setText:[NSString stringWithFormat:@"%i",[whosTurn() health]]];
     
     if (whosTurn() == player1)
