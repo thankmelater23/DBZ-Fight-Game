@@ -90,7 +90,8 @@ int turnsCompleted;
 #define superSpecail1Attainer2   4
 
 //Special attacks defines
-#define bloodFlowHealthPoints 20
+#define bloodFlowHealthPoints   20
+#define desperationHealthPoints 20
 
 //Game setting define
 #define specialScreenImagesFadeOut 0.3

@@ -20,6 +20,9 @@
     int kickInArow,         kicksTotal;
     int superAtackInARow,   superAttackTotal;
     
+    //Other
+    int potionDuds;//Keeps count of how many potions didn't work
+    
     //Special Holders
     BOOL isFirstPlayer;
 }
@@ -46,7 +49,7 @@
 -(NSMutableArray*) doublePunchSpecial;
 -(NSMutableArray*) tripleKickSpecial;
 -(NSMutableArray*) superPunchSpecial;
--(NSString*)       usePotion;
+-(NSMutableArray*) usePotion;
 -(NSString*)       swapLife;
 
 

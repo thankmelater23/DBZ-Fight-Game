@@ -78,7 +78,8 @@
 }//Super attack button
 -(IBAction) potion
 {
-    [self.gameTextBox setText:[whosTurn() usePotion]];
+    [self textLoader:[whosTurn() usePotion]];
+    [self textBoxEnabled];
     [self setScreen];
 }//Potion button
 -(IBAction) swapLife

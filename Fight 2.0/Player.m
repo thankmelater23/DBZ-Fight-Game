@@ -259,6 +259,7 @@
         return damageDoneString;
     }
 }
+//Specials
 -(NSMutableArray*) doublePunchSpecial
 {
     NSMutableArray *array;
@@ -273,9 +274,29 @@
     NSMutableArray *array;
     return array;
 }
--(NSString*)      usePotion
+//Auto Specials
+-(NSString*) desperation
 {
     NSString *string;
+    string = [NSString stringWithFormat:@"None of the potions worked, %@ got desperate!\nDESPERATION activated\n%@ recieved %i health points", [self name], [self name], desperationHealthPoints];
+    [self addHealth:desperationHealthPoints];
+    return string;
+    
+}
+-(NSMutableArray*) deathBlow
+{
+    
+}
+-(NSMutableArray*) kickAndGrab
+{
+    
+}
+
+-(NSMutableArray*)      usePotion
+{
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
+    NSString *string;
+    NSString *desperationString;
     
     if (self.potions > 0)
     {
@@ -285,21 +306,23 @@
         if (num == 1 || num == 3)
         {
             playSound(sIDPotion);
-            self.health += potionStrength;
-            if (self.health >= healthMax)
-            {
-                self.health = healthMax;
-            }
-            
+            [self addHealth:potionStrength];
+
+            string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];
             changeTurn();
-            return string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];
+            
         }
         
         else
         {
             NSLog(@"Potion did not work");
+            potionDuds--;
+            if (potionDuds == 3)
+            {
+                desperationString = [self desperation];
+            }
+            string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
             changeTurn();
-            return string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
             
         }
     }
@@ -307,15 +330,26 @@
     else
     {
         [self setPotions:0];
-        return string = [NSString stringWithFormat:@"No potions left\nPotions: %i", [self potions]];
+        string = [NSString stringWithFormat:@"No potions left\nPotions: %i", [self potions]];
     }
     
+    if (string != nil)
+    {
+        [array addObject:string];
+    }
+    
+    if (desperationString != nil)
+    {
+        [array addObject:desperationString];
+    }
+    
+    return array;
 }
 -(NSString*)      swapLife
 {
-    
-    int num = randomNumber(swapLifeChanceMin, swapLifeChanceMax);
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
     NSString *string;
+    int num = randomNumber(swapLifeChanceMin, swapLifeChanceMax);
     
     if  ((num == 2 && swapLifeUsed == NO) || (num == 0 && swapLifeUsed == NO))
     {
@@ -373,7 +407,7 @@
     {
         self.health = healthMax;
     }
-}
+}//Adds health to player and doesnt let it exceed the maximum health points
 -(void) setPlayerImageTimer:(UIImageView*) playerImg imageName:(NSString*) string
 {
     [playerImg setImage:[UIImage imageNamed:string]];
