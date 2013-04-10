@@ -65,10 +65,9 @@
     
 }//Punch button
 -(IBAction) kick
-{
-    [self.gameTextBox setText:[whosTurn() kickOpp]];
-    changeTurn();
-    [self setScreen];
+{    
+    [self textLoader:[whosTurn() kickOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
+    [self textBoxEnabled];
 }//Kick Button
 -(IBAction) Super
 {

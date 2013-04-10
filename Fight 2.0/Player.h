@@ -44,7 +44,7 @@
 //GamnePlay Methods
 //Attacks
 -(NSMutableArray*) punchOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
--(NSString*)       kickOpp;
+-(NSMutableArray*) kickOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 -(NSString*)       superAtackOpp;
 -(NSMutableArray*) doublePunchSpecial;
 -(NSMutableArray*) tripleKickSpecial;
