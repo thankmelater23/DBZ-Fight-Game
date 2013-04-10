@@ -73,6 +73,7 @@
         if (isFirstPlayer == YES)
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 right punch.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 hit.png"];
             //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
             
     
@@ -81,6 +82,7 @@
         else
         {
             [self setPlayerImageTimer:p2Image imageName:@"player2 punch.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
         }
         
         
@@ -115,6 +117,20 @@
     {
         //Play punch missed sound
         playSound(sIDMissed);
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 right punch.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
+            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            
+            
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 punch.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
+        }
         
         //Reset some feauturs for hit being missed
         punchesInARow = 0;

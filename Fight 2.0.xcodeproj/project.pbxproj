@@ -17,6 +17,7 @@
 		E668450E17158AA4002E8279 /* player2 ready.png in Resources */ = {isa = PBXBuildFile; fileRef = E668450C17158AA3002E8279 /* player2 ready.png */; };
 		E668450F17158AA4002E8279 /* player1 ready.png in Resources */ = {isa = PBXBuildFile; fileRef = E668450D17158AA3002E8279 /* player1 ready.png */; };
 		E668451117159607002E8279 /* player2 stand.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451017159607002E8279 /* player2 stand.png */; };
+		E668451317159AFB002E8279 /* player1 miss.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451217159AFB002E8279 /* player1 miss.png */; };
 		E6B4AD2B170D891500D8ACDF /* reg back arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */; };
 		E6B4AD2C170D891500D8ACDF /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFD170D891500D8ACDF /* click.mp3 */; };
 		E6B4AD2E170D891500D8ACDF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4ACFF170D891500D8ACDF /* MenuViewController.m */; };
@@ -116,6 +117,7 @@
 		E668450C17158AA3002E8279 /* player2 ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player2 ready.png"; sourceTree = "<group>"; };
 		E668450D17158AA3002E8279 /* player1 ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 ready.png"; sourceTree = "<group>"; };
 		E668451017159607002E8279 /* player2 stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player2 stand.png"; sourceTree = "<group>"; };
+		E668451217159AFB002E8279 /* player1 miss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 miss.png"; sourceTree = "<group>"; };
 		E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Globals:Constants.h"; sourceTree = "<group>"; };
 		E6B4ACF6170D891500D8ACDF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E6B4ACF7170D891500D8ACDF /* Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Methods.h; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		E6B4AD61170D8DDC00D8ACDF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E668451217159AFB002E8279 /* player1 miss.png */,
 				E6020B1317100F8300DAE734 /* Space Jupitor Earh Background.jpg */,
 				E6BF43AC17138BC2004C4EB8 /* ball2.png */,
 				E6BF43AD17138BC2004C4EB8 /* ball4.png */,
@@ -554,6 +557,7 @@
 				E668450E17158AA4002E8279 /* player2 ready.png in Resources */,
 				E668450F17158AA4002E8279 /* player1 ready.png in Resources */,
 				E668451117159607002E8279 /* player2 stand.png in Resources */,
+				E668451317159AFB002E8279 /* player1 miss.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
