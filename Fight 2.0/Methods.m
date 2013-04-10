@@ -51,12 +51,12 @@ void   changeTurn()
     else
     {
         turn = enumPlayer1;
-    }
+    } 
     }
     
     else
     {
-       skipTurn = NO; 
+       skipTurn = NO;
     }
     turnsCompleted++;
 }
@@ -73,7 +73,7 @@ Player *whosTurn()
         NSLog(@"Player2 Turn");
         return player2;
     }
-}
+}//Return the player who turn it is by using enum if statements to alternate each time the method is called and skip turn isnt enabled to skip turn and change players
 Player *whosNotTurn()
 {
     if (turn != enumPlayer1)
@@ -87,8 +87,8 @@ Player *whosNotTurn()
         NSLog(@"Not Player2 Turn");
         return player2;
     }
-}
-void   turnGenerator()//Remake turn generator from view controller
+}//Returns whos turn its not right now
+void   turnGenerator()
 {
     int num = randomNumber(1, 2);
     if ( num == 1)
@@ -100,7 +100,7 @@ void   turnGenerator()//Remake turn generator from view controller
     {
         turn = enumPlayer2;
     }
-}
+}//Generates a random player to be able to go first
 
 
 //SFX
@@ -131,7 +131,7 @@ void   initAudio()
 void   playSound(SystemSoundID soundID)
 {
     AudioServicesPlaySystemSound(soundID);
-}
+}//Allocates and initialize all systemSound id's with audio
 
 
 //Game Engine Methods
@@ -148,11 +148,11 @@ int  randomNumber(int min, int max)
     
     NSLog(@"random number generated from: \nMIN:%i\nMAX:%i\nNumber:%i", min, max, num);
     return num;
-}
+}//returns a random integer between the min & max paramaters
 void setToNumber(int var, int setNumber)
 {
     if (var >= setNumber)
     {
         var = setNumber;
     }
-}
+}//Assigns var to setNumber if car is more then setNumber(Method to keep vars from going past max

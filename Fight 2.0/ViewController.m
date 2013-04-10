@@ -61,7 +61,6 @@
 -(IBAction) punch
 {
     [self textLoader:[whosTurn() punchOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
-    
     [self textBoxEnabled];
     
 }//Punch button
@@ -84,7 +83,8 @@
 }//Potion button
 -(IBAction) swapLife
 {
-    [self.gameTextBox setText:[whosTurn() swapLife]];
+    [self textLoader:[whosTurn() swapLife]];
+    [self textBoxEnabled];
     [self setScreen];
 }//Swaps players life only can be used once a game and also has a low percentage
 
@@ -304,7 +304,6 @@
     if (stringTextHolderCurrentCount >= stringTextHolderCount)
     {
         [self enableButtons];
-        changeTurn();
         [self setScreen];
         [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
     }

@@ -50,7 +50,7 @@
 -(NSMutableArray*) tripleKickSpecial;
 -(NSMutableArray*) superPunchSpecial;
 -(NSMutableArray*) usePotion;
--(NSString*)       swapLife;
+-(NSMutableArray*) swapLife;
 
 
 //Game methods

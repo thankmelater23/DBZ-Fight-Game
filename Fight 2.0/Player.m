@@ -31,6 +31,10 @@
         _doublePunch = 0;
         _tripleKick =  0;
         _superPunch =  0;
+        
+        //Others
+        potionDuds = 0;
+        
     }
     
     return self;
@@ -135,6 +139,7 @@
         [array addObject:special2String];
     }
     
+    changeTurn();
     return array;
 }
 -(NSString*)      kickOpp
@@ -275,7 +280,7 @@
     return array;
 }
 //Auto Specials
--(NSString*) desperation
+-(NSString*)      desperation
 {
     NSString *string;
     string = [NSString stringWithFormat:@"None of the potions worked, %@ got desperate!\nDESPERATION activated\n%@ recieved %i health points", [self name], [self name], desperationHealthPoints];
@@ -292,7 +297,7 @@
     
 }
 
--(NSMutableArray*)      usePotion
+-(NSMutableArray*) usePotion
 {
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
     NSString *string;
@@ -309,7 +314,6 @@
             [self addHealth:potionStrength];
 
             string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];
-            changeTurn();
             
         }
         
@@ -322,9 +326,10 @@
                 desperationString = [self desperation];
             }
             string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
-            changeTurn();
             
         }
+        
+        changeTurn();
     }
     
     else
@@ -345,10 +350,12 @@
     
     return array;
 }
--(NSString*)      swapLife
+-(NSMutableArray*) swapLife
 {
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
     NSString *string;
+    NSString *string2;
+    NSString *string3;
     int num = randomNumber(swapLifeChanceMin, swapLifeChanceMax);
     
     if  ((num == 2 && swapLifeUsed == NO) || (num == 0 && swapLifeUsed == NO))
@@ -359,23 +366,41 @@
         other.health = tempHealth;
         
         NSLog(@"Life switches");
-        changeTurn();
         swapLifeUsed = YES;
-        return string = [NSString stringWithFormat:@"Life Swap succesfucl\nPrevious Health:\n%@ Health: %i\n%@ Health: %i\n\nNew Health:\n%@ Health: %i\n%@ Health: %i", [self name], [self health], [other name], [other health], [self name], [self health], [other name], [other health]];
+        string = [NSString stringWithFormat:@"Life Swap succesfucl"];
+        string2 = [NSString stringWithFormat:@"Previous Health:\n%@ Health: %i\n%@ Health: %i", [self name], [self health], [other name], [other health]];
+        string3 = [NSString stringWithFormat:@"New Health:\n%@ Health: %i\n%@ Health: %i", [self name], [self health], [other name], [other health]];
+        changeTurn();
     }
     
     else if (swapLifeUsed == YES)
     {
         NSLog(@"Life swap unavailable");
-        return string = [NSString stringWithFormat:@"Life Swap Unavailable"];
+        string = [NSString stringWithFormat:@"Life Swap Unavailable"];
     }
     else
     {
         NSLog(@"Life Not switched");
-        changeTurn();
         swapLifeUsed = YES;
-        return string = [NSString stringWithFormat:@"Life Swap unsuccesful"];
+        string = [NSString stringWithFormat:@"Life Swap unsuccesful"];
+        changeTurn();
     }
+    
+    if (string != nil)
+    {
+        [array addObject:string];
+    }
+    
+    if (string2 != nil)
+    {
+        [array addObject:string2];
+    }
+    
+    if (string3 != nil)
+    {
+        [array addObject:string3];
+    }
+    return array;
 }
 
 
