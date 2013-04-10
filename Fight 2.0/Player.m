@@ -414,16 +414,12 @@
             if (isFirstPlayer == YES)
             {
                 [self setPlayerImageTimer:p1Image imageName:@"player1 powerup.png"];
-                [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
-                //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
-                
                 
             }
             
             else
             {
                 [self setPlayerImageTimer:p2Image imageName:@"player2 powerup.png"];
-                [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
             }
             
         }
