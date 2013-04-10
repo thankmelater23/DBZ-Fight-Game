@@ -139,7 +139,7 @@
     changeTurn();
     return array;
 }
--(NSMutableArray*) kickOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
+-(NSMutableArray*) kickOpp:(UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
     NSString *damageDoneString;
     NSString *special1String;
@@ -184,7 +184,6 @@
             kickInArow = 0;
             
             NSLog(@"kicks in a row: %i", kickInArow);
-            
         }
         
         if (kicksTotal == kickSpecail1Attainer2)
@@ -227,51 +226,63 @@
     changeTurn();
     return array;
 }
-
-
--(NSString*)      superAtackOpp
+-(NSMutableArray*) superOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
+    NSString *damageDoneString;
+    NSString *special1String;
+    NSString *special2String;
+    NSString *special2AttackString;
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
+    
     int hitOrMiss = randomNumber(superMinPerc, superMaxPerc);//Returns if player will hit or miss
     int hitPoins = superDamage;
-    NSString *damageDoneString;
     
     //Hit miss rand
     if (hitOrMiss == 0 || hitOrMiss == 4)
     {
         playSound(sIDSuper);
-       
+        playSound(sIDPain);
         superAtackInARow++;
         superAttackTotal++;
-        
-        if (superAtackInARow == superSpecail1Attainer1)
-        {
-            NSLog(@"super in a row: %i", superAtackInARow);
-            superAtackInARow = 0;
-            //Do code to make special happen
-            self.superPunch++;
-            setToNumber(self.superPunch, specialsAndPotionsMax);
-        }
-        
-        if (superAttackTotal == superSpecail1Attainer2)
-        {
-            NSLog(@"super total: %i", superAttackTotal);
-            superAttackTotal = 0;
-            //Do code to make special happen
-        }
-        
-        
-        //Set up damage and health change
         [other takeDamage:hitPoins];
         
         damageDoneString = [NSString stringWithFormat: @"%@ Super hit, damage of: %i\n%@ life: %i", [self name], hitPoins, [other name], [other health]];
         
-        //Add timer for hurt sound
-        playSound(sIDPain);
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
+            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            
+            
+        }
         
-        //Retrn string
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+        }
+        
+        if (superAtackInARow == superSpecail1Attainer1)
+        {
+            special1String = [NSString stringWithFormat: @"Special attack added after landing %i consecutive Super Hits", superSpecail1Attainer1];
+            self.superPunch++;
+            setToNumber(self.superPunch, specialsAndPotionsMax);
+            
+            superAtackInARow = 0;
+            
+            NSLog(@"super in a row: %i", superAtackInARow);
+        }
+        
+        if (superAttackTotal == superSpecail1Attainer2)
+        {
+            special2String = [NSString stringWithFormat: @"Special attack activated after landing %i total kicks", superSpecail1Attainer2];
+            
+            special2AttackString = nil;//Enter in right method special
+            
+            superAttackTotal = 0;
+            
+            NSLog(@"super total: %i", superAttackTotal);
+            }
         changeTurn();
-        return damageDoneString;
-
     }
     
     else
@@ -288,9 +299,24 @@
         skipTurn = NO;
         changeTurn();
         skipTurn = YES;
-        
-        return damageDoneString;
     }
+    
+    if (damageDoneString != nil)
+    {
+        [array addObject:damageDoneString];
+    }
+    
+    if (special1String != nil)
+    {
+        [array addObject:special1String];
+    }
+    
+    if (special2String != nil)
+    {
+        [array addObject:special2String];
+    }
+    
+    return array;
 }
 //Specials
 -(NSMutableArray*) doublePunchSpecial

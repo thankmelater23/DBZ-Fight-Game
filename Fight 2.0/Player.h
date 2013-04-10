@@ -45,7 +45,7 @@
 //Attacks
 -(NSMutableArray*) punchOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 -(NSMutableArray*) kickOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
--(NSString*)       superAtackOpp;
+-(NSMutableArray*) superOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 -(NSMutableArray*) doublePunchSpecial;
 -(NSMutableArray*) tripleKickSpecial;
 -(NSMutableArray*) superPunchSpecial;

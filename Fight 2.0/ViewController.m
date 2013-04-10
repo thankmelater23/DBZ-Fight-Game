@@ -71,8 +71,8 @@
 }//Kick Button
 -(IBAction) Super
 {
-    [self.gameTextBox setText:[whosTurn() superAtackOpp]];
-    [self setScreen];
+    [self textLoader:[whosTurn() superOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
+    [self textBoxEnabled];
 }//Super attack button
 -(IBAction) potion
 {
