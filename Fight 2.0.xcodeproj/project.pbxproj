@@ -11,6 +11,7 @@
 		E6020B491710304C00DAE734 /* yellowBox.png in Resources */ = {isa = PBXBuildFile; fileRef = E6020B471710304B00DAE734 /* yellowBox.png */; };
 		E6020B4A1710304C00DAE734 /* whiteBox.png in Resources */ = {isa = PBXBuildFile; fileRef = E6020B481710304B00DAE734 /* whiteBox.png */; };
 		E6020B5317104D4700DAE734 /* SpecialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6020B5217104D4700DAE734 /* SpecialScreenViewController.m */; };
+		E668450317158366002E8279 /* Save&LoadList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E668450217158366002E8279 /* Save&LoadList.plist */; };
 		E6B4AD2B170D891500D8ACDF /* reg back arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */; };
 		E6B4AD2C170D891500D8ACDF /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFD170D891500D8ACDF /* click.mp3 */; };
 		E6B4AD2E170D891500D8ACDF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4ACFF170D891500D8ACDF /* MenuViewController.m */; };
@@ -104,6 +105,7 @@
 		E6020B481710304B00DAE734 /* whiteBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteBox.png; sourceTree = "<group>"; };
 		E6020B5117104D4600DAE734 /* SpecialScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialScreenViewController.h; sourceTree = "<group>"; };
 		E6020B5217104D4700DAE734 /* SpecialScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialScreenViewController.m; sourceTree = "<group>"; };
+		E668450217158366002E8279 /* Save&LoadList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Save&LoadList.plist"; sourceTree = "<group>"; };
 		E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Globals:Constants.h"; sourceTree = "<group>"; };
 		E6B4ACF6170D891500D8ACDF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E6B4ACF7170D891500D8ACDF /* Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Methods.h; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				E6EFFB00170D87FD004B9197 /* main.m */,
 				E6EFFB03170D87FD004B9197 /* AppDelegate.h */,
 				E6EFFB04170D87FD004B9197 /* AppDelegate.m */,
+				E668450217158366002E8279 /* Save&LoadList.plist */,
 				E6EFFAFC170D87FD004B9197 /* Fight 2.0-Info.plist */,
 				E6EFFAFD170D87FD004B9197 /* InfoPlist.strings */,
 				E6EFFB02170D87FD004B9197 /* Fight 2.0-Prefix.pch */,
@@ -530,6 +533,7 @@
 				E6BF43C31713A310004C4EB8 /* 4star.jpg in Resources */,
 				E6BF43C51713A34A004C4EB8 /* 7star.jpg in Resources */,
 				E6BF43C71713A384004C4EB8 /* 5star.jpg in Resources */,
+				E668450317158366002E8279 /* Save&LoadList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
