@@ -334,7 +334,7 @@
     return array;
 }
 //Auto Specials
--(NSString*)      desperation
+-(NSString*)       desperation
 {
     NSString *string;
     string = [NSString stringWithFormat:@"None of the potions worked, %@ got desperate!\nDESPERATION activated\n%@ recieved %i health points", [self name], [self name], desperationHealthPoints];
@@ -350,7 +350,6 @@
 {
     
 }
-
 -(NSMutableArray*) usePotion
 {
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];

@@ -21,7 +21,7 @@
 @implementation ViewController
 
 //System Methods
-- (void)viewDidLoad
+- (void)     viewDidLoad
 {
     [super viewDidLoad];
     
@@ -62,17 +62,20 @@
 {
     [self textLoader:[whosTurn() punchOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
+    [self setScreen];
     
 }//Punch button
 -(IBAction) kick
 {    
     [self textLoader:[whosTurn() kickOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
+    [self setScreen];
 }//Kick Button
 -(IBAction) Super
 {
     [self textLoader:[whosTurn() superOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
+    [self setScreen];
 }//Super attack button
 -(IBAction) potion
 {
@@ -92,14 +95,14 @@
 -(void) textBoxEnabled
 {
     [self.playerNameButton setUserInteractionEnabled:NO];
-    [self.punchButton setUserInteractionEnabled:NO];
-    [self.kickButton setUserInteractionEnabled:NO];
-    [self.superButton setUserInteractionEnabled:NO];
-    [self.potionButton setUserInteractionEnabled:NO];
-    [self.specialButton setUserInteractionEnabled:NO];
-    [self.swapLifeButton setUserInteractionEnabled:NO];
+    [self.punchButton      setUserInteractionEnabled:NO];
+    [self.kickButton       setUserInteractionEnabled:NO];
+    [self.superButton      setUserInteractionEnabled:NO];
+    [self.potionButton     setUserInteractionEnabled:NO];
+    [self.specialButton    setUserInteractionEnabled:NO];
+    [self.swapLifeButton   setUserInteractionEnabled:NO];
     
-    [self.goButton setHidden:NO];
+    [self.goButton setHidden               :NO];
     [self.goButton setUserInteractionEnabled:YES];
     
     blinkingBoxTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(blinkingOkButton) userInfo:nil repeats:YES];
@@ -108,12 +111,12 @@
 -(void) enableButtons
 {
     [self.playerNameButton setUserInteractionEnabled:YES];
-    [self.punchButton setUserInteractionEnabled:YES];
-    [self.kickButton setUserInteractionEnabled:YES];
-    [self.superButton setUserInteractionEnabled:YES];
-    [self.potionButton setUserInteractionEnabled:YES];
-    [self.specialButton setUserInteractionEnabled:YES];
-    [self.swapLifeButton setUserInteractionEnabled:YES];
+    [self.punchButton      setUserInteractionEnabled:YES];
+    [self.kickButton       setUserInteractionEnabled:YES];
+    [self.superButton      setUserInteractionEnabled:YES];
+    [self.potionButton     setUserInteractionEnabled:YES];
+    [self.specialButton    setUserInteractionEnabled:YES];
+    [self.swapLifeButton   setUserInteractionEnabled:YES];
     
     [self.goButton setHidden:YES];
     [self.goButton setUserInteractionEnabled:NO];

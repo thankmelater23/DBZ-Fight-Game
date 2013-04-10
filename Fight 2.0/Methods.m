@@ -33,7 +33,6 @@ void initVariables()
     swapLifeUsed = NO;
     skipTurn = NO;
     continueTextBool = NO;
-    
 }
 
 
