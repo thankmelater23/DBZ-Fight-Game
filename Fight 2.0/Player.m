@@ -74,9 +74,6 @@
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 right punch.png"];
             [self setPlayerImageTimer:p2Image imageName:@"player2 hit.png"];
-            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
-            
-    
         }
         
         else
@@ -181,7 +178,7 @@
         if (isFirstPlayer == YES)
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
-            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 hit.png"];
             
             
         }
@@ -189,6 +186,7 @@
         else
         {
             [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
         }
         
         if (kickInArow == kickSpecail1Attainer1)
@@ -218,6 +216,20 @@
     {
         //Play punch missed sound
         playSound(sIDMissed);
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
+            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            
+            
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
+        }
         
         //Reset some feauturs for hit being missed
         kickInArow = 0;
@@ -267,7 +279,7 @@
         if (isFirstPlayer == YES)
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 super"];
-            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 hit.png"];
             
             
         }
@@ -275,6 +287,7 @@
         else
         {
             [self setPlayerImageTimer:p2Image imageName:@"player2 super"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
         }
         
         if (superAtackInARow == superSpecail1Attainer1)
@@ -305,6 +318,20 @@
     {
         //Play punch missed sound
         playSound(sIDMissed);
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 super.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
+            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            
+            
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 super.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
+        }
         
         //Reset some feauturs for hit being missed
         superAtackInARow = 0;
@@ -366,7 +393,7 @@
 {
     
 }
--(NSMutableArray*) usePotion
+-(NSMutableArray*) usePotion:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
     NSString *string;
@@ -383,6 +410,21 @@
             [self addHealth:potionStrength];
 
             string = [NSString stringWithFormat:@"%@ potion worked, %i health addded\nHealth: %i\nPotions: %i", [self name], potionStrength,[self health], [self potions]];
+            
+            if (isFirstPlayer == YES)
+            {
+                [self setPlayerImageTimer:p1Image imageName:@"player1 powerup.png"];
+                [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
+                //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+                
+                
+            }
+            
+            else
+            {
+                [self setPlayerImageTimer:p2Image imageName:@"player2 powerup.png"];
+                [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
+            }
             
         }
         

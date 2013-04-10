@@ -49,7 +49,7 @@
 -(NSMutableArray*) doublePunchSpecial;
 -(NSMutableArray*) tripleKickSpecial;
 -(NSMutableArray*) superPunchSpecial;
--(NSMutableArray*) usePotion;
+-(NSMutableArray*) usePotion:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 -(NSMutableArray*) swapLife;
 
 

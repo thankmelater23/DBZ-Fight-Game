@@ -79,7 +79,7 @@
 }//Super attack button
 -(IBAction) potion
 {
-    [self textLoader:[whosTurn() usePotion]];
+    [self textLoader:[whosTurn() usePotion:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
     [self setScreen];
 }//Potion button
