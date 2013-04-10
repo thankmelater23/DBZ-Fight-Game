@@ -250,7 +250,7 @@
         
         if (isFirstPlayer == YES)
         {
-            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 super"];
             //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
             
             
@@ -258,7 +258,7 @@
         
         else
         {
-            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 super"];
         }
         
         if (superAtackInARow == superSpecail1Attainer1)

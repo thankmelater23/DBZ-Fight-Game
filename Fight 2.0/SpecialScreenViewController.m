@@ -53,14 +53,14 @@
     
     if (whosTurn() == player1)
     {
-        [self.specPlayerImage setImage:[UIImage imageNamed:@"player1 powerup.png"]];
+        [self.specPlayerImage setImage:[UIImage imageNamed:@"player1 stand.png"]];
         
     }
     
     
     else
     {
-        [self.specPlayerImage setImage:[UIImage imageNamed:@"player2 powerup.png"]];
+        [self.specPlayerImage setImage:[UIImage imageNamed:@"player2 stand.png"]];
     }
 }
 -(void)  setPotionsImages
