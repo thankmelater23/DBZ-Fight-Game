@@ -308,6 +308,9 @@
         [self enableButtons];
         [self setScreen];
         [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
+        
+        [self.player1Image setImage:[UIImage imageNamed:@"player1 ready.png"]];
+        [self.player2Image setImage:[UIImage imageNamed:@"player2 ready.png"]];
     }
     
     else
