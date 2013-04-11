@@ -319,12 +319,24 @@
         
         [self.player1Image setImage:[UIImage imageNamed:@"player1 ready.png"]];
         [self.player2Image setImage:[UIImage imageNamed:@"player2 ready.png"]];
+        
+        if (tripleKickBool == YES)
+        {
+            playSound(sIDPunch);
+            playSound(sIDPain);
+        }
     }
     
     else
     {
         
         [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
+        
+        if (tripleKickBool == YES)
+        {
+            playSound(sIDPunch);
+            playSound(sIDPain);
+        }
     }
 }
 -(void)    blinkingOkButton
@@ -354,19 +366,19 @@
         
         case 2:
         {
-            return [whosTurn() punchOpp:p1Image player2Image:p2Image textBox:textBox];
+            return [whosTurn() doublePunchSpecial:p1Image player2Image:p2Image textBox:textBox];
             break;
         }
             
         case 3:
         {
-            return [whosTurn() punchOpp:p1Image player2Image:p2Image textBox:textBox];
+            return [whosTurn() tripleKickSpecial:p1Image player2Image:p2Image textBox:textBox];
             break;
         }
             
         case 4:
         {
-            return [whosTurn() punchOpp:p1Image player2Image:p2Image textBox:textBox];
+            return [whosTurn() superPunchSpecial:p1Image player2Image:p2Image textBox:textBox];
             break;
         }
             

@@ -362,12 +362,12 @@
     return array;
 }
 //Specials
--(NSMutableArray*) doublePunchSpecial:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
+-(NSMutableArray*) doublePunchSpecial:(UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 {
     NSMutableArray *array;
     return array;
-}
--(NSMutableArray*) tripleKickSpecial:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
+}//Set up on vars for this method(Unfinished)
+-(NSMutableArray*) tripleKickSpecial: (UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
     NSString *damageDoneString;
     NSString *special1String;
@@ -385,8 +385,11 @@
         //Kick Hit
         playSound(sIDKick);
         playSound(sIDPain);
-        kickInArow++;
-        kicksTotal++;
+        
+        for (int i = 0; i < 5; i++)
+        {
+            //Enter in code to do kicks
+        }
         [other takeDamage:hitPoints];
         
         damageDoneString = [NSString stringWithFormat: @"%@ kick hit, damage of: %i\n%@ life: %i", [self name], hitPoints, [other name], [other health]];
@@ -405,27 +408,6 @@
             [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
         }
         
-        if (kickInArow == kickSpecail1Attainer1)
-        {
-            special1String = [NSString stringWithFormat: @"Special attack added after landing %i consecutive punches", punchSpecail1Attainer1];
-            self.tripleKick++;
-            setToNumber(self.tripleKick, specialsAndPotionsMax);
-            
-            kickInArow = 0;
-            
-            NSLog(@"kicks in a row: %i", kickInArow);
-        }
-        
-        if (kicksTotal == kickSpecail1Attainer2)
-        {
-            special2String = [NSString stringWithFormat: @"Special attack activated after landing %i total kicks", kickSpecail1Attainer2];
-            
-            special2AttackString = nil;//Enter in right method special
-            
-            kicksTotal = 0;
-            
-            NSLog(@"kicks total: %i", kicksTotal);
-        }
     }
     
     else
@@ -446,10 +428,6 @@
             [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
             [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
         }
-        
-        //Reset some feauturs for hit being missed
-        kickInArow = 0;
-        damageDoneString = [NSString stringWithFormat:@"%@ kick missed", [self name]];
     }
     
     if (damageDoneString != nil)
@@ -469,12 +447,65 @@
     
     changeTurn();
     return array;
-}
--(NSMutableArray*) superPunchSpecial:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
+}//Set up on vars for this method(Unfinished)
+-(NSMutableArray*) superPunchSpecial: (UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 {
-    NSMutableArray *array;
+    NSString *damageDoneString;
+    NSString *damageDoneString2;
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
+    
+    int hitOrMiss = randomNumber(0, 4);//Returns if player will hit or miss
+    int hitPoins = superDamage;
+    [whosTurn() setSuperPunch:([whosTurn() superPunch] - 1)];
+    
+    
+    //Hit miss rand
+    if (hitOrMiss != 0)
+    {
+        //Punch hit
+        playSound(sIDPunch);
+        playSound(sIDPain);
+        punchesInARow++;
+        punchesTotal++;
+        [other takeDamage:hitPoins];
+        skipTurn = YES;
+        
+        damageDoneString = [NSString stringWithFormat: @"SUPER PUNCH Activated!\n%@ did damage of: %i\n%@ life: %i", [self name],hitPoins, [other name], [other health]];
+        damageDoneString2 = [NSString stringWithFormat: @"%@ is stunned, %@ get another turn\nSuper Punches:%i", [other name], [self name], [self superPunch]];
+        
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 right punch.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 hit.png"];
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 punch.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
+        }
+    }
+    
+    else
+    {
+        damageDoneString = [NSString stringWithFormat: @"SUPER PUNCH Failed!"];
+        damageDoneString = [NSString stringWithFormat: @"Super Punches:%i", [self superPunch]];
+        
+    }
+    
+    if (damageDoneString != nil)
+    {
+        [array addObject:damageDoneString];
+    }
+    
+    if (damageDoneString2 != nil)
+    {
+        [array addObject:damageDoneString2];
+    }
+    
+    changeTurn();
     return array;
-}
+}//Set up on vars for this method(Unfinished)
 //Auto Specials
 -(NSString*)       desperation
 {

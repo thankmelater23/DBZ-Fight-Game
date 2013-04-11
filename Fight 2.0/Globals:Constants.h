@@ -41,6 +41,7 @@ BOOL continueTextBool;
 BOOL newGame;
 BOOL swapLifeUsed;
 BOOL skipTurn;
+BOOL tripleKickBool;
 
 //Global Game Vars
 int turnsCompleted;

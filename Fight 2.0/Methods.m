@@ -34,6 +34,7 @@ void initVariables()
     skipTurn = NO;
     continueTextBool = NO;
     specialViewToViewControllerPlaceHolder = 0;
+    tripleKickBool = NO;
 }
 
 

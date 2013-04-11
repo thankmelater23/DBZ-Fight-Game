@@ -279,7 +279,6 @@
     if ([whosTurn() superPunch] > 0)
     {
     specialViewToViewControllerPlaceHolder = 4;
-    [whosTurn() setSuperPunch:([whosTurn() superPunch] - 1)];
     }
 }
 
