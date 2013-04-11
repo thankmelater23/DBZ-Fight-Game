@@ -39,6 +39,11 @@
     [self enableButtons];
     [self setScreen];
     [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
+    
+    if (specialViewToViewControllerBool == YES)
+    {
+        [self textLoader:[self specialViewMethods:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
+    }
 }
 - (void)     didReceiveMemoryWarning
 {
@@ -85,7 +90,7 @@
 }//Potion button
 -(IBAction) swapLife
 {
-    [self textLoader:[whosTurn() swapLife]];
+    [self textLoader:[whosTurn() swapLife:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
     [self setScreen];
 }//Swaps players life only can be used once a game and also has a low percentage
@@ -334,5 +339,8 @@
     }
 }
 
-
+-(NSMutableArray*) specialViewMethods:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
+{
+    return specialViewToViewControllerArray;
+}
 @end

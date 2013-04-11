@@ -18,6 +18,7 @@
 		E668450F17158AA4002E8279 /* player1 ready.png in Resources */ = {isa = PBXBuildFile; fileRef = E668450D17158AA3002E8279 /* player1 ready.png */; };
 		E668451117159607002E8279 /* player2 stand.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451017159607002E8279 /* player2 stand.png */; };
 		E668451317159AFB002E8279 /* player1 miss.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451217159AFB002E8279 /* player1 miss.png */; };
+		E668451517161AD2002E8279 /* nemic planet backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451417161ACE002E8279 /* nemic planet backGround.png */; };
 		E6B4AD2B170D891500D8ACDF /* reg back arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */; };
 		E6B4AD2C170D891500D8ACDF /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFD170D891500D8ACDF /* click.mp3 */; };
 		E6B4AD2E170D891500D8ACDF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4ACFF170D891500D8ACDF /* MenuViewController.m */; };
@@ -25,7 +26,6 @@
 		E6B4AD30170D891500D8ACDF /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4AD01170D891500D8ACDF /* Player.m */; };
 		E6B4AD31170D891500D8ACDF /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4AD02170D891500D8ACDF /* SettingsViewController.m */; };
 		E6B4AD32170D891500D8ACDF /* Amsterdam_checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD03170D891500D8ACDF /* Amsterdam_checkmark.png */; };
-		E6B4AD33170D891500D8ACDF /* Arrow+01.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD04170D891500D8ACDF /* Arrow+01.png */; };
 		E6B4AD34170D891500D8ACDF /* back-arrow-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD05170D891500D8ACDF /* back-arrow-hi.png */; };
 		E6B4AD35170D891500D8ACDF /* exchange arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD06170D891500D8ACDF /* exchange arrow.png */; };
 		E6B4AD36170D891500D8ACDF /* fightStick.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4AD07170D891500D8ACDF /* fightStick.png */; };
@@ -66,7 +66,6 @@
 		E6B4AD5D170D894D00D8ACDF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B4AD5C170D894D00D8ACDF /* AVFoundation.framework */; };
 		E6BF438517126802004C4EB8 /* Hyperbolic_Time_Chamber_Budokai_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6BF438417126802004C4EB8 /* Hyperbolic_Time_Chamber_Budokai_3.jpg */; };
 		E6BF438B171268A9004C4EB8 /* Sand Background.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6BF4386171268A9004C4EB8 /* Sand Background.gif */; };
-		E6BF438C171268A9004C4EB8 /* DBZ_Beatemup_02.png in Resources */ = {isa = PBXBuildFile; fileRef = E6BF4387171268A9004C4EB8 /* DBZ_Beatemup_02.png */; };
 		E6BF438D171268A9004C4EB8 /* kobe n veggetta.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6BF4388171268A9004C4EB8 /* kobe n veggetta.jpeg */; };
 		E6BF438E171268A9004C4EB8 /* Dessert background.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6BF4389171268A9004C4EB8 /* Dessert background.gif */; };
 		E6BF438F171268A9004C4EB8 /* Hill background.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6BF438A171268A9004C4EB8 /* Hill background.gif */; };
@@ -118,6 +117,7 @@
 		E668450D17158AA3002E8279 /* player1 ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 ready.png"; sourceTree = "<group>"; };
 		E668451017159607002E8279 /* player2 stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player2 stand.png"; sourceTree = "<group>"; };
 		E668451217159AFB002E8279 /* player1 miss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 miss.png"; sourceTree = "<group>"; };
+		E668451417161ACE002E8279 /* nemic planet backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nemic planet backGround.png"; sourceTree = "<group>"; };
 		E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Globals:Constants.h"; sourceTree = "<group>"; };
 		E6B4ACF6170D891500D8ACDF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E6B4ACF7170D891500D8ACDF /* Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Methods.h; sourceTree = "<group>"; };
@@ -130,7 +130,6 @@
 		E6B4AD01170D891500D8ACDF /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		E6B4AD02170D891500D8ACDF /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E6B4AD03170D891500D8ACDF /* Amsterdam_checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Amsterdam_checkmark.png; sourceTree = "<group>"; };
-		E6B4AD04170D891500D8ACDF /* Arrow+01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arrow+01.png"; sourceTree = "<group>"; };
 		E6B4AD05170D891500D8ACDF /* back-arrow-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-arrow-hi.png"; sourceTree = "<group>"; };
 		E6B4AD06170D891500D8ACDF /* exchange arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exchange arrow.png"; sourceTree = "<group>"; };
 		E6B4AD07170D891500D8ACDF /* fightStick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fightStick.png; sourceTree = "<group>"; };
@@ -171,7 +170,6 @@
 		E6B4AD5C170D894D00D8ACDF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E6BF438417126802004C4EB8 /* Hyperbolic_Time_Chamber_Budokai_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hyperbolic_Time_Chamber_Budokai_3.jpg; sourceTree = "<group>"; };
 		E6BF4386171268A9004C4EB8 /* Sand Background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Sand Background.gif"; sourceTree = "<group>"; };
-		E6BF4387171268A9004C4EB8 /* DBZ_Beatemup_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DBZ_Beatemup_02.png; sourceTree = "<group>"; };
 		E6BF4388171268A9004C4EB8 /* kobe n veggetta.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "kobe n veggetta.jpeg"; sourceTree = "<group>"; };
 		E6BF4389171268A9004C4EB8 /* Dessert background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Dessert background.gif"; sourceTree = "<group>"; };
 		E6BF438A171268A9004C4EB8 /* Hill background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Hill background.gif"; sourceTree = "<group>"; };
@@ -282,68 +280,67 @@
 			isa = PBXGroup;
 			children = (
 				E668451217159AFB002E8279 /* player1 miss.png */,
-				E6020B1317100F8300DAE734 /* Space Jupitor Earh Background.jpg */,
-				E6BF43AC17138BC2004C4EB8 /* ball2.png */,
-				E6BF43AD17138BC2004C4EB8 /* ball4.png */,
-				E6BF43BA1713A310004C4EB8 /* 6star.jpg */,
-				E6BF43BB1713A310004C4EB8 /* 2star.jpg */,
-				E6BF43BC1713A310004C4EB8 /* 3star.jpg */,
-				E6BF43C61713A384004C4EB8 /* 5star.jpg */,
-				E668450C17158AA3002E8279 /* player2 ready.png */,
-				E668450D17158AA3002E8279 /* player1 ready.png */,
-				E6BF43A41712F7B8004C4EB8 /* icon_72x72.png */,
-				E6BF43A21712F7B0004C4EB8 /* icon_72x72@2x.png */,
-				E6BF43BD1713A310004C4EB8 /* 1star.jpg */,
-				E6BF43BE1713A310004C4EB8 /* 4star.jpg */,
-				E6BF43AE17138BC2004C4EB8 /* ball5.png */,
-				E6BF43AF17138BC2004C4EB8 /* ball6.png */,
-				E6BF43C41713A34A004C4EB8 /* 7star.jpg */,
-				E6BF43B017138BC2004C4EB8 /* ball7.png */,
-				E6BF43B117138BC2004C4EB8 /* ball3.png */,
-				E6BF43B217138BC2004C4EB8 /* ball1.png */,
-				E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */,
-				E6BF43A81712F86F004C4EB8 /* th_Dbz-logo-135.png */,
-				E6BF43A91712F86F004C4EB8 /* vs dbz.jpeg */,
-				E6EFFB06170D87FD004B9197 /* Default.png */,
-				E6EFFB08170D87FD004B9197 /* Default@2x.png */,
-				E6EFFB0A170D87FD004B9197 /* Default-568h@2x.png */,
-				E6B4AD03170D891500D8ACDF /* Amsterdam_checkmark.png */,
-				E6BF4386171268A9004C4EB8 /* Sand Background.gif */,
-				E6BF4387171268A9004C4EB8 /* DBZ_Beatemup_02.png */,
-				E6BF4388171268A9004C4EB8 /* kobe n veggetta.jpeg */,
-				E6BF4389171268A9004C4EB8 /* Dessert background.gif */,
-				E6BF438A171268A9004C4EB8 /* Hill background.gif */,
-				E6B4AD04170D891500D8ACDF /* Arrow+01.png */,
-				E6B4AD05170D891500D8ACDF /* back-arrow-hi.png */,
-				E6B4AD06170D891500D8ACDF /* exchange arrow.png */,
-				E6BF43A61712F7CF004C4EB8 /* dbz logo.jpg */,
-				E6B4AD07170D891500D8ACDF /* fightStick.png */,
-				E6B4AD08170D891500D8ACDF /* hng.png */,
-				E6BF439017126E13004C4EB8 /* redBox.png */,
-				E6BF439117126E13004C4EB8 /* blueBox.png */,
-				E6020B471710304B00DAE734 /* yellowBox.png */,
 				E668450817158874002E8279 /* player1 super.png */,
-				E668450917158874002E8279 /* player2 super.png */,
-				E6020B481710304B00DAE734 /* whiteBox.png */,
-				E6B4AD09170D891500D8ACDF /* hp_potion.png */,
+				E6B4AD12170D891500D8ACDF /* player1 right punch.png */,
+				E6B4AD13170D891500D8ACDF /* player1 stand.png */,
 				E6B4AD0C170D891500D8ACDF /* player1 block.png */,
 				E6B4AD0D170D891500D8ACDF /* player1 dodge.png */,
 				E6B4AD0E170D891500D8ACDF /* player1 hit.png */,
 				E6B4AD0F170D891500D8ACDF /* player1 kick.png */,
 				E6B4AD10170D891500D8ACDF /* player1 left punch.png */,
 				E6B4AD11170D891500D8ACDF /* player1 powerup.png */,
+				E668450D17158AA3002E8279 /* player1 ready.png */,
+				E668450C17158AA3002E8279 /* player2 ready.png */,
+				E668450917158874002E8279 /* player2 super.png */,
 				E668451017159607002E8279 /* player2 stand.png */,
-				E6BF438417126802004C4EB8 /* Hyperbolic_Time_Chamber_Budokai_3.jpg */,
-				E6B4AD12170D891500D8ACDF /* player1 right punch.png */,
-				E6B4AD13170D891500D8ACDF /* player1 stand.png */,
 				E6B4AD14170D891500D8ACDF /* player2 block.png */,
 				E6B4AD15170D891500D8ACDF /* player2 hit.png */,
 				E6B4AD16170D891500D8ACDF /* player2 kick.png */,
 				E6B4AD17170D891500D8ACDF /* player2 miss.png */,
 				E6B4AD18170D891500D8ACDF /* player2 powerup.png */,
 				E6B4AD19170D891500D8ACDF /* player2 punch.png */,
+				E6020B1317100F8300DAE734 /* Space Jupitor Earh Background.jpg */,
+				E6BF4389171268A9004C4EB8 /* Dessert background.gif */,
+				E6BF4386171268A9004C4EB8 /* Sand Background.gif */,
+				E6BF438A171268A9004C4EB8 /* Hill background.gif */,
+				E668451417161ACE002E8279 /* nemic planet backGround.png */,
+				E6BF438417126802004C4EB8 /* Hyperbolic_Time_Chamber_Budokai_3.jpg */,
+				E6BF4388171268A9004C4EB8 /* kobe n veggetta.jpeg */,
+				E6BF43AC17138BC2004C4EB8 /* ball2.png */,
+				E6BF43AD17138BC2004C4EB8 /* ball4.png */,
+				E6BF43BA1713A310004C4EB8 /* 6star.jpg */,
+				E6BF43AE17138BC2004C4EB8 /* ball5.png */,
+				E6BF43B017138BC2004C4EB8 /* ball7.png */,
+				E6BF43B117138BC2004C4EB8 /* ball3.png */,
+				E6BF43AF17138BC2004C4EB8 /* ball6.png */,
+				E6BF43B217138BC2004C4EB8 /* ball1.png */,
+				E6BF43BB1713A310004C4EB8 /* 2star.jpg */,
+				E6BF43BC1713A310004C4EB8 /* 3star.jpg */,
+				E6BF43C61713A384004C4EB8 /* 5star.jpg */,
+				E6BF43BD1713A310004C4EB8 /* 1star.jpg */,
+				E6BF43BE1713A310004C4EB8 /* 4star.jpg */,
+				E6BF43C41713A34A004C4EB8 /* 7star.jpg */,
+				E6BF43A81712F86F004C4EB8 /* th_Dbz-logo-135.png */,
+				E6BF43A91712F86F004C4EB8 /* vs dbz.jpeg */,
+				E6B4AD03170D891500D8ACDF /* Amsterdam_checkmark.png */,
+				E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */,
+				E6B4AD05170D891500D8ACDF /* back-arrow-hi.png */,
+				E6B4AD06170D891500D8ACDF /* exchange arrow.png */,
+				E6BF43A61712F7CF004C4EB8 /* dbz logo.jpg */,
+				E6B4AD09170D891500D8ACDF /* hp_potion.png */,
 				E6B4AD1A170D891500D8ACDF /* SwapLife.png */,
 				E6B4AD1B170D891500D8ACDF /* Unconventional-Recycle-Arrows-Clip-Art.png */,
+				E6B4AD08170D891500D8ACDF /* hng.png */,
+				E6B4AD07170D891500D8ACDF /* fightStick.png */,
+				E6BF439017126E13004C4EB8 /* redBox.png */,
+				E6BF439117126E13004C4EB8 /* blueBox.png */,
+				E6020B471710304B00DAE734 /* yellowBox.png */,
+				E6020B481710304B00DAE734 /* whiteBox.png */,
+				E6BF43A41712F7B8004C4EB8 /* icon_72x72.png */,
+				E6BF43A21712F7B0004C4EB8 /* icon_72x72@2x.png */,
+				E6EFFB06170D87FD004B9197 /* Default.png */,
+				E6EFFB08170D87FD004B9197 /* Default@2x.png */,
+				E6EFFB0A170D87FD004B9197 /* Default-568h@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -484,7 +481,6 @@
 				E6B4AD2B170D891500D8ACDF /* reg back arrow.jpeg in Resources */,
 				E6B4AD2C170D891500D8ACDF /* click.mp3 in Resources */,
 				E6B4AD32170D891500D8ACDF /* Amsterdam_checkmark.png in Resources */,
-				E6B4AD33170D891500D8ACDF /* Arrow+01.png in Resources */,
 				E6B4AD34170D891500D8ACDF /* back-arrow-hi.png in Resources */,
 				E6B4AD35170D891500D8ACDF /* exchange arrow.png in Resources */,
 				E6B4AD36170D891500D8ACDF /* fightStick.png in Resources */,
@@ -526,7 +522,6 @@
 				E6020B4A1710304C00DAE734 /* whiteBox.png in Resources */,
 				E6BF438517126802004C4EB8 /* Hyperbolic_Time_Chamber_Budokai_3.jpg in Resources */,
 				E6BF438B171268A9004C4EB8 /* Sand Background.gif in Resources */,
-				E6BF438C171268A9004C4EB8 /* DBZ_Beatemup_02.png in Resources */,
 				E6BF438D171268A9004C4EB8 /* kobe n veggetta.jpeg in Resources */,
 				E6BF438E171268A9004C4EB8 /* Dessert background.gif in Resources */,
 				E6BF438F171268A9004C4EB8 /* Hill background.gif in Resources */,
@@ -558,6 +553,7 @@
 				E668450F17158AA4002E8279 /* player1 ready.png in Resources */,
 				E668451117159607002E8279 /* player2 stand.png in Resources */,
 				E668451317159AFB002E8279 /* player1 miss.png in Resources */,
+				E668451517161AD2002E8279 /* nemic planet backGround.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

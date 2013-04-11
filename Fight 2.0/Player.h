@@ -50,7 +50,7 @@
 -(NSMutableArray*) tripleKickSpecial;
 -(NSMutableArray*) superPunchSpecial;
 -(NSMutableArray*) usePotion:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
--(NSMutableArray*) swapLife;
+-(NSMutableArray*) swapLife:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 
 
 //Game methods

@@ -382,16 +382,19 @@
     NSString *string;
     string = [NSString stringWithFormat:@"None of the potions worked, %@ got desperate!\nDESPERATION activated\n%@ recieved %i health points", [self name], [self name], desperationHealthPoints];
     [self addHealth:desperationHealthPoints];
+    
     return string;
     
 }
 -(NSMutableArray*) deathBlow
 {
-    
+    NSMutableArray *array;
+    return array;
 }
 -(NSMutableArray*) kickAndGrab
 {
-    
+    NSMutableArray *array;
+    return array;
 }
 -(NSMutableArray*) usePotion:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
@@ -457,7 +460,7 @@
     
     return array;
 }
--(NSMutableArray*) swapLife
+-(NSMutableArray*) swapLife: (UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
     NSString *string;

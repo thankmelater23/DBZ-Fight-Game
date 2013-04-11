@@ -45,6 +45,10 @@ BOOL skipTurn;
 //Global Game Vars
 int turnsCompleted;
 
+//Vars for SpecialScreenViewController
+NSMutableArray *specialViewToViewControllerArray;
+BOOL specialViewToViewControllerBool;
+
 
 //Defines
 
