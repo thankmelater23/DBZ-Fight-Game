@@ -46,7 +46,6 @@
         [self textBoxEnabled];
         [self setScreen];
         specialViewToViewControllerPlaceHolder = 0;
-
     }
 }
 - (void)     didReceiveMemoryWarning

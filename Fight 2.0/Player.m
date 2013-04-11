@@ -362,16 +362,115 @@
     return array;
 }
 //Specials
--(NSMutableArray*) doublePunchSpecial
+-(NSMutableArray*) doublePunchSpecial:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 {
     NSMutableArray *array;
     return array;
 }
--(NSMutableArray*) tripleKickSpecial
+-(NSMutableArray*) tripleKickSpecial:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
-    NSMutableArray *array;    return array;
+    NSString *damageDoneString;
+    NSString *special1String;
+    NSString *special2String;
+    NSString *special2AttackString;
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
+    
+    int hitOrMiss = randomNumber(kickMinPerc, kickMaxPerc);//Returns if player will hit or miss
+    int numberOfAttacks = randomNumber(kickMinPerc, kickMaxPerc);
+    int hitPoints = kickDamage;
+    
+    //Hit miss rand
+    if (hitOrMiss != 0 && hitOrMiss != 2 && hitOrMiss != 4 && hitOrMiss != 6)
+    {
+        //Kick Hit
+        playSound(sIDKick);
+        playSound(sIDPain);
+        kickInArow++;
+        kicksTotal++;
+        [other takeDamage:hitPoints];
+        
+        damageDoneString = [NSString stringWithFormat: @"%@ kick hit, damage of: %i\n%@ life: %i", [self name], hitPoints, [other name], [other health]];
+        
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 hit.png"];
+            
+            
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
+        }
+        
+        if (kickInArow == kickSpecail1Attainer1)
+        {
+            special1String = [NSString stringWithFormat: @"Special attack added after landing %i consecutive punches", punchSpecail1Attainer1];
+            self.tripleKick++;
+            setToNumber(self.tripleKick, specialsAndPotionsMax);
+            
+            kickInArow = 0;
+            
+            NSLog(@"kicks in a row: %i", kickInArow);
+        }
+        
+        if (kicksTotal == kickSpecail1Attainer2)
+        {
+            special2String = [NSString stringWithFormat: @"Special attack activated after landing %i total kicks", kickSpecail1Attainer2];
+            
+            special2AttackString = nil;//Enter in right method special
+            
+            kicksTotal = 0;
+            
+            NSLog(@"kicks total: %i", kicksTotal);
+        }
+    }
+    
+    else
+    {
+        //Play punch missed sound
+        playSound(sIDMissed);
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
+            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
+            
+            
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
+        }
+        
+        //Reset some feauturs for hit being missed
+        kickInArow = 0;
+        damageDoneString = [NSString stringWithFormat:@"%@ kick missed", [self name]];
+    }
+    
+    if (damageDoneString != nil)
+    {
+        [array addObject:damageDoneString];
+    }
+    
+    if (special1String != nil)
+    {
+        [array addObject:special1String];
+    }
+    
+    if (special2String != nil)
+    {
+        [array addObject:special2String];
+    }
+    
+    changeTurn();
+    return array;
 }
--(NSMutableArray*) superPunchSpecial
+-(NSMutableArray*) superPunchSpecial:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 {
     NSMutableArray *array;
     return array;

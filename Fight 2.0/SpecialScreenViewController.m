@@ -253,19 +253,34 @@
 //Special Attacks
 -(IBAction) potionButton
 {
+    if ([whosTurn() potions] > 0)
+    {
     specialViewToViewControllerPlaceHolder = 1;
+    }
 }
 -(IBAction) doublePunchButton
 {
+    if ([whosTurn() doublePunch] > 0)
+    {
     specialViewToViewControllerPlaceHolder = 2;
+    [whosTurn() setDoublePunch:([whosTurn() doublePunch] - 1)];
+    }
 }
 -(IBAction) tripleKickButton
 {
+    if ([whosTurn() tripleKick] > 0)
+    {
     specialViewToViewControllerPlaceHolder = 3;
+    [whosTurn() setTripleKick:([whosTurn() tripleKick] - 1)];
+    }
 }
 -(IBAction) superPunchButton
 {
+    if ([whosTurn() superPunch] > 0)
+    {
     specialViewToViewControllerPlaceHolder = 4;
+    [whosTurn() setSuperPunch:([whosTurn() superPunch] - 1)];
+    }
 }
 
 @end

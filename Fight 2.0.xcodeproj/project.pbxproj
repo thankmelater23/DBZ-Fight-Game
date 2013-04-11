@@ -19,6 +19,7 @@
 		E668451117159607002E8279 /* player2 stand.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451017159607002E8279 /* player2 stand.png */; };
 		E668451317159AFB002E8279 /* player1 miss.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451217159AFB002E8279 /* player1 miss.png */; };
 		E668451517161AD2002E8279 /* nemic planet backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451417161ACE002E8279 /* nemic planet backGround.png */; };
+		E66845171716AB87002E8279 /* Dragon Ball Z Theme Song.wav in Resources */ = {isa = PBXBuildFile; fileRef = E66845161716AB87002E8279 /* Dragon Ball Z Theme Song.wav */; };
 		E6B4AD2B170D891500D8ACDF /* reg back arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFC170D891500D8ACDF /* reg back arrow.jpeg */; };
 		E6B4AD2C170D891500D8ACDF /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6B4ACFD170D891500D8ACDF /* click.mp3 */; };
 		E6B4AD2E170D891500D8ACDF /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4ACFF170D891500D8ACDF /* MenuViewController.m */; };
@@ -118,6 +119,7 @@
 		E668451017159607002E8279 /* player2 stand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player2 stand.png"; sourceTree = "<group>"; };
 		E668451217159AFB002E8279 /* player1 miss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 miss.png"; sourceTree = "<group>"; };
 		E668451417161ACE002E8279 /* nemic planet backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nemic planet backGround.png"; sourceTree = "<group>"; };
+		E66845161716AB87002E8279 /* Dragon Ball Z Theme Song.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Dragon Ball Z Theme Song.wav"; sourceTree = "<group>"; };
 		E6B4ACF5170D891500D8ACDF /* Globals:Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Globals:Constants.h"; sourceTree = "<group>"; };
 		E6B4ACF6170D891500D8ACDF /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E6B4ACF7170D891500D8ACDF /* Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Methods.h; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		E6B4AD60170D8DD000D8ACDF /* SFX */ = {
 			isa = PBXGroup;
 			children = (
+				E66845161716AB87002E8279 /* Dragon Ball Z Theme Song.wav */,
 				E6B4ACFD170D891500D8ACDF /* click.mp3 */,
 				E6B4AD1C170D891500D8ACDF /* click.wav */,
 				E6B4AD1D170D891500D8ACDF /* Face Punch 2.wav */,
@@ -554,6 +557,7 @@
 				E668451117159607002E8279 /* player2 stand.png in Resources */,
 				E668451317159AFB002E8279 /* player1 miss.png in Resources */,
 				E668451517161AD2002E8279 /* nemic planet backGround.png in Resources */,
+				E66845171716AB87002E8279 /* Dragon Ball Z Theme Song.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

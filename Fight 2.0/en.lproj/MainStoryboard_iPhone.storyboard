@@ -479,7 +479,6 @@
                                 </state>
                                 <connections>
                                     <action selector="doublePunchButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="TDL-ct-FFK"/>
-                                    <segue destination="Csr-dA-cej" kind="modal" id="rHe-7f-yMk"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="pth-0k-c1f">
@@ -501,7 +500,6 @@
                                 </state>
                                 <connections>
                                     <action selector="superPunchButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="Dz2-6Z-VwA"/>
-                                    <segue destination="Csr-dA-cej" kind="modal" id="8Uj-Hj-dW6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91f-gO-2TH">
@@ -518,7 +516,6 @@
                                 </state>
                                 <connections>
                                     <action selector="tripleKickButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="nao-Fc-fv7"/>
-                                    <segue destination="Csr-dA-cej" kind="modal" id="Cv4-zK-isF"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kyx-Pn-a6k"/>
@@ -537,7 +534,6 @@
                                 </state>
                                 <connections>
                                     <action selector="potionButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="Orv-nc-8KL"/>
-                                    <segue destination="Csr-dA-cej" kind="modal" id="5JW-o1-bRM"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="W8q-Wl-RPd"/>

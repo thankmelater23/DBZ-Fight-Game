@@ -156,3 +156,21 @@ void setToNumber(int var, int setNumber)
         var = setNumber;
     }
 }//Assigns var to setNumber if car is more then setNumber(Method to keep vars from going past max
+
+
+//File methods
+void saveGame(int place)
+{
+    
+}
+void LoadGame(int place)
+{
+    
+}
+
+
+
+
+//
+//
+//End of file
