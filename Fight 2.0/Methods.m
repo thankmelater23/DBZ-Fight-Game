@@ -33,8 +33,7 @@ void initVariables()
     swapLifeUsed = NO;
     skipTurn = NO;
     continueTextBool = NO;
-    specialViewToViewControllerArray = nil;
-    specialViewToViewControllerBool = NO;
+    specialViewToViewControllerPlaceHolder = 0;
 }
 
 

@@ -46,9 +46,7 @@ BOOL skipTurn;
 int turnsCompleted;
 
 //Vars for SpecialScreenViewController
-NSMutableArray *specialViewToViewControllerArray;
-BOOL specialViewToViewControllerBool;
-
+int specialViewToViewControllerPlaceHolder;
 
 //Defines
 

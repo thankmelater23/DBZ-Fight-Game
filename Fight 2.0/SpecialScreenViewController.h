@@ -37,6 +37,7 @@
 
 
 //Special Attacks
+-(IBAction) potionButton;
 -(IBAction) doublePunchButton;
 -(IBAction) tripleKickButton;
 -(IBAction) superPunchButton;

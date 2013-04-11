@@ -479,6 +479,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doublePunchButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="TDL-ct-FFK"/>
+                                    <segue destination="Csr-dA-cej" kind="modal" id="rHe-7f-yMk"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="pth-0k-c1f">
@@ -500,6 +501,7 @@
                                 </state>
                                 <connections>
                                     <action selector="superPunchButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="Dz2-6Z-VwA"/>
+                                    <segue destination="Csr-dA-cej" kind="modal" id="8Uj-Hj-dW6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91f-gO-2TH">
@@ -516,6 +518,7 @@
                                 </state>
                                 <connections>
                                     <action selector="tripleKickButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="nao-Fc-fv7"/>
+                                    <segue destination="Csr-dA-cej" kind="modal" id="Cv4-zK-isF"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kyx-Pn-a6k"/>
@@ -532,6 +535,10 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="potionButton" destination="HgM-z4-UwE" eventType="touchUpInside" id="Orv-nc-8KL"/>
+                                    <segue destination="Csr-dA-cej" kind="modal" id="5JW-o1-bRM"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="262" image="Amsterdam_checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="W8q-Wl-RPd"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q13-FF-nBP">
@@ -1494,83 +1501,6 @@
         <image name="player2 powerup.png" width="77" height="109"/>
         <image name="vs dbz.jpeg" width="234" height="215"/>
     </resources>
-    <classes>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goButton"/>
-                <relationship kind="action" name="otherButton"/>
-                <relationship kind="action" name="startButton"/>
-                <relationship kind="outlet" name="player1NameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="player2NameFiled" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-        </class>
-        <class className="SpecialScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpecialScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doublePunchButton"/>
-                <relationship kind="action" name="superPunchButton"/>
-                <relationship kind="action" name="tripleKickButton"/>
-                <relationship kind="outlet" name="specPlayerHealthBar" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="specPlayerHealthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="specPlayerImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specPlayerName" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="specPlayerPot1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specPlayerPot2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specPlayerPot3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialOneCheck1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialOneCheck2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialOneCheck3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialThreeCheck1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialThreeCheck2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialThreeCheck3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialTwoCheck1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialTwoCheck2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialTwoCheck3" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Super"/>
-                <relationship kind="action" name="continueText"/>
-                <relationship kind="action" name="kick"/>
-                <relationship kind="action" name="potion"/>
-                <relationship kind="action" name="punch"/>
-                <relationship kind="action" name="swapLife"/>
-                <relationship kind="outlet" name="gameTextBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="goButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="kickButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="okTextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="p1Potion1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p1Potion2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p1Potion3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p2Potion1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p2Potion2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p2Potion3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player1BackGroundColor" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player1HealthBar" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="player1HealthButton" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player1Image" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player2BackGroundColor" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player2HealthBar" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="player2HealthButton" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player2Image" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="playerNameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="potionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="punchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="specialButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="superButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="swapLifeButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

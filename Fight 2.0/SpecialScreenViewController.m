@@ -251,14 +251,21 @@
 
 
 //Special Attacks
+-(IBAction) potionButton
+{
+    specialViewToViewControllerPlaceHolder = 1;
+}
 -(IBAction) doublePunchButton
 {
+    specialViewToViewControllerPlaceHolder = 2;
 }
 -(IBAction) tripleKickButton
 {
+    specialViewToViewControllerPlaceHolder = 3;
 }
 -(IBAction) superPunchButton
 {
+    specialViewToViewControllerPlaceHolder = 4;
 }
 
 @end

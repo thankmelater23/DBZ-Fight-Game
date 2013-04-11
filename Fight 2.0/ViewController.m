@@ -40,9 +40,13 @@
     [self setScreen];
     [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
     
-    if (specialViewToViewControllerBool == YES)
+    if (specialViewToViewControllerPlaceHolder != 0)
     {
         [self textLoader:[self specialViewMethods:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
+        [self textBoxEnabled];
+        [self setScreen];
+        specialViewToViewControllerPlaceHolder = 0;
+
     }
 }
 - (void)     didReceiveMemoryWarning
@@ -341,6 +345,38 @@
 
 -(NSMutableArray*) specialViewMethods:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
-    return specialViewToViewControllerArray;
+    switch (specialViewToViewControllerPlaceHolder)
+    {
+        case 1:
+        {
+            return [whosTurn() usePotion:p1Image player2Image:p2Image textBox:textBox];
+            break;
+        }
+        
+        case 2:
+        {
+            return [whosTurn() punchOpp:p1Image player2Image:p2Image textBox:textBox];
+            break;
+        }
+            
+        case 3:
+        {
+            return [whosTurn() punchOpp:p1Image player2Image:p2Image textBox:textBox];
+            break;
+        }
+            
+        case 4:
+        {
+            return [whosTurn() punchOpp:p1Image player2Image:p2Image textBox:textBox];
+            break;
+        }
+            
+        default:
+        {
+            NSLog(@"specialViewControllerPlaceHolder returned a wrong number int");
+            exit(1);
+            break;
+        }
+    }
 }
 @end
