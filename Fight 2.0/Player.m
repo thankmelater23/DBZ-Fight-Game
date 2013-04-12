@@ -369,14 +369,15 @@
 }//Set up on vars for this method(Unfinished)
 -(NSMutableArray*) tripleKickSpecial: (UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
-    NSString *damageDoneString;
-    NSString *damageDoneString2;
+    NSString       *damageDoneString;
+    NSString       *damageDoneString2;
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
+    [whosTurn() setTripleKick:([whosTurn() tripleKick] - 1)];
     
-    int hitOrMiss = randomNumber(kickMinPerc, kickMaxPerc);//Returns if player will hit or miss
-    int numberOfAttacks = randomNumber(3, 5+1);
-    int hitPoints = 0;
-    tripleKickBool = YES;
+    int hitOrMiss       = randomNumber(kickMinPerc, kickMaxPerc);//Returns if player will hit or miss
+    int numberOfAttacks = randomNumber(3, (5+1));
+    int hitPoints       = 0;
+    tripleKickBool       = YES;
     
     //Hit miss rand
     if (hitOrMiss != 0 && hitOrMiss != 2 && hitOrMiss != 4 && hitOrMiss != 6)
@@ -398,36 +399,14 @@
         }
         [other takeDamage:sum];
 
-        [array addObject:damageDoneString2 = [NSString stringWithFormat: @"%@ took total damage of:%i\n%@ Health:%i", [other name], sum, [other name], [other health]]]
+        [array addObject:damageDoneString2 = [NSString stringWithFormat: @"%@ took total damage of:%i\n%@ Health:%i\nLanded %i kicks", [other name], sum, [other name], [other health], (numberOfAttacks - 1)]]
         ;
         
         if (isFirstPlayer == YES)
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
-            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
-            
-            
-            
-        }
-        
-        else
-        {
-            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
-            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
-        }
-        playSound(sIDKick);
-        playSound(sIDPain);
-        
-    }
-    
-    else
-    {
-        //Play punch missed sound
-        playSound(sIDMissed);
-        if (isFirstPlayer == YES)
-        {
-            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
             [self setPlayerImageTimer:p2Image imageName:@"player2 hit.png"];
+            
             
             
         }
@@ -436,6 +415,29 @@
         {
             [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
             [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
+        }
+        playSound(sIDKick);
+        playSound(sIDPain);
+        
+    }
+    
+    else
+    {
+        [array addObject:damageDoneString = [NSString stringWithFormat: @"TRIPLE KICK NOT ACTIVATED"]];
+        //Play punch missed sound
+        playSound(sIDMissed);
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
+            
+            
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
         }
     }
     return array;
@@ -479,7 +481,7 @@
     else
     {
         damageDoneString = [NSString stringWithFormat: @"SUPER PUNCH Failed!"];
-        damageDoneString = [NSString stringWithFormat: @"Super Punches:%i", [self superPunch]];
+        damageDoneString2 = [NSString stringWithFormat: @"Super Punches:%i", [self superPunch]];
         
     }
     

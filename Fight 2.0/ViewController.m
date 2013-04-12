@@ -311,8 +311,36 @@
 -(IBAction)continueText
 {
     ++stringTextHolderCurrentCount;
-    if (stringTextHolderCurrentCount >= stringTextHolderCount)
+    if (stringTextHolderCurrentCount != stringTextHolderCount)
     {
+        [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
+        
+        
+        if (tripleKickBool == YES)
+        {
+            if (whosTurn() == player1)
+            {
+                [self.player1Image setImage:[UIImage imageNamed:@"player1 kick.png"]];
+                [self.player2Image setImage:[UIImage imageNamed:@"player2 hit.png"]];
+            }
+            
+            else
+            {
+                [self.player2Image setImage:[UIImage imageNamed:@"player2 kick.png"]];
+                [self.player1Image setImage:[UIImage imageNamed:@"player1 hit.png"]];
+            }
+            if (stringTextHolderCurrentCount != (stringTextHolderCount - 1)) 
+                {
+                    playSound(sIDKick);
+                    playSound(sIDPain);
+                }
+        }
+        
+    }
+    
+    else
+    {
+        
         [self enableButtons];
         [self setScreen];
         [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
@@ -326,30 +354,6 @@
             changeTurn();
             [self setScreen];
         }
-    }
-    
-    else
-    {
-        
-        [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
-        
-        if (tripleKickBool == YES)
-        {
-            if (whosTurn() == player1)
-            {
-                [self.player1Image setImage:[UIImage imageNamed:@"player1 kick.png"]];
-                [self.player2Image setImage:[UIImage imageNamed:@"player1 miss.png"]];
-            }
-            
-            else
-            {
-                [self.player2Image setImage:[UIImage imageNamed:@"player2 kick.png"]];
-                [self.player1Image setImage:[UIImage imageNamed:@"player1 miss.png"]];
-            }
-            playSound(sIDKick);
-            playSound(sIDPain);
-        }
-        
     }
 }
 -(void)    blinkingOkButton

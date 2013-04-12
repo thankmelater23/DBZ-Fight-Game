@@ -11,6 +11,10 @@
                     <view key="view" contentMode="scaleToFill" id="2Un-2w-3Xc" userLabel="Game View">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="384" affinity="minY"/>
+                            <userLayoutGuide location="512" affinity="minX"/>
+                        </userGuides>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="nemic planet backGround.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ob-51-0wR"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWx-ef-70u">
@@ -470,6 +474,10 @@
                     <view key="view" contentMode="scaleToFill" id="At3-Li-8jb">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="512" affinity="minX"/>
+                            <userLayoutGuide location="374" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Hyperbolic_Time_Chamber_Budokai_3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sfq-Sc-T6S">
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -753,6 +761,10 @@
                     <view key="view" contentMode="scaleToFill" id="2uq-IJ-vhE">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="512" affinity="minX"/>
+                            <userLayoutGuide location="374" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL8-VN-8Wq">
                                 <constraints>
@@ -880,6 +892,10 @@
                     <view key="view" contentMode="scaleToFill" id="6Ww-RG-fRS">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="512" affinity="minX"/>
+                            <userLayoutGuide location="396" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Y-fq-ghP">
                                 <items>
@@ -930,6 +946,12 @@
                     <view key="view" contentMode="scaleToFill" id="tjm-ZP-P4C" userLabel="Menu">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="562" affinity="minX"/>
+                            <userLayoutGuide location="35" affinity="minY"/>
+                            <userLayoutGuide location="512" affinity="minX"/>
+                            <userLayoutGuide location="374" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Space Jupitor Earh Background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="v9Z-cy-NpO"/>
                             <button opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0H-31-du6">
@@ -937,7 +959,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="199" id="74y-cA-xP3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="60"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -955,7 +977,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="199" id="Him-dx-pS6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="60"/>
                                 <state key="normal" title="Info">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -984,14 +1006,14 @@
                             <constraint firstItem="t0H-31-du6" firstAttribute="trailing" secondItem="S0U-9K-8Ue" secondAttribute="trailing" type="default" id="Ap2-FH-27d"/>
                             <constraint firstItem="v9Z-cy-NpO" firstAttribute="top" secondItem="tjm-ZP-P4C" secondAttribute="top" type="default" id="DEF-fV-oYJ"/>
                             <constraint firstItem="v9Z-cy-NpO" firstAttribute="bottom" secondItem="tjm-ZP-P4C" secondAttribute="bottom" type="default" id="DNA-Gb-5Zu"/>
-                            <constraint firstAttribute="bottom" secondItem="8mR-yu-iGc" secondAttribute="bottom" constant="153" id="EkT-Lz-IV4"/>
+                            <constraint firstItem="S0U-9K-8Ue" firstAttribute="top" secondItem="tjm-ZP-P4C" secondAttribute="top" type="default" id="GNv-Si-ek0"/>
                             <constraint firstItem="t0H-31-du6" firstAttribute="trailing" secondItem="8mR-yu-iGc" secondAttribute="trailing" type="default" id="JQV-XQ-2sR"/>
-                            <constraint firstItem="S0U-9K-8Ue" firstAttribute="leading" secondItem="tjm-ZP-P4C" secondAttribute="leading" constant="412" id="Oyn-LP-UCY"/>
                             <constraint firstItem="t0H-31-du6" firstAttribute="leading" secondItem="S0U-9K-8Ue" secondAttribute="leading" type="default" id="Qse-N9-HMK"/>
-                            <constraint firstItem="t0H-31-du6" firstAttribute="top" secondItem="tjm-ZP-P4C" secondAttribute="top" constant="107" id="bK6-GP-0fE"/>
+                            <constraint firstAttribute="bottom" secondItem="8mR-yu-iGc" secondAttribute="bottom" constant="148" id="cXL-mW-vPR"/>
+                            <constraint firstItem="t0H-31-du6" firstAttribute="centerX" secondItem="v9Z-cy-NpO" secondAttribute="centerX" type="default" id="hVm-9x-hhU"/>
                             <constraint firstItem="v9Z-cy-NpO" firstAttribute="trailing" secondItem="tjm-ZP-P4C" secondAttribute="trailing" type="default" id="o5y-QV-2mC"/>
-                            <constraint firstItem="S0U-9K-8Ue" firstAttribute="top" secondItem="tjm-ZP-P4C" secondAttribute="top" type="default" id="s1w-TC-IS3"/>
                             <constraint firstItem="v9Z-cy-NpO" firstAttribute="leading" secondItem="tjm-ZP-P4C" secondAttribute="leading" type="default" id="svH-Br-Pbr"/>
+                            <constraint firstItem="t0H-31-du6" firstAttribute="top" secondItem="tjm-ZP-P4C" secondAttribute="top" constant="112" id="xXP-4i-hfQ"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -1012,6 +1034,10 @@
                     <view key="view" contentMode="scaleToFill" id="rUf-X2-wY5">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="512" affinity="minX"/>
+                            <userLayoutGuide location="374" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Load" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0p-2w-cEr">
                                 <constraints>
@@ -1139,6 +1165,10 @@
                     <view key="view" contentMode="scaleToFill" id="m9S-fQ-HGr" userLabel="Menu">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="512" affinity="minX"/>
+                            <userLayoutGuide location="374" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Space Jupitor Earh Background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-SX-reT"/>
                             <button opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg0-Vk-PBV">
@@ -1196,7 +1226,7 @@
                             <constraint firstItem="SpB-SX-reT" firstAttribute="leading" secondItem="m9S-fQ-HGr" secondAttribute="leading" type="default" id="MF9-CY-77u"/>
                             <constraint firstItem="cg0-Vk-PBV" firstAttribute="top" secondItem="m9S-fQ-HGr" secondAttribute="top" constant="114" id="OWM-DY-klW"/>
                             <constraint firstItem="cg0-Vk-PBV" firstAttribute="trailing" secondItem="UGH-xS-8zc" secondAttribute="trailing" type="default" id="Sf8-f5-Ftj"/>
-                            <constraint firstItem="UGH-xS-8zc" firstAttribute="leading" secondItem="m9S-fQ-HGr" secondAttribute="leading" constant="455" id="Vzj-Fo-ANp"/>
+                            <constraint firstItem="710-bs-RKW" firstAttribute="centerX" secondItem="SpB-SX-reT" secondAttribute="centerX" type="default" id="VKM-s5-lNm"/>
                             <constraint firstItem="cg0-Vk-PBV" firstAttribute="leading" secondItem="UGH-xS-8zc" secondAttribute="leading" type="default" id="cHX-Xm-tdb"/>
                             <constraint firstItem="710-bs-RKW" firstAttribute="trailing" secondItem="cg0-Vk-PBV" secondAttribute="trailing" type="default" id="fSJ-es-jCo"/>
                             <constraint firstItem="SpB-SX-reT" firstAttribute="bottom" secondItem="m9S-fQ-HGr" secondAttribute="bottom" type="default" id="fzS-Up-ABx"/>
@@ -1226,84 +1256,6 @@
         <image name="player2 powerup.png" width="77" height="109"/>
         <image name="vs dbz.jpeg" width="234" height="215"/>
     </resources>
-    <classes>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goButton"/>
-                <relationship kind="action" name="otherButton"/>
-                <relationship kind="action" name="startButton"/>
-                <relationship kind="outlet" name="player1NameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="player2NameFiled" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-        </class>
-        <class className="SpecialScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpecialScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doublePunchButton"/>
-                <relationship kind="action" name="potionButton"/>
-                <relationship kind="action" name="superPunchButton"/>
-                <relationship kind="action" name="tripleKickButton"/>
-                <relationship kind="outlet" name="specPlayerHealthBar" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="specPlayerHealthLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="specPlayerImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specPlayerName" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="specPlayerPot1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specPlayerPot2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specPlayerPot3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialOneCheck1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialOneCheck2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialOneCheck3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialThreeCheck1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialThreeCheck2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialThreeCheck3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialTwoCheck1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialTwoCheck2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="specialTwoCheck3" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Super"/>
-                <relationship kind="action" name="continueText"/>
-                <relationship kind="action" name="kick"/>
-                <relationship kind="action" name="potion"/>
-                <relationship kind="action" name="punch"/>
-                <relationship kind="action" name="swapLife"/>
-                <relationship kind="outlet" name="gameTextBox" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="goButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="kickButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="okTextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="p1Potion1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p1Potion2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p1Potion3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p2Potion1" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p2Potion2" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="p2Potion3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player1BackGroundColor" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player1HealthBar" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="player1HealthButton" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player1Image" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player2BackGroundColor" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="player2HealthBar" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="player2HealthButton" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="player2Image" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="playerNameButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="potionButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="punchButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="specialButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="superButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="swapLifeButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -1311,7 +1263,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="VnN-7f-lSX"/>
-        <segue reference="qCj-kv-vYW"/>
+        <segue reference="3Va-zx-xeM"/>
         <segue reference="VtX-8n-g82"/>
     </inferredMetricsTieBreakers>
 </document>
