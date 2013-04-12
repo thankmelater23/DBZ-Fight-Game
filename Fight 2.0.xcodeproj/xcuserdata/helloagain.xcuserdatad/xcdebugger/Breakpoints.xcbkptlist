@@ -21,12 +21,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Fight 2.0/Player.m"
-         timestampString = "387461773.183281"
+         timestampString = "387464917.315262"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "427"
-         endingLineNumber = "427"
+         startingLineNumber = "421"
+         endingLineNumber = "421"
          landmarkName = "-tripleKickSpecial:player2Image:textBox:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Fight 2.0/Player.m"
+         timestampString = "387464662.420098"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "319"
+         endingLineNumber = "319"
+         landmarkName = "-superOpp:player2Image:textBox:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

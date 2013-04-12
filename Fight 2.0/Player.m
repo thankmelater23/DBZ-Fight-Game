@@ -149,7 +149,6 @@
         [array addObject:special2String];
     }
     
-    changeTurn();
     return array;
 }
 -(NSMutableArray*) kickOpp:(UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
@@ -251,7 +250,6 @@
         [array addObject:special2String];
     }
 
-    changeTurn();
     return array;
 }
 -(NSMutableArray*) superOpp:(UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
@@ -311,7 +309,6 @@
             
             NSLog(@"super total: %i", superAttackTotal);
             }
-        changeTurn();
     }
     
     else
@@ -322,9 +319,6 @@
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 super.png"];
             [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
-            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
-            
-            
         }
         
         else
@@ -338,10 +332,7 @@
         
         //Return string of hit being missed
         damageDoneString = [NSString stringWithFormat:@"%@ Super missed and stumbled, %@ counters and get another turn", [self name], [other name]];
-        
-        skipTurn = NO;
-        changeTurn();
-        skipTurn = YES;
+        superPunchMissBool = YES;
     }
     
     if (damageDoneString != nil)
@@ -495,7 +486,6 @@
         [array addObject:damageDoneString2];
     }
     
-    changeTurn();
     return array;
 }//Set up on vars for this method(Unfinished)Also set up images and sounds need to be added and initialized
 //Auto Specials
@@ -560,8 +550,6 @@
             string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
             
         }
-        
-        changeTurn();
     }
     
     else
@@ -602,7 +590,6 @@
         string = [NSString stringWithFormat:@"Life Swap succesfucl"];
         string2 = [NSString stringWithFormat:@"Previous Health:\n%@ Health: %i\n%@ Health: %i", [self name], [self health], [other name], [other health]];
         string3 = [NSString stringWithFormat:@"New Health:\n%@ Health: %i\n%@ Health: %i", [self name], [self health], [other name], [other health]];
-        changeTurn();
     }
     
     else if (swapLifeUsed == YES)
@@ -615,7 +602,6 @@
         NSLog(@"Life Not switched");
         swapLifeUsed = YES;
         string = [NSString stringWithFormat:@"Life Swap unsuccesful"];
-        changeTurn();
     }
     
     if (string != nil)

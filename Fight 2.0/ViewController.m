@@ -44,7 +44,6 @@
     {
         [self textLoader:[self specialViewMethods:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
         [self textBoxEnabled];
-        [self setScreen];
         specialViewToViewControllerPlaceHolder = 0;
     }
 }
@@ -70,32 +69,27 @@
 {
     [self textLoader:[whosTurn() punchOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
-    [self setScreen];
     
 }//Punch button
 -(IBAction) kick
 {    
     [self textLoader:[whosTurn() kickOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
-    [self setScreen];
 }//Kick Button
 -(IBAction) Super
 {
     [self textLoader:[whosTurn() superOpp:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
-    [self setScreen];
 }//Super attack button
 -(IBAction) potion
 {
     [self textLoader:[whosTurn() usePotion:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
-    [self setScreen];
 }//Potion button
 -(IBAction) swapLife
 {
     [self textLoader:[whosTurn() swapLife:self.player1Image player2Image:self.player2Image textBox:self.gameTextBox]];
     [self textBoxEnabled];
-    [self setScreen];
 }//Swaps players life only can be used once a game and also has a low percentage
 
 
@@ -352,8 +346,14 @@
             tripleKickBool = NO;
         }
         
-        //changeTurn();
-        //[self setScreen];
+        changeTurn();
+        [self setScreen];
+        
+        if (superPunchMissBool == YES)
+        {
+            skipTurn = YES;
+            superPunchMissBool = NO;
+        }
     }
 }
 -(void)    blinkingOkButton
