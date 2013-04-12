@@ -8,19 +8,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Fight 2.0/ViewController.m"
-         timestampString = "387460889.758266"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "312"
-         endingLineNumber = "312"
-         landmarkName = "-continueText"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Fight 2.0/ViewController.m"
          timestampString = "387460694.465926"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"

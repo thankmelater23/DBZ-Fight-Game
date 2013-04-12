@@ -342,7 +342,6 @@
     {
         
         [self enableButtons];
-        [self setScreen];
         [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
         
         [self.player1Image setImage:[UIImage imageNamed:@"player1 ready.png"]];
@@ -351,9 +350,10 @@
         if (tripleKickBool == YES)
         {
             tripleKickBool = NO;
-            changeTurn();
-            [self setScreen];
         }
+        
+        //changeTurn();
+        //[self setScreen];
     }
 }
 -(void)    blinkingOkButton

@@ -129,12 +129,12 @@
                                     <action selector="kick" destination="Csr-dA-cej" eventType="touchUpInside" id="rPc-4S-aN2"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="player1 powerup.png" translatesAutoresizingMaskIntoConstraints="NO" id="pfb-VR-ZFU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="player1 ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="pfb-VR-ZFU">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="eco-o6-tRU"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="player2 powerup.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vdl-wj-IsR"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="player2 ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vdl-wj-IsR"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxP-EG-oow">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="3A8-a0-gRQ"/>
@@ -1212,7 +1212,9 @@
         <image name="kobe n veggetta.jpeg" width="264" height="191"/>
         <image name="nemic planet backGround.png" width="543" height="512"/>
         <image name="player1 powerup.png" width="78" height="97"/>
+        <image name="player1 ready.png" width="56" height="87"/>
         <image name="player2 powerup.png" width="77" height="109"/>
+        <image name="player2 ready.png" width="49" height="68"/>
         <image name="vs dbz.jpeg" width="234" height="215"/>
     </resources>
     <classes>
@@ -1300,6 +1302,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Xrc-Q5-b1N"/>
-        <segue reference="gjD-O3-sCJ"/>
+        <segue reference="xhc-ai-1fx"/>
     </inferredMetricsTieBreakers>
 </document>
