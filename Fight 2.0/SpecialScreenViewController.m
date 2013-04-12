@@ -263,7 +263,6 @@
     if ([whosTurn() doublePunch] > 0)
     {
     specialViewToViewControllerPlaceHolder = 2;
-    [whosTurn() setDoublePunch:([whosTurn() doublePunch] - 1)];
     }
 }
 -(IBAction) tripleKickButton
@@ -271,7 +270,6 @@
     if ([whosTurn() tripleKick] > 0)
     {
     specialViewToViewControllerPlaceHolder = 3;
-    [whosTurn() setTripleKick:([whosTurn() tripleKick] - 1)];
     }
 }
 -(IBAction) superPunchButton

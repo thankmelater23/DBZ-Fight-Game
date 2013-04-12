@@ -322,8 +322,9 @@
         
         if (tripleKickBool == YES)
         {
-            playSound(sIDPunch);
-            playSound(sIDPain);
+            tripleKickBool = NO;
+            changeTurn();
+            [self setScreen];
         }
     }
     
@@ -334,9 +335,21 @@
         
         if (tripleKickBool == YES)
         {
-            playSound(sIDPunch);
+            if (whosTurn() == player1)
+            {
+                [self.player1Image setImage:[UIImage imageNamed:@"player1 kick.png"]];
+                [self.player2Image setImage:[UIImage imageNamed:@"player1 miss.png"]];
+            }
+            
+            else
+            {
+                [self.player2Image setImage:[UIImage imageNamed:@"player2 kick.png"]];
+                [self.player1Image setImage:[UIImage imageNamed:@"player1 miss.png"]];
+            }
+            playSound(sIDKick);
             playSound(sIDPain);
         }
+        
     }
 }
 -(void)    blinkingOkButton

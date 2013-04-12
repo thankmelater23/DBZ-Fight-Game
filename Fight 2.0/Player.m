@@ -370,30 +370,60 @@
 -(NSMutableArray*) tripleKickSpecial: (UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
     NSString *damageDoneString;
-    NSString *special1String;
-    NSString *special2String;
-    NSString *special2AttackString;
+    NSString *damageDoneString2;
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
     
     int hitOrMiss = randomNumber(kickMinPerc, kickMaxPerc);//Returns if player will hit or miss
-    int numberOfAttacks = randomNumber(kickMinPerc, kickMaxPerc);
-    int hitPoints = kickDamage;
+    int numberOfAttacks = randomNumber(3, 5+1);
+    int hitPoints = 0;
+    tripleKickBool = YES;
     
     //Hit miss rand
     if (hitOrMiss != 0 && hitOrMiss != 2 && hitOrMiss != 4 && hitOrMiss != 6)
     {
-        //Kick Hit
+        int sum = 0;
+        
+        for (int i = 1; i < numberOfAttacks; i++)
+        {
+            hitPoints = randomNumber(tripleKickMinDamage, tripleKickMaxDamage);
+            sum += hitPoints;
+            if (i == 1)
+            {
+                [array addObject:damageDoneString = [NSString stringWithFormat: @"TRIPLE KICK ACTIVATED!\nKick %i did: %i damage", i, hitPoints]];
+            }
+            else
+            {
+            [array addObject:[NSString stringWithFormat:@"Kick %i did: %i damage", i, hitPoints]];
+            }
+        }
+        [other takeDamage:sum];
+
+        [array addObject:damageDoneString2 = [NSString stringWithFormat: @"%@ took total damage of:%i\n%@ Health:%i", [other name], sum, [other name], [other health]]]
+        ;
+        
+        if (isFirstPlayer == YES)
+        {
+            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
+            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
+            
+            
+            
+        }
+        
+        else
+        {
+            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
+            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
+        }
         playSound(sIDKick);
         playSound(sIDPain);
         
-        for (int i = 0; i < 5; i++)
-        {
-            //Enter in code to do kicks
-        }
-        [other takeDamage:hitPoints];
-        
-        damageDoneString = [NSString stringWithFormat: @"%@ kick hit, damage of: %i\n%@ life: %i", [self name], hitPoints, [other name], [other health]];
-        
+    }
+    
+    else
+    {
+        //Play punch missed sound
+        playSound(sIDMissed);
         if (isFirstPlayer == YES)
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
@@ -407,66 +437,26 @@
             [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
             [self setPlayerImageTimer:p1Image imageName:@"player1 hit.png"];
         }
-        
     }
-    
-    else
-    {
-        //Play punch missed sound
-        playSound(sIDMissed);
-        if (isFirstPlayer == YES)
-        {
-            [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
-            [self setPlayerImageTimer:p2Image imageName:@"player2 miss.png"];
-            //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(setPlayerImageTimer:) userInfo:p1Image repeats:NO];
-            
-            
-        }
-        
-        else
-        {
-            [self setPlayerImageTimer:p2Image imageName:@"player2 kick.png"];
-            [self setPlayerImageTimer:p1Image imageName:@"player1 miss.png"];
-        }
-    }
-    
-    if (damageDoneString != nil)
-    {
-        [array addObject:damageDoneString];
-    }
-    
-    if (special1String != nil)
-    {
-        [array addObject:special1String];
-    }
-    
-    if (special2String != nil)
-    {
-        [array addObject:special2String];
-    }
-    
-    changeTurn();
     return array;
 }//Set up on vars for this method(Unfinished)
 -(NSMutableArray*) superPunchSpecial: (UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 {
     NSString *damageDoneString;
     NSString *damageDoneString2;
-    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
     
-    int hitOrMiss = randomNumber(0, 4);//Returns if player will hit or miss
-    int hitPoins = superDamage;
+    int hitOrMiss = randomNumber(superPunchMin, superPunchMax);//Returns if player will hit or miss
+    int hitPoins = superPunchDamage;
     [whosTurn() setSuperPunch:([whosTurn() superPunch] - 1)];
     
     
     //Hit miss rand
-    if (hitOrMiss != 0)
+    if (hitOrMiss != 1)
     {
         //Punch hit
-        playSound(sIDPunch);
+        playSound(sIDPunch);//Add right sound for super punch
         playSound(sIDPain);
-        punchesInARow++;
-        punchesTotal++;
         [other takeDamage:hitPoins];
         skipTurn = YES;
         
@@ -505,7 +495,7 @@
     
     changeTurn();
     return array;
-}//Set up on vars for this method(Unfinished)
+}//Set up on vars for this method(Unfinished)Also set up images and sounds need to be added and initialized
 //Auto Specials
 -(NSString*)       desperation
 {

@@ -63,7 +63,7 @@ int specialViewToViewControllerPlaceHolder;
 #define doublePunchDamage   5
 #define tripleKickMinDamage 1
 #define tripleKickMaxDamage 5
-#define superPunchDamage    10
+#define superPunchDamage    15
 //Minimun to max for attacks
 #define punchMinPerc   0
 #define punchMaxPerc   9
@@ -74,7 +74,7 @@ int specialViewToViewControllerPlaceHolder;
 #define doublePunchMin 0
 #define doublePunchMax 3//Make doublePunch chance 2/3 success
 #define superPunchMin  0
-#define superPunchMax  5//Make superPunch chance 3/5 success
+#define superPunchMax  4//Make superPunch chance 3/5 success
 
 //Health defines
 #define potionChanceMin   0
