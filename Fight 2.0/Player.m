@@ -50,8 +50,8 @@
 {
     NSString *damageDoneString;
     NSString *special1String;
-    NSString *special2String;
-    NSString *special2AttackString;
+    NSString *totalPunchesLandedString;
+    NSString *adrenalineString;
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
     
     int hitOrMiss = randomNumber(punchMinPerc, punchMaxPerc);//Returns if player will hit or miss
@@ -95,8 +95,8 @@
         
         if (punchesTotal == punchSpecail1Attainer2)
         {
-            special2String = [NSString stringWithFormat: @"%@ landED %i total punches", [self name], punchSpecail1Attainer2];
-            special2AttackString = [self adrenaline];
+            totalPunchesLandedString = [NSString stringWithFormat: @"%@ landed %i total punches", [self name], punchSpecail1Attainer2];
+            adrenalineString = [self adrenaline];
             
             NSLog(@"punches total: %i", punchesTotal);
         }
@@ -137,9 +137,14 @@
         [array addObject:special1String];
     }
     
-    if (special2String != nil)
+    if (totalPunchesLandedString != nil)
     {
-        [array addObject:special2String];
+        [array addObject:totalPunchesLandedString];
+    }
+    
+    if (adrenalineString != nil)
+    {
+        [array addObject:adrenalineString];
     }
     
     return array;
@@ -250,7 +255,7 @@
     NSString *damageDoneString;
     NSString *special1String;
     NSString *special2String;
-    NSString *special2AttackString;
+    NSString *deathBlowString;
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:4];
     
     int hitOrMiss = randomNumber(superMinPerc, superMaxPerc);//Returns if player will hit or miss
@@ -294,11 +299,9 @@
         
         if (superAttackTotal == superSpecail1Attainer2)
         {
-            special2String = [NSString stringWithFormat: @"Special attack activated after landing %i total kicks", superSpecail1Attainer2];
+            special2String = [NSString stringWithFormat: @"%@ landed %i total kicks", [self name], superSpecail1Attainer2];
             
-            special2AttackString = nil;//Enter in right method special
-            
-            superAttackTotal = 0;
+            deathBlowString = [self deathBlow];
             
             NSLog(@"super total: %i", superAttackTotal);
             }
@@ -341,6 +344,11 @@
     if (special2String != nil)
     {
         [array addObject:special2String];
+    }
+    
+    if (deathBlowString != nil)
+    {
+        [array addObject:deathBlowString];
     }
     
     return array;
@@ -497,16 +505,20 @@
 -(NSString*)      adrenaline
 {
     [self addHealth:adrenalineHealthPoints];
-    NSString *string = [NSString stringWithFormat: @"ADRENALINE ACTIVATED!/n %@ recieved %i health points", [self name], adrenalineHealthPoints];
+    NSString *string = [NSString stringWithFormat: @"ADRENALINE ACTIVATED!\n%@ recieved %i health points", [self name], adrenalineHealthPoints];
     
     punchesTotal = 0;
     
     return string;
 }
--(NSMutableArray*) deathBlow
+-(NSString*) deathBlow
 {
-    NSMutableArray *array;
-    return array;
+    [other resetStats];
+    NSString *string = [NSString stringWithFormat:@"DEATH BLOW ACTIVATED!\nAll %@: attacks in a row and total attack to specials has been reseted to zero", [other name]];
+    superAttackTotal = 0;
+    
+    NSLog(@"Death Blow Activated");
+    return string;
 }
 -(NSMutableArray*) kickAndGrab
 {
@@ -666,4 +678,18 @@
     [playerImg setImage:[UIImage imageNamed:string]];
     
 }
+
+//other
+-(void)resetStats
+{
+    punchesInARow     = 0;
+    punchesTotal      = 0;
+    kickInArow        = 0;
+    kicksTotal        = 0;
+    superAtackInARow = 0;
+    superAttackTotal = 0;
+}
+
+
+
 @end
