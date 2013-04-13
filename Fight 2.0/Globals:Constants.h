@@ -38,7 +38,8 @@ SystemSoundID sIDMissed;
 SystemSoundID sIDPain;
 SystemSoundID sIDPotion;
 SystemSoundID sIDSwapLife;
-
+SystemSoundID sIDDead;
+SystemSoundID sIDFailed;
 //Game BOOL's
 BOOL continueTextBool;
 BOOL newGame;
@@ -46,6 +47,7 @@ BOOL swapLifeUsed;
 BOOL skipTurn;
 BOOL tripleKickBool;
 BOOL superPunchMissBool;
+BOOL gameOver;
 
 //Global Game Vars
 int turnsCompleted;

@@ -420,7 +420,7 @@
     {
         [array addObject:damageDoneString = [NSString stringWithFormat: @"TRIPLE KICK NOT ACTIVATED"]];
         //Play punch missed sound
-        playSound(sIDMissed);
+        playSound(sIDFailed);
         if (isFirstPlayer == YES)
         {
             [self setPlayerImageTimer:p1Image imageName:@"player1 kick.png"];
@@ -477,6 +477,7 @@
     {
         damageDoneString = [NSString stringWithFormat: @"SUPER PUNCH Failed!"];
         damageDoneString2 = [NSString stringWithFormat: @"Super Punches:%i", [self superPunch]];
+        playSound(sIDFailed);
         
     }
     
@@ -493,7 +494,7 @@
     return array;
 }//Set up on vars for this method(Unfinished)Also set up images and sounds need to be added and initialized
 //Auto Specials
--(NSString*)      desperation
+-(NSString*)       desperation
 {
     NSString *string;
     string = [NSString stringWithFormat:@"DESPERATION ACTIVATED!\nNone of the potions worked, %@ became desperate!\n%@ recieved %i health points", [self name], [self name], desperationHealthPoints];
@@ -502,7 +503,7 @@
     return string;
     
 }//When no potions has worked this special is activated does variable settings and returns a string
--(NSString*)      adrenaline
+-(NSString*)       adrenaline
 {
     [self addHealth:adrenalineHealthPoints];
     NSString *string = [NSString stringWithFormat: @"ADRENALINE ACTIVATED!\n%@ recieved %i health points", [self name], adrenalineHealthPoints];
@@ -511,7 +512,7 @@
     
     return string;
 }
--(NSString*) deathBlow
+-(NSString*)       deathBlow
 {
     [other resetStats];
     NSString *string = [NSString stringWithFormat:@"DEATH BLOW ACTIVATED!\nAll %@: attacks in a row and total attack to specials has been reseted to zero", [other name]];
@@ -558,7 +559,7 @@
         
         else
         {
-            playSound(sIDPain);
+            playSound(sIDFailed);
             NSLog(@"Potion did not work");
             potionDuds++;
             string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
@@ -624,6 +625,7 @@
         NSLog(@"Life Not switched");
         swapLifeUsed = YES;
         string = [NSString stringWithFormat:@"Life Swap unsuccesful"];
+        playSound(sIDFailed);
     }
     
     if (string != nil)
@@ -649,7 +651,7 @@
 {
     if (self.health <= 0)
     {
-        NSLog(@"is Dead");
+        NSLog(@"%@ is Dead", [self name]);
         return YES;
     }
     

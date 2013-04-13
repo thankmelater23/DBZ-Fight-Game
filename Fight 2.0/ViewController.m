@@ -160,8 +160,6 @@
     [self setHealthBar];
     [self setPotionsImage];
     [self setUniqueLookForCurrentPlayerTurn];
-    
-    
 }//Sets all buttons to a certin color
 -(void) setHealthBar
 {
@@ -304,56 +302,65 @@
 }
 -(IBAction)continueText
 {
-    ++stringTextHolderCurrentCount;
-    if (stringTextHolderCurrentCount != stringTextHolderCount)
+    if (gameOver != YES)
     {
-        [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
-        
-        
-        if (tripleKickBool == YES)
+        ++stringTextHolderCurrentCount;
+        if (stringTextHolderCurrentCount != stringTextHolderCount)
         {
-            if (whosTurn() == player1)
+            [self.gameTextBox setText:stringTextHolder[stringTextHolderCurrentCount]];
+            
+            
+            if (tripleKickBool == YES)
             {
-                [self.player1Image setImage:[UIImage imageNamed:@"player1 kick.png"]];
-                [self.player2Image setImage:[UIImage imageNamed:@"player2 hit.png"]];
+                if (whosTurn() == player1)
+                {
+                    [self.player1Image setImage:[UIImage imageNamed:@"player1 kick.png"]];
+                    [self.player2Image setImage:[UIImage imageNamed:@"player2 hit.png"]];
+                }
+                
+                else
+                {
+                    [self.player2Image setImage:[UIImage imageNamed:@"player2 kick.png"]];
+                    [self.player1Image setImage:[UIImage imageNamed:@"player1 hit.png"]];
+                }
+                if (stringTextHolderCurrentCount != (stringTextHolderCount - 1)) 
+                    {
+                        playSound(sIDKick);
+                        playSound(sIDPain);
+                    }
             }
             
-            else
-            {
-                [self.player2Image setImage:[UIImage imageNamed:@"player2 kick.png"]];
-                [self.player1Image setImage:[UIImage imageNamed:@"player1 hit.png"]];
-            }
-            if (stringTextHolderCurrentCount != (stringTextHolderCount - 1)) 
-                {
-                    playSound(sIDKick);
-                    playSound(sIDPain);
-                }
         }
         
+        else
+        {
+            [self enableButtons];
+            [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
+            
+            [self.player1Image setImage:[UIImage imageNamed:@"player1 ready.png"]];
+            [self.player2Image setImage:[UIImage imageNamed:@"player2 ready.png"]];
+            
+            if (tripleKickBool == YES)
+            {
+                tripleKickBool = NO;
+            }
+            
+            
+            changeTurn();
+            [self setScreen];
+            
+            if (superPunchMissBool == YES)
+            {
+                skipTurn = YES;
+                superPunchMissBool = NO;
+            }
+        }
+        [self playerDied];
     }
-    
+
     else
     {
-        
-        [self enableButtons];
-        [self.gameTextBox setText:[NSString stringWithFormat:@"%@ turn", [whosTurn() name]]];
-        
-        [self.player1Image setImage:[UIImage imageNamed:@"player1 ready.png"]];
-        [self.player2Image setImage:[UIImage imageNamed:@"player2 ready.png"]];
-        
-        if (tripleKickBool == YES)
-        {
-            tripleKickBool = NO;
-        }
-        
-        changeTurn();
-        [self setScreen];
-        
-        if (superPunchMissBool == YES)
-        {
-            skipTurn = YES;
-            superPunchMissBool = NO;
-        }
+        [self.gameTextBox setText:[NSString stringWithFormat:@"Game Over"]];
     }
 }
 -(void)    blinkingOkButton
@@ -405,6 +412,23 @@
             exit(1);
             break;
         }
+    }
+}
+
+-(void) playerDied
+{
+    if ([player1 isDead])
+    {
+        playSound(sIDDead);
+        [self.player1Image setImage:[UIImage imageNamed:@"player1 dead.png"]];
+        gameOver = YES;
+    }
+    
+    if ([player2 isDead])
+    {
+        playSound(sIDDead);
+        [self.player2Image setImage:[UIImage imageNamed:@"player2 dead.png"]];
+        gameOver = YES;
     }
 }
 @end

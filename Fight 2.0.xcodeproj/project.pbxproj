@@ -31,6 +31,22 @@
 		E6020B5317104D4700DAE734 /* SpecialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6020B5217104D4700DAE734 /* SpecialScreenViewController.m */; };
 		E641F8B3171870DC0079B9EE /* player1 miss.png in Resources */ = {isa = PBXBuildFile; fileRef = E641F8B2171870DC0079B9EE /* player1 miss.png */; };
 		E641F8B5171870E10079B9EE /* player2 miss.png in Resources */ = {isa = PBXBuildFile; fileRef = E641F8B4171870E10079B9EE /* player2 miss.png */; };
+		E641F8B917193BD70079B9EE /* player2 dead.png in Resources */ = {isa = PBXBuildFile; fileRef = E641F8B617193BD70079B9EE /* player2 dead.png */; };
+		E641F8BA17193BD70079B9EE /* player2 left punch.png in Resources */ = {isa = PBXBuildFile; fileRef = E641F8B717193BD70079B9EE /* player2 left punch.png */; };
+		E641F8BB17193BD70079B9EE /* player1 dead.png in Resources */ = {isa = PBXBuildFile; fileRef = E641F8B817193BD70079B9EE /* player1 dead.png */; };
+		E641F8BD17194E9A0079B9EE /* scream2 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8BC17194E9A0079B9EE /* scream2 1.wav */; };
+		E641F8BF17194F260079B9EE /* sbc_charge.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8BE17194F260079B9EE /* sbc_charge.wav */; };
+		E641F8C217194F430079B9EE /* strongkick.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8C017194F430079B9EE /* strongkick.wav */; };
+		E641F8C317194F430079B9EE /* strongpunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8C117194F430079B9EE /* strongpunch.wav */; };
+		E641F8C7171950270079B9EE /* meleemiss1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8C4171950270079B9EE /* meleemiss1.wav */; };
+		E641F8C8171950270079B9EE /* meleemiss2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8C5171950270079B9EE /* meleemiss2.wav */; };
+		E641F8C9171950270079B9EE /* meleemiss3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8C6171950270079B9EE /* meleemiss3.wav */; };
+		E641F8CC171950CE0079B9EE /* mediumkick.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8CA171950CE0079B9EE /* mediumkick.wav */; };
+		E641F8CD171950CE0079B9EE /* mediumpunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8CB171950CE0079B9EE /* mediumpunch.wav */; };
+		E641F8CF171950F00079B9EE /* pain2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8CE171950F00079B9EE /* pain2.wav */; };
+		E641F8D1171952970079B9EE /* scream1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8D0171952970079B9EE /* scream1.wav */; };
+		E641F8D517195C940079B9EE /* failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E641F8D417195C940079B9EE /* failed.mp3 */; };
+		E641F8D717195DC00079B9EE /* fingerlaser.wav in Resources */ = {isa = PBXBuildFile; fileRef = E641F8D617195DC00079B9EE /* fingerlaser.wav */; };
 		E668450317158366002E8279 /* Save&LoadList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E668450217158366002E8279 /* Save&LoadList.plist */; };
 		E668451517161AD2002E8279 /* nemic planet backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = E668451417161ACE002E8279 /* nemic planet backGround.png */; };
 		E66845171716AB87002E8279 /* Dragon Ball Z Theme Song.wav in Resources */ = {isa = PBXBuildFile; fileRef = E66845161716AB87002E8279 /* Dragon Ball Z Theme Song.wav */; };
@@ -131,6 +147,22 @@
 		E6020B5217104D4700DAE734 /* SpecialScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialScreenViewController.m; sourceTree = "<group>"; };
 		E641F8B2171870DC0079B9EE /* player1 miss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 miss.png"; sourceTree = "<group>"; };
 		E641F8B4171870E10079B9EE /* player2 miss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player2 miss.png"; sourceTree = "<group>"; };
+		E641F8B617193BD70079B9EE /* player2 dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player2 dead.png"; sourceTree = "<group>"; };
+		E641F8B717193BD70079B9EE /* player2 left punch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player2 left punch.png"; sourceTree = "<group>"; };
+		E641F8B817193BD70079B9EE /* player1 dead.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player1 dead.png"; sourceTree = "<group>"; };
+		E641F8BC17194E9A0079B9EE /* scream2 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "scream2 1.wav"; sourceTree = "<group>"; };
+		E641F8BE17194F260079B9EE /* sbc_charge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sbc_charge.wav; sourceTree = "<group>"; };
+		E641F8C017194F430079B9EE /* strongkick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = strongkick.wav; sourceTree = "<group>"; };
+		E641F8C117194F430079B9EE /* strongpunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = strongpunch.wav; sourceTree = "<group>"; };
+		E641F8C4171950270079B9EE /* meleemiss1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meleemiss1.wav; sourceTree = "<group>"; };
+		E641F8C5171950270079B9EE /* meleemiss2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meleemiss2.wav; sourceTree = "<group>"; };
+		E641F8C6171950270079B9EE /* meleemiss3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = meleemiss3.wav; sourceTree = "<group>"; };
+		E641F8CA171950CE0079B9EE /* mediumkick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mediumkick.wav; sourceTree = "<group>"; };
+		E641F8CB171950CE0079B9EE /* mediumpunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mediumpunch.wav; sourceTree = "<group>"; };
+		E641F8CE171950F00079B9EE /* pain2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pain2.wav; sourceTree = "<group>"; };
+		E641F8D0171952970079B9EE /* scream1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scream1.wav; sourceTree = "<group>"; };
+		E641F8D417195C940079B9EE /* failed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = failed.mp3; sourceTree = "<group>"; };
+		E641F8D617195DC00079B9EE /* fingerlaser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fingerlaser.wav; sourceTree = "<group>"; };
 		E668450217158366002E8279 /* Save&LoadList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Save&LoadList.plist"; sourceTree = "<group>"; };
 		E668451417161ACE002E8279 /* nemic planet backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nemic planet backGround.png"; sourceTree = "<group>"; };
 		E66845161716AB87002E8279 /* Dragon Ball Z Theme Song.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Dragon Ball Z Theme Song.wav"; sourceTree = "<group>"; };
@@ -258,7 +290,19 @@
 		E6B4AD60170D8DD000D8ACDF /* SFX */ = {
 			isa = PBXGroup;
 			children = (
+				E641F8BC17194E9A0079B9EE /* scream2 1.wav */,
 				E66845161716AB87002E8279 /* Dragon Ball Z Theme Song.wav */,
+				E641F8BE17194F260079B9EE /* sbc_charge.wav */,
+				E641F8C4171950270079B9EE /* meleemiss1.wav */,
+				E641F8CA171950CE0079B9EE /* mediumkick.wav */,
+				E641F8CB171950CE0079B9EE /* mediumpunch.wav */,
+				E641F8CE171950F00079B9EE /* pain2.wav */,
+				E641F8C5171950270079B9EE /* meleemiss2.wav */,
+				E641F8D417195C940079B9EE /* failed.mp3 */,
+				E641F8D617195DC00079B9EE /* fingerlaser.wav */,
+				E641F8C6171950270079B9EE /* meleemiss3.wav */,
+				E641F8C017194F430079B9EE /* strongkick.wav */,
+				E641F8C117194F430079B9EE /* strongpunch.wav */,
 				E6009E9417184C1C009886E6 /* DBZ-Goku vs Vegeta Theme.m4a */,
 				E6B4ACFD170D891500D8ACDF /* click.mp3 */,
 				E6B4AD1C170D891500D8ACDF /* click.wav */,
@@ -271,6 +315,7 @@
 				E6B4AD23170D891500D8ACDF /* powerhum.wav */,
 				E6B4AD24170D891500D8ACDF /* punch.wav */,
 				E6B4AD25170D891500D8ACDF /* razor slate.wav */,
+				E641F8D0171952970079B9EE /* scream1.wav */,
 				E6B4AD26170D891500D8ACDF /* right hook.wav */,
 				E6B4AD27170D891500D8ACDF /* Ripple Lazer.wav */,
 				E6B4AD28170D891500D8ACDF /* strike.wav */,
@@ -288,6 +333,7 @@
 				E6009EAA171853DD009886E6 /* player1 powerup.png */,
 				E6009EAC171853DD009886E6 /* player1 left punch.png */,
 				E6009EAD171853DD009886E6 /* player1 stand.png */,
+				E641F8B817193BD70079B9EE /* player1 dead.png */,
 				E641F8B2171870DC0079B9EE /* player1 miss.png */,
 				E6009EAE171853DD009886E6 /* player1 block.png */,
 				E6009EAF171853DD009886E6 /* player1 hit.png */,
@@ -297,6 +343,8 @@
 				E6009E97171850DF009886E6 /* player2 powerup.png */,
 				E6009E98171850DF009886E6 /* player2 punch.png */,
 				E641F8B4171870E10079B9EE /* player2 miss.png */,
+				E641F8B617193BD70079B9EE /* player2 dead.png */,
+				E641F8B717193BD70079B9EE /* player2 left punch.png */,
 				E6009EA617185150009886E6 /* player2 kick.png */,
 				E6009E99171850DF009886E6 /* player2 block.png */,
 				E6009E9B171850DF009886E6 /* player2 super.png */,
@@ -558,6 +606,22 @@
 				E6009EBB171853DD009886E6 /* player1 ready.png in Resources */,
 				E641F8B3171870DC0079B9EE /* player1 miss.png in Resources */,
 				E641F8B5171870E10079B9EE /* player2 miss.png in Resources */,
+				E641F8B917193BD70079B9EE /* player2 dead.png in Resources */,
+				E641F8BA17193BD70079B9EE /* player2 left punch.png in Resources */,
+				E641F8BB17193BD70079B9EE /* player1 dead.png in Resources */,
+				E641F8BD17194E9A0079B9EE /* scream2 1.wav in Resources */,
+				E641F8BF17194F260079B9EE /* sbc_charge.wav in Resources */,
+				E641F8C217194F430079B9EE /* strongkick.wav in Resources */,
+				E641F8C317194F430079B9EE /* strongpunch.wav in Resources */,
+				E641F8C7171950270079B9EE /* meleemiss1.wav in Resources */,
+				E641F8C8171950270079B9EE /* meleemiss2.wav in Resources */,
+				E641F8C9171950270079B9EE /* meleemiss3.wav in Resources */,
+				E641F8CC171950CE0079B9EE /* mediumkick.wav in Resources */,
+				E641F8CD171950CE0079B9EE /* mediumpunch.wav in Resources */,
+				E641F8CF171950F00079B9EE /* pain2.wav in Resources */,
+				E641F8D1171952970079B9EE /* scream1.wav in Resources */,
+				E641F8D517195C940079B9EE /* failed.mp3 in Resources */,
+				E641F8D717195DC00079B9EE /* fingerlaser.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

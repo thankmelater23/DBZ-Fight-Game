@@ -37,6 +37,7 @@ void initVariables()
     specialViewToViewControllerPlaceHolder = 0;
     tripleKickBool = NO;
     superPunchMissBool = NO;
+    gameOver = NO;
     
     menuMusicSetUpAndPlay();
 }
@@ -111,26 +112,32 @@ void   turnGenerator()
 //SFX
 void   initAudio()
 {
-    NSURL *punchUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"punch" ofType: @"wav"]];
+    NSURL *punchUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"strongpunch" ofType: @"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)punchUrl, &sIDPunch);
     
-    NSURL *kickUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"kick" ofType: @"wav"]];
+    NSURL *kickUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"strongkick" ofType: @"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)kickUrl, &sIDKick);
     
-    NSURL *superUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"razor slate" ofType: @"wav"]];
+    NSURL *superUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"fingerlaser" ofType: @"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)superUrl, &sIDSuper);
     
-    NSURL *missedUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"swoosh 3" ofType: @"wav"]];
+    NSURL *missedUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"meleemiss2" ofType: @"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)missedUrl, &sIDMissed);
     
-    NSURL *hurtUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"pain" ofType: @"wav"]];
+    NSURL *hurtUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"pain2" ofType: @"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)hurtUrl, &sIDPain);
     
-    NSURL *potionURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"powerhum" ofType: @"wav"]];
+    NSURL *potionURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"scream2 1" ofType: @"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)potionURL, &sIDPotion);
     
-    NSURL *swapLifeURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"Magic Tree" ofType: @"wav"]];
+    NSURL *swapLifeURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"sbc_charge" ofType: @"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)swapLifeURL, &sIDSwapLife);
+    
+    NSURL *dieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"scream1" ofType: @"wav"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)dieURL, &sIDDead);
+    
+    NSURL *failURL = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"failed" ofType: @"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)failURL, &sIDFailed);
     
 }
 void   playSound(SystemSoundID soundID)
