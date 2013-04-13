@@ -7,11 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "Globals:Constants.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self playMenuMusic];
     // Override point for customization after application launch.
     return YES;
 }
@@ -41,6 +43,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+-(void)playMenuMusic
+{
+    NSURL *menuMusicUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"Dragon Ball Z Theme Song" ofType: @"wav"]];
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:menuMusicUrl error:&error];
+    [audioPlayer setNumberOfLoops:10];
+    [audioPlayer numberOfLoops];
+    [audioPlayer play];
 }
 
 @end

@@ -90,20 +90,13 @@
             setToNumber(self.doublePunch, specialsAndPotionsMax);
             
             punchesInARow = 0;
-
             NSLog(@"punches in a row: %i", punchesInARow);
-            
-            //Do code to make special happen
         }
         
         if (punchesTotal == punchSpecail1Attainer2)
         {
-            special2String = [NSString stringWithFormat: @"Special attack activated after landing %i total punches", punchSpecail1Attainer2];
-            
-            [self addHealth:bloodFlowHealthPoints];
-            special2AttackString = [NSString stringWithFormat: @"BLOOD FLOW activated!/n/n %@ recieved %i health points", [self name], bloodFlowHealthPoints];
-            
-            punchesTotal = 0;
+            special2String = [NSString stringWithFormat: @"%@ landED %i total punches", [self name], punchSpecail1Attainer2];
+            special2AttackString = [self adrenaline];
             
             NSLog(@"punches total: %i", punchesTotal);
         }
@@ -355,7 +348,10 @@
 //Specials
 -(NSMutableArray*) doublePunchSpecial:(UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox;
 {
-    NSMutableArray *array;
+    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:1];
+    [whosTurn() setDoublePunch:([whosTurn() doublePunch] - 1)];
+    [array addObject:@"Not Implemented yet"];
+    
     return array;
 }//Set up on vars for this method(Unfinished)
 -(NSMutableArray*) tripleKickSpecial: (UIImageView*)  p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
@@ -489,14 +485,23 @@
     return array;
 }//Set up on vars for this method(Unfinished)Also set up images and sounds need to be added and initialized
 //Auto Specials
--(NSString*)       desperation
+-(NSString*)      desperation
 {
     NSString *string;
-    string = [NSString stringWithFormat:@"None of the potions worked, %@ got desperate!\nDESPERATION activated\n%@ recieved %i health points", [self name], [self name], desperationHealthPoints];
+    string = [NSString stringWithFormat:@"DESPERATION ACTIVATED!\nNone of the potions worked, %@ became desperate!\n%@ recieved %i health points", [self name], [self name], desperationHealthPoints];
     [self addHealth:desperationHealthPoints];
     
     return string;
     
+}//When no potions has worked this special is activated does variable settings and returns a string
+-(NSString*)      adrenaline
+{
+    [self addHealth:adrenalineHealthPoints];
+    NSString *string = [NSString stringWithFormat: @"ADRENALINE ACTIVATED!/n %@ recieved %i health points", [self name], adrenalineHealthPoints];
+    
+    punchesTotal = 0;
+    
+    return string;
 }
 -(NSMutableArray*) deathBlow
 {
@@ -519,7 +524,7 @@
         self.potions--;
         int num = randomNumber(potionChanceMin, potionChanceMax);
         
-        if (num == 1 || num == 3)
+        if (num == 0 || num == 2 || num == 4)
         {
             playSound(sIDPotion);
             [self addHealth:potionStrength];
@@ -541,14 +546,15 @@
         
         else
         {
+            playSound(sIDPain);
             NSLog(@"Potion did not work");
-            potionDuds--;
+            potionDuds++;
+            string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
+            
             if (potionDuds == 3)
             {
                 desperationString = [self desperation];
             }
-            string = [NSString stringWithFormat:@"%@ potion did not work\nPotions: %i", [self name] ,[self potions]];
-            
         }
     }
     
@@ -556,6 +562,8 @@
     {
         [self setPotions:0];
         string = [NSString stringWithFormat:@"No potions left\nPotions: %i", [self potions]];
+        skipTurn = YES;
+        turnsCompleted--;
     }
     
     if (string != nil)
@@ -569,7 +577,7 @@
     }
     
     return array;
-}
+}//Gives player health if potion is successful
 -(NSMutableArray*) swapLife: (UIImageView*) p1Image player2Image:(UIImageView*) p2Image textBox:(UITextView*) textBox
 {
     NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:2];
@@ -596,6 +604,8 @@
     {
         NSLog(@"Life swap unavailable");
         string = [NSString stringWithFormat:@"Life Swap Unavailable"];
+        skipTurn = YES;
+        turnsCompleted--;
     }
     else
     {
@@ -619,7 +629,7 @@
         [array addObject:string3];
     }
     return array;
-}
+}//Swaps players life if successful
 
 
 //Game methods

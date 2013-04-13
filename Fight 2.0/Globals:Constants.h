@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @class Player;
 
@@ -28,6 +29,8 @@ NSString *player1Name, *player2Name;
 playerTurn turn;
 
 //Sound ID's
+AVAudioPlayer *audioPlayer;
+
 SystemSoundID sIDPunch;
 SystemSoundID sIDKick;
 SystemSoundID sIDSuper;
@@ -94,12 +97,15 @@ int specialViewToViewControllerPlaceHolder;
 #define superSpecail1Attainer2   4
 
 //Special attacks defines
-#define bloodFlowHealthPoints   20
+#define adrenalineHealthPoints  20
 #define desperationHealthPoints 20
 
 //Game setting define
 #define specialScreenImagesFadeOut 0.3
 #define specialScreenImagesFadeIn  1.0
+
+//Audio
+#define gamePlayMusicVolume 0.1
 
 
 #endif

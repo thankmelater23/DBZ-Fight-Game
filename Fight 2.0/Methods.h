@@ -35,4 +35,5 @@ void playSound   (SystemSoundID soundID);
 //Game Engine Methods
 int  randomNumber (int min, int max);
 void setToNumber  (int var, int setNumber);
+void menuMusicSetUpAndPlay();
 #endif

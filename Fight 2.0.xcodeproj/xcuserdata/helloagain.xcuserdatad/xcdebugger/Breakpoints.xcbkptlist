@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Fight 2.0/ViewController.m"
-         timestampString = "387460694.465926"
+         timestampString = "387465904.443386"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "316"
-         endingLineNumber = "316"
+         startingLineNumber = "310"
+         endingLineNumber = "310"
          landmarkName = "-continueText"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Fight 2.0/Player.m"
-         timestampString = "387464917.315262"
+         timestampString = "387507214.051835"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "421"
-         endingLineNumber = "421"
+         startingLineNumber = "411"
+         endingLineNumber = "411"
          landmarkName = "-tripleKickSpecial:player2Image:textBox:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Fight 2.0/Player.m"
-         timestampString = "387464662.420098"
+         timestampString = "387507214.051835"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "319"
-         endingLineNumber = "319"
+         startingLineNumber = "309"
+         endingLineNumber = "309"
          landmarkName = "-superOpp:player2Image:textBox:"
          landmarkType = "5">
       </FileBreakpoint>

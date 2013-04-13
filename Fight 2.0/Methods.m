@@ -10,6 +10,7 @@
 #import "Player.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "Globals:Constants.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 //Initialize
@@ -36,6 +37,8 @@ void initVariables()
     specialViewToViewControllerPlaceHolder = 0;
     tripleKickBool = NO;
     superPunchMissBool = NO;
+    
+    menuMusicSetUpAndPlay();
 }
 
 
@@ -170,6 +173,17 @@ void LoadGame(int place)
     
 }
 
+void menuMusicSetUpAndPlay()
+{
+    audioPlayer = nil;
+    NSURL *gamePlayMusicUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"DBZ-Goku vs Vegeta Theme" ofType: @"m4a"]];
+    NSError *error;
+    audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:gamePlayMusicUrl error:&error];
+    [audioPlayer setNumberOfLoops:100];
+    [audioPlayer numberOfLoops];
+    [audioPlayer setVolume:gamePlayMusicVolume];
+    [audioPlayer play];
+}
 
 
 
