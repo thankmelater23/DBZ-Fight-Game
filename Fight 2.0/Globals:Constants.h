@@ -16,7 +16,7 @@
 @class Player;
 
 
-typedef enum
+typedef enum 
 {
     enumPlayer1, enumPlayer2
 }playerTurn;
