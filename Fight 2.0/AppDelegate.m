@@ -14,6 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self playMenuMusic];
+    [self printAppInfo];
     // Override point for customization after application launch.
     return YES;
 }
@@ -55,5 +56,43 @@
     [audioPlayer numberOfLoops];
     [audioPlayer play];
 }
-
+- (void)printAppInfo{
+    NSString * CFBundleShortVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+    NSString * CFBundleDevelopmentRegion = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleDevelopmentRegion"];
+    NSString * CFBundleDisplayName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleDisplayName"];
+    NSString * CFBundleDocumentTypes = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleDocumentTypes"];
+    NSString * CFBundleDeCFBundleExecutablevelopmentRegion = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleDeCFBundleExecutablevelopmentRegion"];
+    NSString * CFBundleIconFile = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleIconFile"];
+    NSString * CFBundleIcons = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleIcons"];
+    NSString * CFBundleIdentifier = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleIdentifier"];
+    NSString * CFBundleLocalizations = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleLocalizations"];
+    NSString * CFBundleName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleName"];
+    NSString * CFBundlePackageType = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundlePackageType"];
+    NSString * CFBundleSignature = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleSignature"];
+    NSString * CFBundleSpokenName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleSpokenName"];
+    NSString * CFBundleURLTypes = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleURLTypes"];
+    NSString * CFBundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleVersion"];
+    NSString * CFBundleTypeName = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleTypeName"];
+    NSString * LSHandlerRank = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"LSHandlerRank"];
+    
+    
+    //    printf(CFBundleShortVersionString);
+    //    printf(CFBundleDevelopmentRegion);
+    //    printf(CFBundleDisplayName);
+    //    printf(CFBundleDocumentTypes);
+    //    printf(CFBundleDeCFBundleExecutablevelopmentRegion);
+    //    printf(CFBundleIconFile);
+    //    printf(CFBundleIcons);
+    //    printf(CFBundleIdentifier);
+    //    printf(CFBundleLocalizations);
+    //    printf(CFBundleName);
+    //    printf(CFBundleSignature);
+    //    printf(CFBundleSpokenName);
+    //    printf(CFBundleURLTypes);
+    //    printf(CFBundleVersion);
+    //    printf(CFBundleTypeName);
+    //    printf(LSHandlerRank);
+    //    printf(CFBundlePackageType);
+    
+}
 @end
